@@ -22,16 +22,16 @@ body{
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 main{
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 button{
     border: none;
@@ -55,11 +55,10 @@ button{
     display: grid;
     justify-items: center;
     align-items: center;
-    /* background-color: var(--main-bg-color_dark); */
     background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_light));
+    min-height: 600px;
     width: 635px;
     gap: 20px;
-    height: 600px;
 }
 .login_form-container h2 {
     margin-top: 30px;
@@ -91,6 +90,7 @@ button{
     outline: none;
     height: 34.85px;
     width: 258.07px;
+    padding: 10px;
     background-color: var(--blanco-principal);
 }
 .login_linea-separacion-container{
@@ -133,7 +133,7 @@ button{
     width: 277.67px;
     background-color: var(--blanco-principal);
 }
-.login_captcha .login_captcha_cuadrado-ok{
+.login_captcha_cuadrado-ok{
     position: absolute;
     top: 20px;
     left: 20px;
@@ -141,6 +141,15 @@ button{
     width: 30.85px;
     border: 1px solid var(--negro-principal);
     background-color: var(--blanco-puro);
+}
+.palomita_ok{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    box-shadow: none;
+    height: 30.85px;
+    width: 35.85px;
 }
 .login_captcha p{
     position: absolute;
@@ -208,4 +217,8 @@ footer{
     width: 100px; */
     height: 50px;
     width: 50px;
+}
+
+.hidden{
+    display: none;
 }

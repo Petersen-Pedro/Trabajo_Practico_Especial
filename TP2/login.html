@@ -14,7 +14,7 @@
 
     <main>
 
-        <div class="login_form-container">
+        <div class="login_form-container" id="form_iniciar-sesion">
             <h2>Iniciar Sesion</h2>
             <form action="">
                 <div class="login_form-input--container">
@@ -40,12 +40,78 @@
                 </button>
             </div>
             <div class="login_captcha">
-                <div class="login_captcha_cuadrado-ok"></div>
+                <div class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado"></div>
                 <p>No soy un robot</p>
-                <img src="images/logo/logos_recaptcha.png" alt="recaptcha">
+                <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
             </div>
-            <button class="login_iniciar-sesion_btn"><span>Iniciar Sesión</span></button>
-            <button class="login_sin-cuenta_btn"><span>¿No Tienes Cuenta?</span></button>
+            <button class="login_iniciar-sesion_btn" type="submit">
+                <span>Iniciar Sesión</span>
+            </button>
+            <button class="login_sin-cuenta_btn" id="sin-cuenta_btn">
+                <span>¿No Tienes Cuenta?</span>
+            </button>
+        </div>
+
+        <div class="login_form-container hidden" id="form_registrarse">
+            <h2>Iniciar Sesion</h2>
+            <form action="">
+                <div class="login_form-input--container">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="apellido">Apellido</label>
+                    <input type="password" name="apellido" id="apellido">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="nickName">NickName (opcional)</label>
+                    <input type="text" name="nickName" id="nickName">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="genero">Genero</label>
+                    <input type="text" name="genero" id="genero">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="repEmail">Repetir Email</label>
+                    <input type="email" name="repEmail" id="repEmail">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="login_form-input--container">
+                    <label for="repPassword">Repetir Contraseña</label>
+                    <input type="password" name="repPassword" id="repPassword">
+                </div>
+            </form>
+            <div class="login_linea-separacion-container">
+                <div class="login_linea-separacion"></div>
+                <span>O</span>  
+                <div class="login_linea-separacion"></div>
+            </div>
+            <div class="login_sesion-externa">
+                <button>
+                    Iniciar Sesion con <img src="images/logo/Google.png" alt="google">
+                </button>
+                <button>
+                    Iniciar Sesion con <img src="images/logo/logos_facebook.png" alt="facebook">
+                </button>
+            </div>
+            <div class="login_captcha">
+                <div class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado"></div>
+                <p>No soy un robot</p>
+                <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
+            </div>
+            <button class="login_iniciar-sesion_btn" type="submit">
+                <span>Iniciar Sesión</span>
+            </button>
+            <button class="login_sin-cuenta_btn" id="login_ya-cuenta-btn">
+                <span>¿Ya Tienes Cuenta?</span>
+            </button>
         </div>
 
     </main>
