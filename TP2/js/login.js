@@ -1,20 +1,82 @@
 "use strict"
 
-const loginIniciarSesion = document.querySelector("#form_iniciar-sesion");
-const loginRegistrarse = document.querySelector("#form_registrarse");
+// Selectores generales
+const form = document.querySelector("#mainForm");
 const sinCuentaBtn = document.querySelector("#sin-cuenta_btn");
-const yaCuentaBtn = document.querySelector("#login_ya-cuenta-btn");
 const captchaBtn = document.querySelector("#login_captcha_cuadrado");
 const recaptcha = document.querySelector("#recaptcha_btn");
 const palomita = document.createElement("img");
+// Button de "¿ya tienes cuenta?"
+const yaCuentaBtn = document.createElement("button");
+yaCuentaBtn.classList.add("login_sin-cuenta_btn");
+const spanElement = document.createElement("span");
+spanElement.textContent = "¿Ya tienes cuenta?";
+yaCuentaBtn.appendChild(spanElement);
+yaCuentaBtn.setAttribute("id", "ya-cuenta-btn");
+// H2 de "registrarse"
+const iniciarSesionTitulo = document.querySelector("#login_form-titulo");
+const registrarseTitulo = document.createElement("h2");
+registrarseTitulo.textContent = "Registrarse";
 
+// Arrays con labels-inputs
+const iniciarSesionArr = [
+    {
+        label: "Usuario o Mail", id: "usuario", type: "text"
+    },
+    {
+        label: "Contraseña", id: "contrasenia", type: "password"
+    }
+]
+const registrarseArr = [
+    {
+        label: "Nombre", id: "nombre", type: "text"
+    },
+    {
+        label: "Apellido", id: "apellido", type: "text"
+    },
+    {
+        label: "NickName (opcional)", id: "nickname", type: "text"
+    },
+    {
+        label: "Genero", id: "genero", type: "text"
+    },
+    {
+        label: "Email", id: "email", type: "email"
+    },
+    {
+        label: "Repetir Email", id: "repEmail", type: "email"
+    },
+    {
+        label: "Contraseña", id: "contrasenia", type: "password"
+    },
+    {
+        label: "Repetir Contraseña", id: "repContrasenia", type: "password"
+    }
+]
+// Carga de labels-inputs
+const loadInputs = (array) => {
+    for(const elem of array){
+        form.innerHTML += 
+        `                
+            <div class="login_form-input--container">
+                <label for="${elem.id}">${elem.label}</label>
+                <input type="${elem.type}" name="${elem.id}" id="${elem.id}">
+            </div>
+        `
+    }
+}
+// Funciones de reemplazo
 sinCuentaBtn.addEventListener("click", () => {
-    loginIniciarSesion.classList.add("hidden");
-    loginRegistrarse.classList.remove("hidden");
+    form.innerHTML = "";
+    loadInputs(registrarseArr);
+    iniciarSesionTitulo.replaceWith(registrarseTitulo);
+    sinCuentaBtn.replaceWith(yaCuentaBtn);
 });
 yaCuentaBtn.addEventListener("click", () => {
-    loginRegistrarse.classList.add("hidden");
-    loginIniciarSesion.classList.remove("hidden");
+    form.innerHTML = "";
+    loadInputs(iniciarSesionArr);
+    registrarseTitulo.replaceWith(iniciarSesionTitulo);
+    yaCuentaBtn.replaceWith(sinCuentaBtn);
 });
 captchaBtn.addEventListener("click", () => {
     palomita.classList.add("palomita_ok");
