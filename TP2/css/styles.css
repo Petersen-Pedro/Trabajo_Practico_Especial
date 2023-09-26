@@ -1,0 +1,209 @@
+:root {
+    --main-bg-color_light: #8788A4;
+    --main-bg-color_dark: #1c1e45;
+    --secondary-bg-color_light: #FF8E7D;
+    --blanco-puro: #FFF;
+    --blanco-principal: #DFDFDF;
+    --negro-puro: #000;
+    --negro-principal: #222;
+    --gris-principal: #555;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--main-bg-color_light);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    min-height: 100%;
+    min-width: 100%;
+}
+main{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    min-height: 100%;
+    min-width: 100%;
+}
+button{
+    border: none;
+    outline: none;
+}
+/* Login Header */
+.login_header{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.login_header--logo{
+    height: 30%;
+    width: 15%;
+}
+/* Login Form */
+.login_form-container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--main-bg-color_dark);
+    width: 635px;
+    gap: 20px;
+    height: 600px;
+}
+.login_form-container h2 {
+    margin-top: 30px;
+    color: var(--blanco-puro);
+}
+.login_form-container form{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.login_form-input--container{
+    display: flex;
+    flex-direction: column;
+    color: var(--blanco-principal);
+}
+.login_form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.login_form-input--container label{
+    padding-left: 7px;
+    padding-bottom: 2px;
+}
+.login_form-input--container input{
+    border-radius: 8.71px;
+    /* border-radius: 5px; */
+    border: none;
+    outline: none;
+    height: 34.85px;
+    width: 258.07px;
+    background-color: var(--blanco-principal);
+}
+.login_linea-separacion-container{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 3.5fr 1fr 3.5fr;
+    color: var(--blanco-principal);
+}
+.login_linea-separacion{
+    height: 1%;
+    width: 100%;
+    display: inline;
+    background-color: red;
+    /* background-color: var(--negro-principal); */
+}
+.login_sesion-externa{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.login_sesion-externa button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    /* padding: 6px; */
+    border-radius: 26px;
+    border: none;
+    outline: none;
+    width: 167.66px;
+    height: 44.71px;
+}
+.login_captcha{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 74.05px;
+    width: 277.67px;
+    background-color: var(--blanco-principal);
+}
+.login_captcha .login_captcha_cuadrado-ok{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 30.85px;
+    width: 30.85px;
+    border: 1px solid var(--negro-principal);
+    background-color: var(--blanco-puro);
+}
+.login_captcha p{
+    position: absolute;
+    top: 28px;
+    left: 70px;
+    color: var(--negro-principal);
+}
+.login_captcha img{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.login_iniciar-sesion_btn{
+    height: 63.16px;
+    width: 270.05px;
+    border-radius: 217.78px;
+    color: var(--negro-puro);
+    background-color: var(--secondary-bg-color_light);
+}
+.login_sin-cuenta_btn{
+    height: 35px;
+    width: 294px;
+    margin-bottom: 50px;
+    background: transparent;
+    color: var(--blanco-puro);
+}
+.login_sin-cuenta_btn span{
+    height: 70px;
+}
+.login_sin-cuenta_btn span:hover{
+    /* border-bottom: 2px solid var(--negro-principal); */
+    border-bottom: 2px solid red;
+}
+/* Footer */
+footer{
+    margin-top: 7%;
+    width: 100%;
+}
+.footer_main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    padding: 25px;
+    gap: 40px;
+    color: var(--blanco-principal);
+    background-color: var(--gris-principal);
+}
+.footer_copyright-texto{
+    align-self: flex-start;
+}
+.footer_logo-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--negro-principal);
+}
+.footer_logo-container img{
+    /* height: 100px;
+    width: 100px; */
+    height: 50px;
+    width: 50px;
+}
