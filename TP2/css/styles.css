@@ -13,8 +13,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    margin-bottom: 20px;
+}
 body{
-    background-color: var(--main-bg-color_light);
+    background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_light));
     display: grid;
     justify-items: center;
     align-items: center;
@@ -33,6 +36,7 @@ main{
 button{
     border: none;
     outline: none;
+    cursor: pointer;
 }
 /* Login Header */
 .login_header{
@@ -51,7 +55,8 @@ button{
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: var(--main-bg-color_dark);
+    /* background-color: var(--main-bg-color_dark); */
+    background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_light));
     width: 635px;
     gap: 20px;
     height: 600px;
@@ -82,7 +87,6 @@ button{
 }
 .login_form-input--container input{
     border-radius: 8.71px;
-    /* border-radius: 5px; */
     border: none;
     outline: none;
     height: 34.85px;
@@ -101,8 +105,7 @@ button{
     height: 1%;
     width: 100%;
     display: inline;
-    background-color: red;
-    /* background-color: var(--negro-principal); */
+    background-color: var(--negro-principal);
 }
 .login_sesion-externa{
     display: flex;
@@ -116,10 +119,7 @@ button{
     justify-content: center;
     text-align: center;
     gap: 6px;
-    /* padding: 6px; */
     border-radius: 26px;
-    border: none;
-    outline: none;
     width: 167.66px;
     height: 44.71px;
 }
@@ -171,8 +171,7 @@ button{
     height: 70px;
 }
 .login_sin-cuenta_btn span:hover{
-    /* border-bottom: 2px solid var(--negro-principal); */
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid var(--negro-principal);
 }
 /* Footer */
 footer{
@@ -187,9 +186,12 @@ footer{
     text-align: center;
     height: 250px;
     padding: 25px;
-    gap: 40px;
+    gap: 30px;
     color: var(--blanco-principal);
     background-color: var(--gris-principal);
+}
+.footer_main-texto{
+    width: 80%;
 }
 .footer_copyright-texto{
     align-self: flex-start;
