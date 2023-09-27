@@ -54,13 +54,13 @@ button{
 }
 .main_header-searchbar--lupa{
     position: absolute;
-    top: 3px;
-    right: 12px; 
-    height: 25px;
+    cursor: pointer;
+    top: 4px;
+    right: 11px; 
+    height: 23px;
 }
 .main_header-sub-container{
     display: flex;
-    align-items: center;
     gap: 20px;
 }
 .main_header-sub-container div{
@@ -87,23 +87,18 @@ button{
 .login_header{
     width: 90%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
 }
 .header--logo{
     height: 30%;
     width: 15%;
 }
-/* Home */
+/* Home Page */
 .home_juego-destacado{
     width: 90%;
 }
-
-
-
-
-/* Login Form */
+/* Login Page */
+/* Login form */
 .login_form-container{
     display: grid;
     justify-items: center;
@@ -120,8 +115,6 @@ button{
 .login_form-container form{
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
 }
 .login_form-input--container{
     display: flex;
@@ -139,8 +132,6 @@ button{
 }
 .login_form-input--container input{
     border-radius: 8.71px;
-    border: none;
-    outline: none;
     height: 34.85px;
     width: 258.07px;
     padding: 10px;
@@ -162,12 +153,10 @@ button{
 }
 .login_sesion-externa{
     display: flex;
-    flex-direction: row;
     gap: 20px;
 }
 .login_sesion-externa button{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -178,10 +167,6 @@ button{
 }
 .login_captcha{
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     height: 74.05px;
     width: 277.67px;
     background-color: var(--blanco-principal);
@@ -199,8 +184,6 @@ button{
     position: absolute;
     top: 20px;
     left: 20px;
-    background: transparent;
-    box-shadow: none;
     height: 30.85px;
     width: 35.85px;
 }

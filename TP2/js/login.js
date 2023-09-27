@@ -5,7 +5,6 @@ const form = document.querySelector("#mainForm");
 const sinCuentaBtn = document.querySelector("#sin-cuenta_btn");
 const captchaBtn = document.querySelector("#login_captcha_cuadrado");
 const recaptcha = document.querySelector("#recaptcha_btn");
-const palomita = document.createElement("img");
 // Button de "¿ya tienes cuenta?"
 const yaCuentaBtn = document.createElement("button");
 yaCuentaBtn.classList.add("login_sin-cuenta_btn");
@@ -17,6 +16,11 @@ yaCuentaBtn.setAttribute("id", "ya-cuenta-btn");
 const iniciarSesionTitulo = document.querySelector("#login_form-titulo");
 const registrarseTitulo = document.createElement("h2");
 registrarseTitulo.textContent = "Registrarse";
+// Palomita
+const palomita = document.createElement("img");
+palomita.classList.add("palomita_ok");
+palomita.src = "images/logo/palomita_ok.png";
+palomita.alt = "palomita";
 
 // Arrays con labels-inputs
 const iniciarSesionArr = [
@@ -79,9 +83,6 @@ yaCuentaBtn.addEventListener("click", () => {
     yaCuentaBtn.replaceWith(sinCuentaBtn);
 });
 captchaBtn.addEventListener("click", () => {
-    palomita.classList.add("palomita_ok");
-    palomita.src = "images/logo/palomita_ok.png";
-    palomita.alt = "palomita";
     captchaBtn.replaceWith(palomita);
 });
 recaptcha.addEventListener("click", () => {
