@@ -12,6 +12,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 header{
     margin-bottom: 20px;
@@ -23,20 +25,63 @@ body{
     align-items: center;
     grid-template-columns: 1fr;
     min-height: 100vh;
-    min-width: 100vw;
 }
 main{
     display: grid;
     justify-items: center;
-    align-items: center;
     grid-template-columns: 1fr;
     min-height: 100vh;
-    min-width: 100vw;
 }
 button{
-    border: none;
-    outline: none;
     cursor: pointer;
+}
+/* Main header */
+.main_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.main_header-searchbar-container{
+    position: relative;
+}
+.main_header-searchbar{
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: var(--blanco-principal);
+}
+.main_header-searchbar--lupa{
+    position: absolute;
+    top: 3px;
+    right: 12px; 
+    height: 25px;
+}
+.main_header-sub-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main_header-sub-container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 34px;
+    color: var(--blanco-puro);
+    background-color: var(--main-bg-color_light);
+}
+.main_header_carrito{
+    width: 72px;
+}
+.main_header_user{
+    gap: 10px;
+    width: 120px;
+}
+.main_header_carrito img,
+.main_header_user img{
+    height: 30px;
 }
 /* Login Header */
 .login_header{
@@ -46,10 +91,18 @@ button{
     align-items: center;
     justify-content: center;
 }
-.login_header--logo{
+.header--logo{
     height: 30%;
     width: 15%;
 }
+/* Home */
+.home_juego-destacado{
+    width: 90%;
+}
+
+
+
+
 /* Login Form */
 .login_form-container{
     display: grid;
@@ -213,8 +266,6 @@ footer{
     background-color: var(--negro-principal);
 }
 .footer_logo-container img{
-    /* height: 100px;
-    width: 100px; */
     height: 50px;
     width: 50px;
 }
