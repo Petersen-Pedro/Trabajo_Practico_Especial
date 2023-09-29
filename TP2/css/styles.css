@@ -19,21 +19,21 @@
 
 @font-face {
     font-family: "Roboto";
-    src: url(fonts/RobotoMono-Regular.ttf);
+    src: url(fonts/Roboto-Regular.ttf);
 }
 @font-face {
     font-family: "Roboto";
-    src: url(fonts/RobotoMono-Bold.ttf);
+    src: url(fonts/Roboto-Bold.ttf);
     font-weight: bold;
 }
 @font-face {
     font-family: "Roboto";
-    src: url(fonts/RobotoMono-Italic.ttf);
+    src: url(fonts/Roboto-Italic.ttf);
     font-style: italic;
 }
 @font-face {
     font-family: "Roboto";
-    src: url(fonts/RobotoMono-BoldItalic.ttf);
+    src: url(fonts/Roboto-BoldItalic.ttf);
     font-weight: bold;
     font-style: italic;
 }
@@ -68,6 +68,29 @@ main{
 button{
     cursor: pointer;
 }
+.button-primary{
+    text-align: center;
+    font-size: 21.778px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 3.267px;
+}
+.button-Terciary{
+    text-align: center;
+    font-size: 21.778px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 3.267px;
+}
+.button-social{
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
 /* Main header */
 .main_header{
     display: flex;
@@ -289,6 +312,8 @@ footer{
     height: 50px;
     width: 50px;
 }
+
+
 
 .hidden{
     display: none;

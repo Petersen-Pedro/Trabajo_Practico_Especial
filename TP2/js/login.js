@@ -5,6 +5,7 @@ const form = document.querySelector("#mainForm");
 const sinCuentaBtn = document.querySelector("#sin-cuenta_btn");
 const captchaBtn = document.querySelector("#login_captcha_cuadrado");
 const recaptcha = document.querySelector("#recaptcha_btn");
+
 // Button de "¿ya tienes cuenta?"
 const yaCuentaBtn = document.createElement("button");
 yaCuentaBtn.classList.add("login_sin-cuenta_btn");
@@ -12,10 +13,12 @@ const spanElement = document.createElement("span");
 spanElement.textContent = "¿Ya tienes cuenta?";
 yaCuentaBtn.appendChild(spanElement);
 yaCuentaBtn.setAttribute("id", "ya-cuenta-btn");
+
 // H2 de "registrarse"
 const iniciarSesionTitulo = document.querySelector("#login_form-titulo");
 const registrarseTitulo = document.createElement("h2");
 registrarseTitulo.textContent = "Registrarse";
+
 // Palomita
 const palomita = document.createElement("img");
 palomita.classList.add("palomita_ok");
@@ -57,18 +60,20 @@ const registrarseArr = [
         label: "Repetir Contraseña", id: "repContrasenia", type: "password"
     }
 ]
+
 // Carga de labels-inputs
 const loadInputs = (array) => {
     for(const elem of array){
         form.innerHTML += 
         `                
-            <div class="login_form-input--container">
+            <section class="login_form-input--container">
                 <label for="${elem.id}">${elem.label}</label>
                 <input type="${elem.type}" name="${elem.id}" id="${elem.id}">
-            </div>
+            </section>
         `
     }
 }
+
 // Funciones de reemplazo
 sinCuentaBtn.addEventListener("click", () => {
     form.innerHTML = "";
