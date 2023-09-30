@@ -296,7 +296,11 @@ footer{
     background-color: var(--gris-principal);
 }
 .footer_main-texto{
-    width: 80%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
 }
 .footer_copyright-texto{
     align-self: flex-start;
