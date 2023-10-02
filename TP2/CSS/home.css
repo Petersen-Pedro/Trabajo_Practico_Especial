@@ -1,0 +1,54 @@
+:root {
+    --main-bg-color_light: #8788A4;
+    --main-bg-color_base: #46486F;
+    --main-bg-color_medium: #1C1F47;
+    --main-bg-color_dark: #1c1e45;
+    --secondary-bg-color_light: #FF8E7D;
+    --secondary-bg-color_base: #E54228;
+    --secondary-bg-color_medium: #951400;
+    --secondary-bg-color_dark: #450900;
+    --money-bg-color_base: #14A41A;
+    --blanco-puro: #FFF;
+    --blanco-principal: #DFDFDF;
+    --gris-principal: #555555;
+    --negro-principal: #222222;
+    --negro-puro: #000;
+    --radius: 20px;
+
+}
+
+.home_categoria-container{
+    color: var(--blanco-puro);
+}
+.home_categoria-container > h1{
+    padding: 10px 15px;
+}
+.home_categoria{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.home_categoria--juego > img{
+    height: 150px;
+    width: 150px;
+}
+.juego_precio_sin-compra{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -4px;
+    height: 40px;
+    width: 150px;
+    background-color: var(--money-bg-color_base);
+    color: var(--blanco-puro);
+    border-radius: 0 0 15px 15px;
+}
+.juego_precio_sin-compra span{
+    font-size: 25px;
+}
+.juego_add-carr{
+    height: 30px;
+    width: 30px;
+}
