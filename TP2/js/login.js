@@ -8,11 +8,12 @@ const recaptcha = document.querySelector("#recaptcha_btn");
 
 // Button de "¿ya tienes cuenta?"
 const yaCuentaBtn = document.createElement("button");
-yaCuentaBtn.classList.add("login_sin-cuenta_btn");
+yaCuentaBtn.classList.add("login_cambiar-form_btn");
+yaCuentaBtn.classList.add("button-Terciary");
+yaCuentaBtn.setAttribute("id", "ya-cuenta-btn");
 const spanElement = document.createElement("span");
 spanElement.textContent = "¿Ya tienes cuenta?";
 yaCuentaBtn.appendChild(spanElement);
-yaCuentaBtn.setAttribute("id", "ya-cuenta-btn");
 
 // H2 de "registrarse"
 const iniciarSesionTitulo = document.querySelector("#login_form-titulo");
@@ -63,6 +64,7 @@ const registrarseArr = [
 
 // Carga de labels-inputs
 const loadInputs = (array) => {
+    form.innerHTML = "";
     for(const elem of array){
         form.innerHTML += 
         `                
@@ -76,13 +78,11 @@ const loadInputs = (array) => {
 
 // Funciones de reemplazo
 sinCuentaBtn.addEventListener("click", () => {
-    form.innerHTML = "";
     loadInputs(registrarseArr);
     iniciarSesionTitulo.replaceWith(registrarseTitulo);
     sinCuentaBtn.replaceWith(yaCuentaBtn);
 });
 yaCuentaBtn.addEventListener("click", () => {
-    form.innerHTML = "";
     loadInputs(iniciarSesionArr);
     registrarseTitulo.replaceWith(iniciarSesionTitulo);
     yaCuentaBtn.replaceWith(sinCuentaBtn);

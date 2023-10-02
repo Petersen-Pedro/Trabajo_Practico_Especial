@@ -68,6 +68,7 @@ main{
 button{
     cursor: pointer;
 }
+/* Buttons */
 .button-primary{
     text-align: center;
     font-size: 21.778px;
@@ -90,7 +91,6 @@ button{
     font-weight: 800;
     line-height: normal;
 }
-
 /* Main header */
 .main_header{
     display: flex;
@@ -153,8 +153,6 @@ button{
 .home_juego-destacado{
     width: 90%;
 }
-
-
 /* Login Page */
 /* Login form */
 .login_form-container{
@@ -265,17 +263,17 @@ button{
     color: var(--negro-puro);
     background-color: var(--secondary-bg-color_light);
 }
-.login_sin-cuenta_btn{
+.login_cambiar-form_btn{
     height: 35px;
     width: 294px;
     margin-bottom: 50px;
     background: transparent;
     color: var(--blanco-puro);
 }
-.login_sin-cuenta_btn span{
+.login_cambiar-form_btn span{
     height: 70px;
 }
-.login_sin-cuenta_btn span:hover{
+.login_cambiar-form_btn span:hover{
     border-bottom: 2px solid var(--negro-principal);
 }
 /* Footer */
