@@ -13,6 +13,8 @@
     --gris-principal: #555555;
     --negro-principal: #222222;
     --negro-puro: #000;
+    --ok: #14A41A;
+    --eror: #EB3417;
     --radius: 20px;
 
 }
@@ -57,7 +59,7 @@ body{
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr;
-    min-height: 100vh;
+    min-height: 100%;
 }
 main{
     display: grid;
@@ -65,7 +67,8 @@ main{
     grid-template-columns: 1fr;
     min-height: 100vh;
 }
-button{
+button,
+label{
     cursor: pointer;
 }
 /* Buttons */
@@ -177,7 +180,13 @@ button{
 .login_form-input--container{
     display: flex;
     flex-direction: column;
+    position: relative;
     color: var(--blanco-principal);
+}
+.login_form-input_img{
+    position: absolute;
+    top: 32px;
+    right: 10px;
 }
 .login_form-container form{
     display: flex;
@@ -188,13 +197,19 @@ button{
     padding-left: 7px;
     padding-bottom: 2px;
 }
-.login_form-input--container input{
+.login_form-input{
     border-radius: 8.71px;
     height: 34.85px;
     width: 258.07px;
     padding: 10px;
     background-color: var(--blanco-principal);
 }
+.login_form_error-text{
+    width: 80%;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
 .login_linea-separacion-container{
     width: 100%;
     display: grid;
@@ -278,6 +293,9 @@ button{
 }
 /* Footer */
 footer{
+    position: sticky;
+    top: 100%;
+    bottom: 0;
     margin-top: 7%;
     width: 100%;
 }
@@ -319,4 +337,11 @@ footer{
 
 .hidden{
     display: none;
+}
+
+.ok{
+    color: var(--ok);
+}
+.error{
+    color: var(--eror);
 }

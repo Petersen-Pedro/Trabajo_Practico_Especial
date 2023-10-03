@@ -28,18 +28,32 @@
     
     <main>
         <img src="images/juego_destacado.png" alt="juego_destacado" class="home_juego-destacado">
-        <section class="home_categoria-container">
-            <h1>Especiales para ti</h1>
-            <div class="home_categoria" id="especiales-para-ti">
-                <!-- <article class="home_categoria--juego">
-                    <img src="images/juego_sin-imagen.png" alt="juego">
-                    <div class="juego_precio_sin-compra">
-                        <span>$9999</span>
-                        <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
-                    </div>
-                </article> -->
-            </div>
-        </section>
+        <div class="home_main-container">
+            <section class="home_categoria-container especial">
+                <h1>Especiales para ti</h1>
+                <div class="home_categoria" id="especiales-para-ti"></div>
+            </section>
+            <section class="home_categoria-container">
+                <h1>Lo mas Jugado</h1>
+                <div class="home_categoria" id="mas-jugado"></div>
+            </section>
+            <section class="home_categoria-container">
+                <h1>Aventura</h1>
+                <div class="home_categoria" id="aventura"></div>
+            </section>
+            <section class="home_categoria-container">
+                <h1>Horror</h1>
+                <div class="home_categoria" id="horror"></div>
+            </section>
+            <section class="home_categoria-container">
+                <h1>Suspenso</h1>
+                <div class="home_categoria" id="suspenso"></div>
+            </section>
+            <section class="home_categoria-container">
+                <h1>Accion</h1>
+                <div class="home_categoria" id="accion"></div>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -55,6 +69,7 @@
         </div>
     </footer>
 
+    <script src="js/json_imitation/home.json.js"></script>
     <script src="js/home.js"></script>
 </body>
 </html>
