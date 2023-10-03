@@ -45,8 +45,10 @@
     /* width: 100%; */
 }
 .home_categoria--juego > img{
-    height: 150px;
+    /*height: 150px;
     width: 150px;
+    height: 1em;*/
+    width: 9em;
 }
 .juego_precio_sin-compra{
     display: flex;
@@ -56,7 +58,9 @@
     margin-top: -4px;
     height: 40px;
     width: 150px;
-    /* background-color: var(--money-bg-color_base); */
+    width: 9em;
+    /*width: 150px;
+    background-color: var(--money-bg-color_base); */
     color: var(--blanco-puro);
     border-radius: 0 0 15px 15px;
 }
@@ -68,6 +72,7 @@
     background-color: var(--secondary-bg-color_medium);
 }
 .juego_precio_sin-compra span{
+    /*font-size: 25px;*/
     font-size: 25px;
 }
 .juego_add-carr{
