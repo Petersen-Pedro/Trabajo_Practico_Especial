@@ -49,7 +49,7 @@
     font-family: "Roboto";
 }
 header{
-    /*margin-bottom: 20px;*/
+    margin-bottom: 20px;
 }
 body{
     background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_light));
@@ -103,7 +103,7 @@ button{
 }
 .main_header-searchbar{
     height: 30px;
-    width: 500px;
+    width: 300px;
     border-radius: var(--radius);
     padding: 15px;
     background-color: var(--blanco-principal);
@@ -160,10 +160,10 @@ button{
     justify-items: center;
     align-items: center;
     background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_base));
-    /*min-height: 600px;
-    width: 480px;
+    min-height: 600px;
+    /*width: 480px;
     padding: 1em;*/
-    padding:  10px 40px;
+    padding: 40px;
     gap: 1em;
     border-radius: var(--radius);
     border: 2px solid var(--main-bg-color_dark);
@@ -265,6 +265,12 @@ button{
     color: var(--negro-puro);
     background-color: var(--secondary-bg-color_light);
 }
+
+.login_iniciar-sesion_btn:hover{
+    background-color: var(--secondary-bg-color_medium);
+    font-weight: bold;
+}
+
 .login_cambiar-form_btn{
     height: 35px;
     width: 294px;
@@ -276,7 +282,7 @@ button{
     height: 70px;
 }
 .login_cambiar-form_btn span:hover{
-    border-bottom: 2px solid var(--negro-principal);
+    font-weight: bold;
 }
 /* Footer */
 footer{
