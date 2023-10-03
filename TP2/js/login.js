@@ -47,38 +47,51 @@ recaptcha.addEventListener("click", () => {
 
 // Carga de labels-inputs
 function loadInputs(array){
-    while (form.firstChild) {
-        form.removeChild(form.firstChild);
+    form.innerHTML = "";
+    for (const elem of array) {
+        form.innerHTML += `
+        <section class="login_form-input--container" id="login_form_${elem.id}--container">
+            <label for="${elem.id}">${elem.label}</label>
+            <input type="${elem.type}" name="${elem.id}" id="${elem.id}" class="login_form-input">
+            <img src="#" alt="validator" 
+                class="login_form-input_img hidden" id="login_form-input--validator">
+        </section>
+        `
+        const inputsNew = document.querySelectorAll(".login_form-input");
+        inputsNew.forEach(input => input.addEventListener("keyup", validarInput));
     }
-    for(const elem of array){
-        const section = document.createElement("section");
-        const label = document.createElement("label");
-        const input = document.createElement("input");
-        const img = document.createElement("img");
+    // while (form.firstChild) {
+    //     form.removeChild(form.firstChild);
+    // }
+    // for(const elem of array){
+    //     const section = document.createElement("section");
+    //     const label = document.createElement("label");
+    //     const input = document.createElement("input");
+    //     const img = document.createElement("img");
 
-        section.classList.add("login_form-input--container");
-        section.id = `login_form_${elem.id}-container`;
+    //     section.classList.add("login_form-input--container");
+    //     section.id = `login_form_${elem.id}-container`;
 
-        label.setAttribute("for", elem.id);
-        label.textContent = elem.label;
+    //     label.setAttribute("for", elem.id);
+    //     label.textContent = elem.label;
 
-        input.type = elem.type;
-        input.name = elem.id;
-        input.id = elem.id;
-        input.classList.add("login_form-input");
+    //     input.type = elem.type;
+    //     input.name = elem.id;
+    //     input.id = elem.id;
+    //     input.classList.add("login_form-input");
 
-        img.src = "#";
-        img.classList.add("login_form-input_img");
-        img.classList.add("hidden");
-        img.id = "login_form-input--validator";
+    //     img.src = "#";
+    //     img.classList.add("login_form-input_img");
+    //     img.classList.add("hidden");
+    //     img.id = "login_form-input--validator";
 
-        input.addEventListener("keyup", validarInput);
+    //     input.addEventListener("keyup", validarInput);
 
-        section.appendChild(label);
-        section.appendChild(input);
-        section.appendChild(img);
-        form.appendChild(section);
-    }
+    //     section.appendChild(label);
+    //     section.appendChild(input);
+    //     section.appendChild(img);
+    //     form.appendChild(section);
+    // }
 }
 
 function validarInput(e){
@@ -105,13 +118,10 @@ function validarInput(e){
 }
 
 function validarCampo(inputNombre, inputValor, expresion){
-    const grupoInput = document.querySelector(`#login_form_${inputNombre}-container`);
+    // const grupoInput = document.querySelector(`#login_form_${inputNombre}-container`);
     const input = document.querySelector(`#${inputNombre}`);
     const validator = document.querySelector(`#login_form_${inputNombre}--container .login_form-input_img`);
 
-    // TO VERIFY;
-    console.log(grupoInput);
-    console.log(validator);
     if (expresion.test(inputValor)) {
         input.classList.remove("error");
         input.classList.add("ok");
