@@ -160,6 +160,10 @@ button{
     justify-items: center;
     align-items: center;
     background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_base));
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     min-height: 600px;
     /*width: 480px;
     padding: 1em;*/
@@ -265,6 +269,12 @@ button{
     color: var(--negro-puro);
     background-color: var(--secondary-bg-color_light);
 }
+
+.login_iniciar-sesion_btn:hover{
+    background-color: var(--secondary-bg-color_medium);
+    font-weight: bold;
+}
+
 .login_cambiar-form_btn{
     height: 35px;
     width: 294px;
@@ -276,7 +286,7 @@ button{
     height: 70px;
 }
 .login_cambiar-form_btn span:hover{
-    border-bottom: 2px solid var(--negro-principal);
+    font-weight: bold;
 }
 /* Footer */
 footer{

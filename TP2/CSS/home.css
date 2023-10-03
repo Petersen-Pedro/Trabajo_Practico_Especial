@@ -8,6 +8,8 @@
     --secondary-bg-color_medium: #951400;
     --secondary-bg-color_dark: #450900;
     --money-bg-color_base: #14A41A;
+    --money-bg-color_en_carro: #80BF83;
+    --money-bg-color_hover: #0a5c0d;
     --blanco-puro: #FFF;
     --blanco-principal: #DFDFDF;
     --gris-principal: #555555;
@@ -45,9 +47,29 @@
     color: var(--blanco-puro);
     border-radius: 0 0 15px 15px;
 }
+<<<<<<< Updated upstream
+=======
+
+
+.juego_precio_sin-compra{
+    background-color: var(--money-bg-color_base);
+}
+/*
+.juego_precio_sin-compra.gratis{
+     Color temporal 
+    background-color: var(--secondary-bg-color_medium);
+}
+*/
+
+>>>>>>> Stashed changes
 .juego_precio_sin-compra span{
     font-size: 25px;
 }
+.juego_precio_sin-compra:hover{
+    background-color: var(--money-bg-color_hover);
+}
+
+
 .juego_add-carr{
     height: 30px;
     width: 30px;
