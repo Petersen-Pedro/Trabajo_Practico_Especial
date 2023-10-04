@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos^3 - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -31,27 +32,56 @@
         <div class="home_main-container">
             <section class="home_categoria-container especial">
                 <h1>Especiales para ti</h1>
-                <div class="home_categoria" id="especiales-para-ti"></div>
+                <div class="categoria-carrusel" id="especiales-para-ti_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="especiales-para-ti"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
+
             <section class="home_categoria-container">
                 <h1>Lo mas Jugado</h1>
-                <div class="home_categoria" id="mas-jugado"></div>
+                <div class="categoria-carrusel" id="mas-jugado_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="mas-jugado"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
+
             <section class="home_categoria-container">
                 <h1>Aventura</h1>
-                <div class="home_categoria" id="aventura"></div>
+                <div class="categoria-carrusel" id="aventura_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="aventura"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
+            
             <section class="home_categoria-container">
                 <h1>Horror</h1>
-                <div class="home_categoria" id="horror"></div>
+                <div class="categoria-carrusel" id="horror_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="horror"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
+
             <section class="home_categoria-container">
                 <h1>Suspenso</h1>
-                <div class="home_categoria" id="suspenso"></div>
+                <div class="categoria-carrusel" id="suspenso_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="suspenso"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
+
             <section class="home_categoria-container">
                 <h1>Accion</h1>
-                <div class="home_categoria" id="accion"></div>
+                <div class="categoria-carrusel" id="accion_container">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="home_categoria" id="accion"></div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
             </section>
         </div>
     </main>
@@ -71,5 +101,6 @@
 
     <script src="js/json_imitation/home.json.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/carrusel_juegos.js"></script>
 </body>
 </html>

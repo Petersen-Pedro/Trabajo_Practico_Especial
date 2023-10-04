@@ -11,7 +11,7 @@ const cargarSeccionJuego = (arr, section) => {
     for(const elem of arr){
         section.innerHTML += `
             <article class="home_categoria--juego">
-                <img src="${elem.img}" alt="juego">
+                <img src="${elem.img}" alt="juego" draggable="false">
                 <div class="juego_precio_sin-compra ${elem.precio>0 ? "precio" : "gratis"}">
                     <span>$${elem.precio}</span>
                     <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
