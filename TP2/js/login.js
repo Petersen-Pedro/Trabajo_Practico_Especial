@@ -53,8 +53,6 @@ function loadInputs(array){
         <section class="login_form-input--container" id="login_form_${elem.id}--container">
             <label for="${elem.id}">${elem.label}</label>
             <input type="${elem.type}" name="${elem.id}" id="${elem.id}" class="login_form-input">
-            <img src="#" alt="validator" 
-                class="login_form-input_img hidden" id="login_form-input--validator">
         </section>
         `
         const inputsNew = document.querySelectorAll(".login_form-input");
@@ -125,13 +123,13 @@ function validarCampo(inputNombre, inputValor, expresion){
     if (expresion.test(inputValor)) {
         input.classList.remove("error");
         input.classList.add("ok");
-        validator.src = "images/validator/ok-circle.png";
+        //validator.src = "images/validator/ok-circle.png";
         camposInicioSesion[inputNombre] = true;
         verificarSubmit();
     }else{
         input.classList.remove("ok");
         input.classList.add("error");
-        validator.src = "images/validator/error.png";
+        //validator.src = "images/validator/error.png";
         camposInicioSesion[inputNombre] = false;
     }
     validator.classList.remove("hidden");

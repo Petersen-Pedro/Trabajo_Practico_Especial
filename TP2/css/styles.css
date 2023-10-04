@@ -86,7 +86,7 @@ button{
     letter-spacing: 3.267px;
 }
 .button-social{
-    font-size: 13px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -163,7 +163,7 @@ button{
     min-height: 600px;
     /*width: 480px;
     padding: 1em;*/
-    padding: 40px;
+    padding: 10px 40px;
     gap: 1em;
     border-radius: var(--radius);
     border: 2px solid var(--main-bg-color_dark);
@@ -186,17 +186,27 @@ button{
     flex-direction: column;
     gap: 10px;
 }
+/*
 .login_form-input--container label{
     padding-left: 7px;
     padding-bottom: 2px;
-}
+}*/
 .login_form-input--container input{
-    border-radius: 8.71px;
-    height: 30px;
-    width: 250px;
+    border-radius: 4px;
+    height: 10px;
+    width: 240px;
     padding: 10px;
     background-color: var(--blanco-principal);
 }
+
+.ok {
+    border: 3px solid var(--money-bg-color_base);
+}
+
+.error {
+    border: 3px solid var(--secondary-bg-color_medium);
+}
+
 .login_linea-separacion-container{
     width: 100%;
     display: grid;
@@ -220,9 +230,9 @@ button{
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 6px;
+    gap: 3px;
     border-radius: 26px;
-    width: 160px;
+    width: 130px;
     height: 40px;
 }
 .login_captcha{
