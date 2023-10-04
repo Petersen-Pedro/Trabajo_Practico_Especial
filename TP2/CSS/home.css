@@ -86,13 +86,6 @@
     .home_categoria.dragging img{
         pointer-events: none;
     }
-    /* .home_categoria img{
-        height: 340px;
-        object-fit: cover;
-        user-select: none;
-        margin-left: 14px;
-        width: calc(100% / 3);
-    } */
     .home_categoria img:first-child{
         margin-left: 0px;
     }
@@ -139,4 +132,17 @@
 .juego_add-carr{
     height: 30px;
     width: 30px;
+}
+/* Carrito de compras / hover */
+.carrito_lista-juegos{
+    background: rgb(52, 52, 52);
+    opacity: 0;
+    visibility: hidden;
+    min-width: 100%;
+    height: 0;
+    position: absolute;
+    top: 48px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s;
 }

@@ -7,7 +7,7 @@ function initializeCarousel(carouselSelectorId){
     const arrowIcons = document.querySelectorAll("#"+carouselSelectorId+"_container i");
 
     let isDragStart = false;
-    let isDragging = false 
+    let isDragging = false; 
     let prevPageX;
     let prevScrollLeft;
     let positionDiff;
@@ -68,5 +68,3 @@ function initializeCarousel(carouselSelectorId){
     document.addEventListener("mouseup", dragStop);
     carousel.addEventListener("touchend", dragStop);
 }
-
-
