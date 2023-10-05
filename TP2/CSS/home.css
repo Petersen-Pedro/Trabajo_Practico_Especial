@@ -158,6 +158,7 @@
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 0.3s;
+    z-index: 3;
 }
 
 .carrito_lista-juegos::before {
