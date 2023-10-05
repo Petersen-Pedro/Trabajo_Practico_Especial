@@ -133,16 +133,70 @@
     height: 30px;
     width: 30px;
 }
-/* Carrito de compras / hover */
+/* Carrito de compras*/
+.main_header_carrito{
+    position: relative;
+    cursor: pointer;
+}
+.main_header_carrito:hover .carrito_lista-juegos {
+    opacity: 1;
+    visibility: visible;
+    height: unset;
+    transform: scaleY(1);
+}
+
 .carrito_lista-juegos{
-    background: rgb(52, 52, 52);
+    background: var(--main-bg-color_base);
     opacity: 0;
     visibility: hidden;
     min-width: 100%;
+    height: 100px;
     height: 0;
     position: absolute;
     top: 48px;
+    gap: 5px;
     transform-origin: top;
     transform: scaleY(0);
     transition: transform 0.3s;
+}
+
+.carrito_lista-juegos::before {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--main-bg-color_base);
+    transform: rotate(45deg);
+    top: -7px;
+    left: 20px;
+    z-index: -1;
+}
+.carrito_juego,
+.carrito_sin-juego{
+    width: 300px;
+}
+.carrito_sin-juego{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+.carrito_juego{
+    color: var(--blanco-principal);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: all 0.2s;
+    padding: 0.5rem 0.5rem;
+}
+.carrito_linea-separadora{
+    width: 100%;
+    height: 1px;
+    background-color: var(--blanco-principal);
+}
+.carrito_precio-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    color: var(--blanco-principal);
 }
