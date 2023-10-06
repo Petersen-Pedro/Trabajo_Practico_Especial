@@ -102,7 +102,10 @@
     height: 150px;
     width: 150px;
 }
-.juego_precio_sin-compra{
+
+/**/
+
+.juego_precio_sin-compra {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -110,25 +113,32 @@
     margin-top: -4px;
     height: 40px;
     width: 150px;
-    padding: 25px 0;
     background-color: var(--money-bg-color_base);
     color: var(--blanco-puro);
     border-radius: 0 0 15px 15px;
-}.juego_precio_sin-compra{
-    background-color: var(--money-bg-color_base);
+    position: relative;
+    overflow: hidden;
 }
-/*
-.juego_precio_sin-compra.gratis{
-     Color temporal 
-    background-color: var(--secondary-bg-color_medium);
-}
-*/
-.juego_precio_sin-compra span{
+.juego_precio_sin-compra span {
     font-size: 25px;
+    z-index: 1;
 }
-.juego_precio_sin-compra:hover{
+.juego_precio_sin-compra img {
+    z-index: 1;
+}
+.hover_compra {
+    position: absolute;
+    width: 0;
+    height: 100%;
     background-color: var(--money-bg-color_hover);
+    z-index: 0;
 }
+.juego_precio_sin-compra:hover .hover_compra{
+    width: 100%;
+    transition: width 300ms;
+    left: 0;
+}
+
 .juego_add-carr{
     height: 30px;
     width: 30px;

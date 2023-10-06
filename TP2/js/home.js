@@ -55,6 +55,9 @@ function cargarSeccionJuego(categorias, container){
             juegoPrecio.setAttribute('data-idjuego', elem.id);
             juegoPrecio.setAttribute('data-categoria', categoria);
 
+            const hoverBoton = document.createElement('div');
+            hoverBoton.classList.add('hover_compra');
+
             const precioSpan = document.createElement('span');
             precioSpan.textContent = `$${elem.precio}`;
 
@@ -64,6 +67,7 @@ function cargarSeccionJuego(categorias, container){
             agregarCarritoImg.classList.add('juego_add-carr');
 
             // Anidar los elementos
+            juegoPrecio.appendChild(hoverBoton);
             juegoPrecio.appendChild(precioSpan);
             juegoPrecio.appendChild(agregarCarritoImg);
 
@@ -91,6 +95,7 @@ function cargarJuego(categoria, container){
                 <img src="${elem.img}" alt="juego" draggable="false">
                 <div class="juego_precio_sin-compra ${elem.precio > 0 ? 'precio' : 'gratis'}" 
                     data-idjuego="${elem.id}" data-categoria="${categoria}">
+
                     <span>$${elem.precio}</span>
                     <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
                 </div>
