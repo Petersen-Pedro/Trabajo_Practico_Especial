@@ -36,6 +36,7 @@
     color: var(--blanco-puro);
 }
 .home_categoria-container > h1{
+    text-transform: capitalize;
     padding: 10px 15px;
 }
 /* Inicio Carrusel */
@@ -109,6 +110,7 @@
     margin-top: -4px;
     height: 40px;
     width: 150px;
+    padding: 25px 0;
     background-color: var(--money-bg-color_base);
     color: var(--blanco-puro);
     border-radius: 0 0 15px 15px;
@@ -127,25 +129,28 @@
 .juego_precio_sin-compra:hover{
     background-color: var(--money-bg-color_hover);
 }
-
-
 .juego_add-carr{
     height: 30px;
     width: 30px;
 }
-/* Carrito de compras*/
-.main_header_carrito{
+
+/* Menu desplegable */
+.menu-desplegable_linea-separadora{
+    width: 100%;
+    height: 1px;
+    background-color: var(--blanco-principal);
+}
+.main_header_item{
     position: relative;
     cursor: pointer;
 }
-.main_header_carrito:hover .carrito_lista-juegos {
+.main_header_item:hover > ul {
     opacity: 1;
     visibility: visible;
     height: unset;
     transform: scaleY(1);
 }
-
-.carrito_lista-juegos{
+.main_header_item > ul{
     background: var(--main-bg-color_base);
     opacity: 0;
     visibility: hidden;
@@ -160,8 +165,7 @@
     transition: transform 0.3s;
     z-index: 3;
 }
-
-.carrito_lista-juegos::before {
+.main_header_item > ul::before {
     position: absolute;
     width: 15px;
     height: 15px;
@@ -171,9 +175,23 @@
     left: 20px;
     z-index: -1;
 }
+.carrito_juego, 
+.user_opt{
+    color: var(--blanco-principal);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    padding: 0.5rem 0.5rem;
+}
+.carrito_juego.seleccionable:hover,
+.user_opt:hover{
+    color: var(--blanco-puro);
+}
+/* Carrito de compras*/
 .carrito_juego,
 .carrito_sin-juego{
-    width: 300px;
+    width: 400px;
 }
 .carrito_sin-juego{
     display: flex;
@@ -181,18 +199,13 @@
     padding: 0.5rem 0;
 }
 .carrito_juego{
-    color: var(--blanco-principal);
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    text-decoration: none;
-    transition: all 0.2s;
-    padding: 0.5rem 0.5rem;
 }
-.carrito_linea-separadora{
-    width: 100%;
-    height: 1px;
-    background-color: var(--blanco-principal);
+.carrito_juego span{
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .carrito_precio-total{
     display: flex;
@@ -200,4 +213,10 @@
     align-items: center;
     padding: 10px 0;
     color: var(--blanco-principal);
+}
+/* User desplegable */
+.user_opt{
+    justify-content: flex-end;
+    gap: 10px;
+    width: 200px;
 }

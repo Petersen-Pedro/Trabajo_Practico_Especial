@@ -55,41 +55,9 @@ function loadInputs(array){
             <input type="${elem.type}" name="${elem.id}" id="${elem.id}" class="login_form-input">
         </section>
         `
-        const inputsNew = document.querySelectorAll(".login_form-input");
-        inputsNew.forEach(input => input.addEventListener("keyup", validarInput));
     }
-    // while (form.firstChild) {
-    //     form.removeChild(form.firstChild);
-    // }
-    // for(const elem of array){
-    //     const section = document.createElement("section");
-    //     const label = document.createElement("label");
-    //     const input = document.createElement("input");
-    //     const img = document.createElement("img");
-
-    //     section.classList.add("login_form-input--container");
-    //     section.id = `login_form_${elem.id}-container`;
-
-    //     label.setAttribute("for", elem.id);
-    //     label.textContent = elem.label;
-
-    //     input.type = elem.type;
-    //     input.name = elem.id;
-    //     input.id = elem.id;
-    //     input.classList.add("login_form-input");
-
-    //     img.src = "#";
-    //     img.classList.add("login_form-input_img");
-    //     img.classList.add("hidden");
-    //     img.id = "login_form-input--validator";
-
-    //     input.addEventListener("keyup", validarInput);
-
-    //     section.appendChild(label);
-    //     section.appendChild(input);
-    //     section.appendChild(img);
-    //     form.appendChild(section);
-    // }
+    const inputsNew = document.querySelectorAll(".login_form-input");
+    inputsNew.forEach(input => input.addEventListener("keyup", validarInput));
 }
 
 function validarInput(e){
@@ -118,7 +86,7 @@ function validarInput(e){
 function validarCampo(inputNombre, inputValor, expresion){
     // const grupoInput = document.querySelector(`#login_form_${inputNombre}-container`);
     const input = document.querySelector(`#${inputNombre}`);
-    const validator = document.querySelector(`#login_form_${inputNombre}--container .login_form-input_img`);
+    // const validator = document.querySelector(`#login_form_${inputNombre}--container .login_form-input_img`);
 
     if (expresion.test(inputValor)) {
         input.classList.remove("error");
@@ -132,7 +100,7 @@ function validarCampo(inputNombre, inputValor, expresion){
         //validator.src = "images/validator/error.png";
         camposInicioSesion[inputNombre] = false;
     }
-    validator.classList.remove("hidden");
+    // validator.classList.remove("hidden");
 }
 
 function verificarSubmit(){

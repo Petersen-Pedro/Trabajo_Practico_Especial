@@ -144,15 +144,14 @@ button{
     color: var(--blanco-puro);
     background-color: var(--main-bg-color_light);
 }
-.main_header_carrito{
+.main_header_item.user{
     width: 72px;
 }
-.main_header_user{
+.main_header_item.carrito{
     gap: 10px;
     width: 120px;
 }
-.main_header_carrito img,
-.main_header_user img{
+.main_header_item img{
     height: 30px;
 }
 /* Login Header */
