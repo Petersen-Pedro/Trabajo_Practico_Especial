@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (document.URL.includes("index.html")) {
         mainArray = juegos_por_categoria;
         cargarSeccionJuego(juegos_por_categoria, mainContainer);
-    }else if(document.URL.includes("juego.4EnLinea.html")){
+    }else if(document.URL.includes("juego_4EnLinea.html")){
         mainArray = juegos_similares;
         cargarSeccionJuego(juegos_similares, mainContainer);
     }
@@ -162,7 +162,7 @@ function agregarJuegoCarrito(){
 }
 
 function botonEnCarrito(idjuego, categoria){
-    
+
 
 }
 
