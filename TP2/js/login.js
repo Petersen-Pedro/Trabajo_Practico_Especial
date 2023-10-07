@@ -9,6 +9,8 @@ const sinCuentaBtn = document.querySelector("#sin-cuenta_btn");
 const captchaInput = document.querySelector("#login_captcha_cuadrado");
 const recaptcha = document.querySelector("#recaptcha_btn");
 const submitBtn = document.querySelector("#submitBtn");
+const logContainer = document.querySelector("#login_form_container");
+const loading = document.querySelector("#loading");
 
 const yaCuentaBtn = crearYaCuentaBtn();
 
@@ -110,7 +112,27 @@ function verificarSubmit(){
 
 function validarForm(){
     if (camposInicioSesion.usuario && camposInicioSesion.contrasenia) {
-        window.open("index.html");
-        // window.location.replace("index.html");
+        
+        //Tan solo es un testeo - submitBtn
+        
+        logContainer.classList.add("hidden");
+        loading.classList.remove("hidden");
+
+        /*
+        toggleClass();
+        button.addEventListener('transitionend', toggleClass);
+        button.addEventListener('transitionend', addClass);
+
+        button.addEventListener('click', toggleClass);
+        */
+
+        setTimeout(function(){
+            window.location.replace("index.html"); 
+        }, 5500);
+        //window.open("index.html");
+        
+        
+
     }
+
 }
