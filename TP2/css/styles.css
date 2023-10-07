@@ -68,11 +68,6 @@ main{
 button{
     cursor: pointer;
 }
-/*
-a {
-    text-decoration: none;
-}
-*/
 /* Buttons */
 .button-primary{
 
@@ -166,6 +161,11 @@ a {
     width: 90%;
     margin-bottom: 1rem;
 }
+
+.home_juego-destacado > img {
+    width: 100%;
+}
+
 /* Login Page */
 /* Login form */
 .login_form-container{
