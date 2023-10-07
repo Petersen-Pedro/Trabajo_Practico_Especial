@@ -177,6 +177,38 @@ const juegos_por_categoria = {
         ]
     },
 }
+
+const juegos_similares = {
+    similares: {
+        nombre: "juegos similares",
+        arr: [
+            {
+                id: "accion", nombre: "juego1", img: "images/juegos/juego_sin-imagen.png", precio: 0,
+            }, 
+            {
+                id: "accion2", nombre: "juego2", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion3", nombre: "juego3", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion4", nombre: "juego4", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion5", nombre: "juego5", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion6", nombre: "juego6", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion7", nombre: "juego7", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+            {
+                id: "accion8", nombre: "juego8", img: "images/juegos/juego_sin-imagen.png", precio: 9999,
+            }, 
+        ]
+    },
+}
 // Carrito 
 // const juegosCarrito = [
 //     { id: 22, cant: 1, nombre: "Metal Gear", precio: 500 },

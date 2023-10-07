@@ -1,7 +1,22 @@
 "use strict"
 
-const mainContainer = document.querySelector("#home_main-container");
+const mainContainer = document.querySelector("#lista-categorias_container");
 const ulCarrito = document.querySelector("#carrito_lista-juegos");
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    if (document.URL.includes("index.html")) {
+        cargarSeccionJuego(juegos_por_categoria, mainContainer);
+    }else if(document.URL.includes("juego.4EnLinea.html")){
+        cargarSeccionJuego(juegos_similares, mainContainer);
+    }
+    cargarCarrito();
+});
+
+const categoriasEspeciales = [
+    "juegos especiales", "juegos similares"
+]
+
 
 function cargarSeccionJuego(categorias, container){
     for (const categoria in categorias) {
@@ -11,7 +26,7 @@ function cargarSeccionJuego(categorias, container){
         // Crear la sección
         const section = document.createElement('section');
         section.classList.add('home_categoria-container');
-        if (categoriaNombre === "juegos especiales") {
+        if (categoriasEspeciales.includes(categoriaNombre)) {
             section.classList.add("especial");
         }
 
@@ -88,24 +103,6 @@ function cargarSeccionJuego(categorias, container){
     cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
 }
 
-function cargarJuego(categoria, container){
-    for(const elem of categoria){
-        container.innerHTML += `
-            <article class="home_categoria--juego">
-                <img src="${elem.img}" alt="juego" draggable="false">
-                <div class="juego_precio_sin-compra ${elem.precio > 0 ? 'precio' : 'gratis'}" 
-                    data-idjuego="${elem.id}" data-categoria="${categoria}">
-
-                    <span>$${elem.precio}</span>
-                    <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
-                </div>
-            </article>
-        `
-    }
-    const cards = document.querySelectorAll(".juego_precio_sin-compra");
-    cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
-}
-
 function cargarCarrito(arr = []){
     ulCarrito.innerHTML = "";
 
@@ -159,8 +156,6 @@ function agregarJuegoCarrito(){
     cargarCarrito(juegosCarrito);
 }
 
-cargarSeccionJuego(juegos_por_categoria, mainContainer);
-cargarCarrito();
 
 // function cargarSeccionJuego(categorias, container){
 //     for (const categoria in categorias) {
@@ -194,4 +189,22 @@ cargarCarrito();
 //         const cards = document.querySelectorAll(".juego_precio_sin-compra");
 //         cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
 //     }
+// }
+
+// function cargarJuego(categoria, container){
+//     for(const elem of categoria){
+//         container.innerHTML += `
+//             <article class="home_categoria--juego">
+//                 <img src="${elem.img}" alt="juego" draggable="false">
+//                 <div class="juego_precio_sin-compra ${elem.precio > 0 ? 'precio' : 'gratis'}" 
+//                     data-idjuego="${elem.id}" data-categoria="${categoria}">
+
+//                     <span>$${elem.precio}</span>
+//                     <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
+//                 </div>
+//             </article>
+//         `
+//     }
+//     const cards = document.querySelectorAll(".juego_precio_sin-compra");
+//     cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
 // }
