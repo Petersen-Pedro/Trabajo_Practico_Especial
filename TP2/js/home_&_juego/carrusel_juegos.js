@@ -1,10 +1,8 @@
-const carousels = document.querySelectorAll(".home_categoria");
-carousels.forEach(car => initializeCarousel(car.id));
 
 function initializeCarousel(carouselSelectorId){
-    const carousel = document.querySelector("#"+carouselSelectorId);
+    const carousel = document.querySelector(`#${carouselSelectorId}`);
     const firstImg = carousel.querySelectorAll("img")[0];
-    const arrowIcons = document.querySelectorAll("#"+carouselSelectorId+"_container i");
+    const arrowIcons = document.querySelectorAll(`#${carouselSelectorId}_container i`);
 
     let isDragStart = false;
     let isDragging = false; 

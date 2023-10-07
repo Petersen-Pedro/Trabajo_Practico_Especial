@@ -2,21 +2,22 @@
 
 const mainContainer = document.querySelector("#lista-categorias_container");
 const ulCarrito = document.querySelector("#carrito_lista-juegos");
-
-
-window.addEventListener("DOMContentLoaded", () => {
-    if (document.URL.includes("index.html")) {
-        cargarSeccionJuego(juegos_por_categoria, mainContainer);
-    }else if(document.URL.includes("juego.4EnLinea.html")){
-        cargarSeccionJuego(juegos_similares, mainContainer);
-    }
-    cargarCarrito();
-});
+let mainArray = [];
 
 const categoriasEspeciales = [
     "juegos especiales", "juegos similares"
 ]
 
+window.addEventListener("DOMContentLoaded", () => {
+    if (document.URL.includes("index.html")) {
+        mainArray = juegos_por_categoria;
+        cargarSeccionJuego(juegos_por_categoria, mainContainer);
+    }else if(document.URL.includes("juego.4EnLinea.html")){
+        mainArray = juegos_similares;
+        cargarSeccionJuego(juegos_similares, mainContainer);
+    }
+    cargarCarrito();
+});
 
 function cargarSeccionJuego(categorias, container){
     for (const categoria in categorias) {
@@ -101,6 +102,9 @@ function cargarSeccionJuego(categorias, container){
     }
     const cards = document.querySelectorAll(".juego_precio_sin-compra");
     cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
+
+    const carousels = document.querySelectorAll(".home_categoria");
+    carousels.forEach(car => initializeCarousel(car.id));
 }
 
 function cargarCarrito(arr = []){
@@ -143,7 +147,7 @@ function cargarCarrito(arr = []){
 }
 function agregarJuegoCarrito(){
     const { idjuego, categoria } = this.dataset;
-    const array = juegos_por_categoria[categoria].arr;
+    const array = mainArray[categoria].arr;
     const newJuego = array.find(juego => juego.id === idjuego);
     const addedJuego = juegosCarrito.find(juego => juego.id === newJuego.id);
     if (addedJuego) {

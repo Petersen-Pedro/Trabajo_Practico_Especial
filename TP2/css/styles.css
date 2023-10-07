@@ -396,6 +396,36 @@ button{
     height: 100%;
     width: 20%;
 }
+.imagen_juego-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-end;
+    width: 60%;
+    background-image: url("../images/4enLinea.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.imagen_juego_btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 50px;
+}
+.imagen_juego-container img{
+    cursor: pointer;
+}
+.imagen_juego_btn-container .play_btn{
+    justify-self: center;
+    height: 50px;
+    width: 100px;
+}
+.imagen_juego_btn-container .compartir_btn{
+    height: 70px;
+    width: 140px;
+}
 .cuatro_en-linea{
     width: 60%;
 }
@@ -442,10 +472,9 @@ button{
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-    width: 1000px;
-    height: 600px;
+    width: 90%;
+    height: 1000px;
     color: var(--negro-puro);
-    background-color: red;
 }
 .comentarios_logo{
     display: flex;
@@ -465,19 +494,31 @@ button{
     align-items: center;
     margin-top: 4%;
     width: 80%;
-    height: 50%;
     background-color: var(--blanco-principal);
+}
+.comentario.nuevo{
+    height: 230px;
+}
+.comentario.viejo{
+    height: 200px;
 }
 .comentario_user{
     display: flex;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
     align-self: flex-start;
     padding: 10px 5%;
     gap: 20px;
 }
 .comentario_user p{
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 25px;
+}
+.usario_nombre_img{
+    display: flex;
+    width: 50%;
+    gap: 20px;
 }
 .comentario-individual_linea-separadora{
     width: 90%;
@@ -485,9 +526,9 @@ button{
     background-color: var(--negro-principal);
 }
 .escribir-comentario{
-    margin-top: 20px;
+    margin-top: 10px;
     width: 80%;
-    height: 50%;
+    height: 45%;
     padding: 10px;
     background-color: inherit;
     border: 1px solid var(--gris-principal);
@@ -501,7 +542,25 @@ button{
     margin-right: 10%;
     width: 200px;
 }
-
+.texto_comentario-viejo, 
+.fecha_comentario-viejo{
+    align-self: flex-start;
+    text-transform: capitalize;
+    padding: 2% 5%;
+}
+.fecha_comentario-viejo{
+    color: var(--gris-principal);
+}
+.likes_comentario-viejo{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-end;
+}
+.likes_comentario-viejo span{
+    font-weight: bolder;
+}
 /* Footer */
 footer{
     margin-top: 7%;
