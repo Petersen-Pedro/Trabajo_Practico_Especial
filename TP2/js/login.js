@@ -112,27 +112,10 @@ function verificarSubmit(){
 
 function validarForm(){
     if (camposInicioSesion.usuario && camposInicioSesion.contrasenia) {
-        
-        //Tan solo es un testeo - submitBtn
-        
         logContainer.classList.add("hidden");
         loading.classList.remove("hidden");
-
-        /*
-        toggleClass();
-        button.addEventListener('transitionend', toggleClass);
-        button.addEventListener('transitionend', addClass);
-
-        button.addEventListener('click', toggleClass);
-        */
-
         setTimeout(function(){
             window.location.replace("index.html"); 
-        }, 5500);
-        //window.open("index.html");
-        
-        
-
+        }, 5000); 
     }
-
 }

@@ -158,8 +158,13 @@ function agregarJuegoCarrito(){
         juegosCarrito.push({id, cant:1, nombre, precio});
     }
     cargarCarrito(juegosCarrito);
+    botonEnCarrito(idjuego, categoria);
 }
 
+function botonEnCarrito(idjuego, categoria){
+    
+
+}
 
 // function cargarSeccionJuego(categorias, container){
 //     for (const categoria in categorias) {

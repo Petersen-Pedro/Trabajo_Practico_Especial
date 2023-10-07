@@ -600,7 +600,7 @@ footer{
     display: none;
 }
 
-/*Tan solo es un testeo*/
+/*Pantalla de Carga*/
 
 .box{
     width:20rem;
@@ -612,23 +612,16 @@ footer{
     right: 0;
     bottom: 0;
     left: 0;
-    /*
-    font-family: 'Orbitron', sans-serif;
-    text-transform:uppercase;
-    font-weight:600;
-    text-align:center;
-    line-height:40px;
-    */
   }
   .underline{
     width:100%;
     background:var(--secondary-bg-color_base);
     height:10px;
     margin-top:130px;
-    animation: underline 3s ease-in-out infinite; 
+    animation: underline 5s ease-in-out infinite; 
   }
   @keyframes underline {
       0%    {width:0%;float:left;}
       50%   {width:100%;}
-      100%  {width:0%;float:right;}
+      /*100%  {width:0%;float:right;}*/
   }
