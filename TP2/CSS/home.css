@@ -103,7 +103,7 @@
     width: 150px;
 }
 
-/**/
+/*
 
 .juego_precio_sin-compra {
     display: flex;
@@ -126,6 +126,41 @@
 .juego_precio_sin-compra img {
     z-index: 1;
 }
+/*testeo animacion card*/
+.juego_precio_sin-compra {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    border-radius: 0 0 15px 15px;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: -4px;
+    background-color: var(--money-bg-color_base);
+    color: var(--blanco-puro);
+}
+.juego_precio_sin-compra span {
+    font-size: 25px;
+    z-index: 1;
+}
+.juego_precio_sin-compra img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+    z-index: 1;
+}
+.juego_precio_sin-compra:hover img {
+    transform: scale(1.1);
+}
+.juego_precio_sin-compra:hover {
+    border: 1px solid var(--blanco-puro);
+}
+
+/*---------------------*/
+
 .hover_compra {
     position: absolute;
     width: 0;
@@ -232,5 +267,5 @@
 }
 
 @media only screen and (max-width: 600px) {
-    
+
 }
