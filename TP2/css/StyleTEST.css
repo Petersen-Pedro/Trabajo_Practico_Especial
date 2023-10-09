@@ -14,6 +14,7 @@
     --gris-principal: #555555;
     --negro-principal: #222222;
     --negro-puro: #000;
+    --error: #EB3417;
     --radius: 20px;
 }
 *{
@@ -276,6 +277,9 @@ button{
     border-radius: var(--radius);
     border: 2px solid var(--main-bg-color_dark);
 }
+.login_form-container.registrarse{
+    min-height: 950px;
+}
 .login_form-container h2 {
     color: var(--blanco-puro);
 }
@@ -287,6 +291,13 @@ button{
     display: flex;
     flex-direction: column;
     color: var(--blanco-principal);
+}
+.login_form-select{
+    text-transform: capitalize;
+    outline: none;
+    height: 20px;
+    border-radius: 4px;
+    background-color: var(--blanco-principal);
 }
 .login_form-container form{
     display: flex;
@@ -387,9 +398,6 @@ button{
 }
 .login_cambiar-form_btn{
     height: 35px;
-    /*
-    width: 294px;
-    margin-bottom: 50px;*/
     background: transparent;
     color: var(--blanco-puro);
     position: relative;
@@ -411,6 +419,12 @@ button{
 .login_cambiar-form_btn:hover span::before {
     animation: 0.5s forwards hover-v linear;
     animation-fill-mode: forwards;
+}
+.form_input-error{
+    padding: 6px;
+    width: 240px;
+    word-wrap: break-word; 
+    color: var(--error);
 }
 /* Home Page */
 .home_juego-destacado{
@@ -760,10 +774,12 @@ footer{
     left: 0;
 }
 .underline{
-    width:100%;
-    background:var(--secondary-bg-color_base);
-    height:10px;
+    text-align: center;
+    height: 20px;
+    width: 100%;
     margin-top:130px;
+    color: var(--blanco-puro);
+    background:var(--secondary-bg-color_base);
     animation: underline 5s ease-in-out infinite; 
 }
 /* Clases agregadas por js */

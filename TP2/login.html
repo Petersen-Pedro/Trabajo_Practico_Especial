@@ -21,13 +21,15 @@
             <h2 id="login_form-titulo">Iniciar Sesion</h2>
             <form action="" id="mainForm">
                 <section class="login_form-input--container" id="login_form_usuario--container">
-                    <label for="usuario">Usuario o Email</label>
+                    <label for="usuario">Usuario</label>
                     <input type="text" name="usuario" id="usuario" class="login_form-input">
+                    <p class="form_input-error hidden">El usuario debe tener más de 1 digito y solo letras, y espacios</p>
                 </section>
-                <section class="login_form-input--container" id="login_form_contrasenia--container">
 
+                <section class="login_form-input--container" id="login_form_contrasenia--container">
                     <label for="contrasenia">Contraseña</label>
                     <input type="password" name="contrasenia" id="contrasenia" class="login_form-input">
+                    <p class="form_input-error hidden">La contraseña debe tener de 4 a 12 digitos</p>
                 </section>
             </form>
 
@@ -44,12 +46,17 @@
                     Iniciar Sesion con <img src="images/logo/logos_facebook.png" alt="facebook">
                 </button>
             </div>
-            <div class="login_captcha">
-                <input type="checkbox" class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado">
-                <p>No soy un robot</p>
-                <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
+            <div>
+                <div class="login_captcha">
+                    <input type="checkbox" class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado">
+                    <p>No soy un robot</p>
+                    <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
+                </div>
+                <p class="form_input-error hidden" id="captcha_texto-error">
+                    Validar captcha
+                </p>
             </div>
-            <button class="login_iniciar-sesion_btn button-primary" type="submit" id="submitBtn" disabled="true">
+            <button class="login_iniciar-sesion_btn button-primary" type="submit" id="submitBtn">
                 Iniciar Sesión
             </button>
             <button class="login_cambiar-form_btn button-terciary" id="sin-cuenta_btn">
@@ -58,7 +65,8 @@
         </div>
         <div id="loading" class="hidden">
             <div class="box">
-                <div class="underline">
+                <div class="underline" id="loading_underline">
+                    1%
                 </div>
             </div>
         </div>
