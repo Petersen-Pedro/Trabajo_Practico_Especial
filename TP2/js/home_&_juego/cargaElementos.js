@@ -64,6 +64,7 @@ function cargarSeccionJuego(categorias, container){
             img.src = elem.img;
             img.alt = 'juego';
             img.draggable = false;
+            img.classList.add('img_animacion');
 
             // Crear el precio y el botón de agregar al carrito
             const juegoPrecio = document.createElement('div');
@@ -90,6 +91,44 @@ function cargarSeccionJuego(categorias, container){
             juegoArticle.appendChild(img);
             juegoArticle.appendChild(juegoPrecio);
             homeCategoria.appendChild(juegoArticle);
+            /*
+            // Crear el artículo del juego
+            const juegoArticle = document.createElement('article');
+            juegoArticle.classList.add('home_categoria--juego');
+
+            // Crear la imagen del juego
+            const img = document.createElement('img');
+            img.src = elem.img;
+            img.alt = 'juego';
+            img.draggable = false;
+            img.classList.add('img_animacion');
+
+            // Crear el precio y el botón de agregar al carrito
+            const juegoPrecio = document.createElement('div');
+            juegoPrecio.classList.add('juego_precio_sin-compra', elem.precio > 0 ? 'precio' : 'gratis');
+            juegoPrecio.setAttribute('data-idjuego', elem.id);
+            juegoPrecio.setAttribute('data-categoria', categoria);
+
+            const hoverBoton = document.createElement('div');
+            hoverBoton.classList.add('hover_compra');
+
+            const precioSpan = document.createElement('span');
+            precioSpan.textContent = `$${elem.precio}`;
+
+            const agregarCarritoImg = document.createElement('img');
+            agregarCarritoImg.src = 'images/logo/agregar-carrito.png';
+            agregarCarritoImg.alt = 'add-carr';
+            agregarCarritoImg.classList.add('juego_add-carr');
+
+            // Anidar los elementos
+            juegoPrecio.appendChild(hoverBoton);
+            juegoPrecio.appendChild(precioSpan);
+            juegoPrecio.appendChild(agregarCarritoImg);
+
+            juegoArticle.appendChild(img);
+            juegoArticle.appendChild(juegoPrecio);
+            homeCategoria.appendChild(juegoArticle);
+            */
         }
         // Anidar los elementos
         section.appendChild(h1);

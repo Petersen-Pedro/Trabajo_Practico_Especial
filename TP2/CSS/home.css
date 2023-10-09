@@ -76,7 +76,10 @@
     .categoria-carrusel .home_categoria{
         font-size: 0px;
         cursor: pointer;
-        overflow: hidden;
+        /*
+        */
+        overflow-x: hidden;
+        overflow-y: visible;
         white-space: nowrap;
         scroll-behavior: smooth;
     }
@@ -92,19 +95,20 @@
     }
 /* Fin Carrusel */
 
-.home_categoria{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+
+/* Home Page */
+.home_juego-destacado{
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+.home_juego-destacado > img {
     width: 100%;
 }
-.home_categoria--juego > img{
-    height: 150px;
-    width: 150px;
-}
+/*ACOMODAR*/
+
 
 /*
-
 .juego_precio_sin-compra {
     display: flex;
     justify-content: space-evenly;
@@ -136,16 +140,31 @@
     border-radius: 0 0 15px 15px;
     align-items: center;
     cursor: pointer;
+    /*
+    */
     overflow: hidden;
     margin-top: -4px;
     background-color: var(--money-bg-color_base);
     color: var(--blanco-puro);
 }
+
+/*
+.hover_img {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.juego_precio_sin-compra img {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+*/
 .juego_precio_sin-compra span {
     font-size: 25px;
     z-index: 1;
 }
-.juego_precio_sin-compra img {
+.juego_precio_sin-compra > img {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
@@ -179,92 +198,6 @@
     width: 30px;
 }
 
-/* Menu desplegable */
-.menu-desplegable_linea-separadora{
-    width: 100%;
-    height: 1px;
-    background-color: var(--blanco-principal);
-}
-.main_header_item{
-    position: relative;
-    cursor: pointer;
-}
-.main_header_item:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    height: unset;
-    transform: scaleY(1);
-}
-.main_header_item > ul{
-    background: var(--main-bg-color_base);
-    opacity: 0;
-    visibility: hidden;
-    min-width: 100%;
-    height: 100px;
-    height: 0;
-    position: absolute;
-    top: 48px;
-    gap: 5px;
-    transform-origin: top;
-    transform: scaleY(0);
-    transition: transform 0.3s;
-    z-index: 3;
-}
-.main_header_item > ul::before {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--main-bg-color_base);
-    transform: rotate(45deg);
-    top: -7px;
-    left: 20px;
-    z-index: -1;
-}
-.carrito_juego, 
-.user_opt{
-    color: var(--blanco-principal);
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.2s;
-    padding: 0.5rem 0.5rem;
-}
-.carrito_juego.seleccionable:hover,
-.user_opt:hover{
-    color: var(--blanco-puro);
-}
-/* Carrito de compras*/
-.carrito_juego,
-.carrito_sin-juego{
-    width: 400px;
-}
-.carrito_sin-juego{
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
-}
-.carrito_juego{
-    justify-content: space-between;
-}
-.carrito_juego span{
-    width: 100px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-.carrito_precio-total{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    color: var(--blanco-principal);
-}
-/* User desplegable */
-.user_opt{
-    justify-content: flex-end;
-    gap: 10px;
-    width: 200px;
-}
 
 @media only screen and (max-width: 600px) {
 

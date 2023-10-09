@@ -8,6 +8,7 @@
     --secondary-bg-color_medium: #951400;
     --secondary-bg-color_dark: #450900;
     --money-bg-color_base: #14A41A;
+    --money-bg-oscuro: #025a04;
     --blanco-puro: #FFF;
     --blanco-principal: #DFDFDF;
     --gris-principal: #555555;
@@ -100,64 +101,7 @@ button{
     line-height: normal;
 }
 
-/* Main header */
-.main_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-}
-.main_header-searchbar-container{
-    position: relative;
-}
-.main_header-searchbar{
-    height: 30px;
-    width: 300px;
-    border-radius: var(--radius);
-    padding: 15px;
-    background-color: var(--blanco-principal);
-}
-.main_header-searchbar--lupa{
-    position: absolute;
-    cursor: pointer;
-    top: 4px;
-    right: 11px; 
-    height: 23px;
-}
-.main_header-sub-container{
-    display: flex;
-    gap: 20px;
-}
-.main_header-sub-container > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    height: 34px;
-    color: var(--blanco-puro);
-    background-color: var(--main-bg-color_light);
-}
-.main_header_item.user{
-    width: 72px;
-}
-.main_header_item.carrito{
-    gap: 10px;
-    width: 120px;
-}
-.main_header_item img{
-    height: 30px;
-}
 
-/* Login Header */
-.login_header{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-}
-.header--logo{
-    height: 30%;
-    width: 15%;
-}
 
 
 
