@@ -417,23 +417,23 @@ button{
     width: 90%;
     margin-bottom: 1rem;
 }
-.home_juego-destacado > img {
+.home_juego-destacado img {
     width: 100%;
 }
 /*Cuerpo y Categorias*/
 .home_main-container{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    max-width: 90%;
     align-items: center;
     justify-content: center;
 }
 .home_categoria-container{
-    width: 90%;
+    max-width: 90%;
     color: var(--negro-puro);
 }
 .home_categoria-container.especial{
-    width: 100%;
+    max-width: 100%;
     color: var(--blanco-puro);
 }
 .home_categoria-container > h1{
@@ -712,12 +712,7 @@ nav{
 /* Footer */
 footer{
     margin-top: 7%;
-
     width: 100%;
-    /* position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0; */
 }
 .footer_main-container{
     display: flex;
@@ -802,21 +797,20 @@ footer{
         height: 3px;
     }
 }
-
 @keyframes underline {
     0%    { width:0%; float:left; }
     50%   { width:100%; }
 }
-
 /* Mobile */
 @media only screen and (max-width: 500px){
     header{
         width: 90%;
     }
-    main{
-        background-color: red;
-    }
     /* Header */
+    .header--logo{
+        height: 30%;
+        width: 25%;
+    }
     .main_header{
         width: 90%;
     } 
@@ -852,8 +846,18 @@ footer{
         width: 200px;
     }
     /* Home */
-    .home_categoria img {
-        width: 110px;
+    .home_juego-destacado{
+        width: 95%;
+    }
+    .home_categoria{
+        width: 300px;
+    }
+    .footer_main-container{
+        height: 100%;
+        padding: 25px;
+        gap: 30px;
+        color: var(--blanco-principal);
+        background-color: var(--gris-principal);
     }
 
 }

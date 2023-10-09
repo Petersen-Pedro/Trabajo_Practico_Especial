@@ -86,15 +86,15 @@ function cargarSeccionJuego(categorias, container){
             const precioSpan = document.createElement('span');
             precioSpan.textContent = `$${elem.precio}`;
 
-            const agregarCarritoImg = document.createElement('img');
-            agregarCarritoImg.src = 'images/logo/carrito.png';
-            agregarCarritoImg.alt = 'add-carr';
-            agregarCarritoImg.classList.add('juego_add-carr');
+            const carritoImg = document.createElement('img');
+            carritoImg.src = 'images/logo/carrito.png';
+            carritoImg.alt = 'add-carr';
+            carritoImg.classList.add('juego_add-carr');
 
             // Anidar los elementos
             juegoPrecio.appendChild(hoverBoton);
             juegoPrecio.appendChild(precioSpan);
-            juegoPrecio.appendChild(agregarCarritoImg);
+            juegoPrecio.appendChild(carritoImg);
             if (enlace) {
                 enlace.appendChild(img);
                 juegoArticle.appendChild(enlace);
