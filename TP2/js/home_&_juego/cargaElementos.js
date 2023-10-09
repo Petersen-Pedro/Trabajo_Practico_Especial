@@ -2,8 +2,10 @@
 
 const mainContainer = document.querySelector("#lista-categorias_container");
 const ulCarrito = document.querySelector("#carrito_lista-juegos");
+const imgCarrito = document.querySelector("#carrito_img");
 let mainArray = [];
 
+const jugable = "4 en linea";
 const categoriasEspeciales = [
     "juegos especiales", "juegos similares"
 ]
@@ -11,11 +13,10 @@ const categoriasEspeciales = [
 window.addEventListener("DOMContentLoaded", () => {
     if (document.URL.includes("index.html")) {
         mainArray = juegos_por_categoria;
-        cargarSeccionJuego(juegos_por_categoria, mainContainer);
     }else if(document.URL.includes("juego4EnLinea.html")){
         mainArray = juegos_similares;
-        cargarSeccionJuego(juegos_similares, mainContainer);
     }
+    cargarSeccionJuego(mainArray, mainContainer);
     cargarCarrito();
 });
 
@@ -59,6 +60,13 @@ function cargarSeccionJuego(categorias, container){
             const juegoArticle = document.createElement('article');
             juegoArticle.classList.add('home_categoria--juego');
 
+            let enlace;
+
+            if (elem.nombre === jugable) {
+                enlace = document.createElement("a");
+                enlace.href = "juego4EnLinea.html";
+            }
+
             // Crear la imagen del juego
             const img = document.createElement('img');
             img.src = elem.img;
@@ -79,7 +87,7 @@ function cargarSeccionJuego(categorias, container){
             precioSpan.textContent = `$${elem.precio}`;
 
             const agregarCarritoImg = document.createElement('img');
-            agregarCarritoImg.src = 'images/logo/agregar-carrito.png';
+            agregarCarritoImg.src = 'images/logo/carrito.png';
             agregarCarritoImg.alt = 'add-carr';
             agregarCarritoImg.classList.add('juego_add-carr');
 
@@ -87,8 +95,12 @@ function cargarSeccionJuego(categorias, container){
             juegoPrecio.appendChild(hoverBoton);
             juegoPrecio.appendChild(precioSpan);
             juegoPrecio.appendChild(agregarCarritoImg);
-
-            juegoArticle.appendChild(img);
+            if (enlace) {
+                enlace.appendChild(img);
+                juegoArticle.appendChild(enlace);
+            }else{
+                juegoArticle.appendChild(img);
+            }
             juegoArticle.appendChild(juegoPrecio);
             homeCategoria.appendChild(juegoArticle);
           
@@ -113,15 +125,16 @@ function cargarCarrito(arr = []){
     ulCarrito.innerHTML = "";
 
     if (arr.length <= 0) {
+        imgCarrito.src = "images/logo/carrito.png";
         ulCarrito.innerHTML += `
             <li class="carrito_sin-juego">
                 <span>No hay juegos agregados</span>
             </li>
         `
     }else{
+        imgCarrito.src = "images/logo/agregar-carrito.png";
         ulCarrito.innerHTML += `
             <li class="carrito_juego">
-                <span>Cant</span>
                 <span>Nombre</span>
                 <span>Precio</span>
             </li>
@@ -133,8 +146,7 @@ function cargarCarrito(arr = []){
             ulCarrito.innerHTML += `
                 <div class="menu-desplegable_linea-separadora"></div>
                 <li class="carrito_juego seleccionable">
-                    <span>${cant}</span>
-                    <span>${nombre}</span>
+                    <span class="nombre">${nombre}</span>
                     <span>$${precio}</span>
                 </li>
             `
@@ -154,11 +166,20 @@ function agregarJuegoCarrito(){
     const addedJuego = juegosCarrito.find(juego => juego.id === newJuego.id);
     if (!addedJuego) {
         const { id, nombre, precio } = newJuego;
-        this.classList.add("juego_agregado");
         juegosCarrito.push({id, cant:1, nombre, precio});
+        aplicarEstilos(this);
     }
     cargarCarrito(juegosCarrito);
     // botonEnCarrito(idjuego, categoria);
+}
+
+function aplicarEstilos(element){
+    const span = element.querySelector("span");
+    const img = element.querySelector("img");
+
+    element.classList.add("juego_agregado");
+    img.src = "images/logo/agregar-carrito.png"
+    span.classList.add("lined_text");
 }
 
 // function botonEnCarrito(idjuego, categoria){}

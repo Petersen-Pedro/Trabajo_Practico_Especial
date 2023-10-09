@@ -27,7 +27,7 @@ const juegos_por_categoria = {
                 id: "esp7", nombre: "GTA V", img: "images/juegos/poster/gtav.jpg", precio: 500,
             }, 
             {
-                id: "esp8", nombre: "pokemon_go.jpg", img: "images/juegos/poster/pokemon_go.jpg", precio: 200,
+                id: "esp8", nombre: "pokemon go", img: "images/juegos/poster/pokemon_go.jpg", precio: 200,
             }, 
         ] 
     },
@@ -154,29 +154,29 @@ const juegos_similares = {
         nombre: "juegos similares",
         arr: [
             {
-                id: "accion", nombre: "juego1", img: "images/juegos/poster/juego_sin-imagen.png", precio: 0,
+                id: "sim1", nombre: "pacman", img: "images/juegos/poster/pacman.png", precio: 0,
             }, 
             {
-                id: "accion2", nombre: "juego2", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+                id: "sim2", nombre: "jungle adventure", img: "images/juegos/poster/jungle_adventure.jpg", precio: 0,
             }, 
             {
-                id: "accion3", nombre: "juego3", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+                id: "sim3", nombre: "crash bandicoot", img: "images/juegos/poster/crash.jpg", precio: 0,
             }, 
             {
-                id: "accion4", nombre: "juego4", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+                id: "sim4", nombre: "candy crush", img: "images/juegos/poster/candy_crush.jpg", precio: 0,
             }, 
             {
-                id: "accion5", nombre: "juego5", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+                id: "sim5", nombre: "minecraft", img: "images/juegos/poster/minecrat.jpg", precio: 200,
             }, 
             {
-                id: "accion6", nombre: "juego6", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+                id: "sim6", nombre: "GTA V", img: "images/juegos/poster/gtav.jpg", precio: 500,
             }, 
-            {
-                id: "accion7", nombre: "juego7", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
-            }, 
-            {
-                id: "accion8", nombre: "juego8", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
-            }, 
+            // {
+            //     id: "sim7", nombre: "juego7", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+            // }, 
+            // {
+            //     id: "sim8", nombre: "juego8", img: "images/juegos/poster/juego_sin-imagen.png", precio: 9999,
+            // }, 
         ]
     },
 }
