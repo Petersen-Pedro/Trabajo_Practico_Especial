@@ -1,46 +1,3 @@
-
-/* Menu desplegable */
-.menu-desplegable_linea-separadora{
-    width: 100%;
-    height: 1px;
-    background-color: var(--blanco-principal);
-}
-.main_header_item{
-    position: relative;
-    cursor: pointer;
-}
-.main_header_item:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    height: unset;
-    transform: scaleY(1);
-}
-.main_header_item > ul{
-    background: var(--main-bg-color_base);
-    opacity: 0;
-    visibility: hidden;
-    min-width: 100%;
-    height: 100px;
-    height: 0;
-    position: absolute;
-    top: 48px;
-    gap: 5px;
-    transform-origin: top;
-    transform: scaleY(0);
-    transition: transform 0.3s;
-    z-index: 3;
-}
-.main_header_item > ul::before {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--main-bg-color_base);
-    transform: rotate(45deg);
-    top: -7px;
-    left: 20px;
-    z-index: -1;
-}
-
 /* Main header */
 .main_header{
     display: flex;
@@ -256,6 +213,7 @@
 .categoria-carrusel i:last-child{
     right: -22px;
 }
+
 .categoria-carrusel .home_categoria{
     cursor: pointer;
     white-space: nowrap;
@@ -263,9 +221,6 @@
     display: flex;
     flex-direction: row;
     gap: 1em;
-    /*
-    max-width: 80%;
-    */
     padding: 1em 0em;
     overflow-x: hidden;
     overflow-y: visible;
@@ -279,6 +234,12 @@
 }
 .home_categoria img:first-child{
     margin-left: 0px;
+}
+.home_categoria img {
+    /* height: 340px; */
+    /* object-fit: cover; */
+    /* width: calc(100% / 1); */
+    width: 130px;
 }
 /* Fin Carrusel */
 
@@ -303,8 +264,6 @@
     margin-top: -4px;
     background-color: var(--money-bg-color_base);
     color: var(--blanco-puro);
-    /*
-    */
     padding: 0.1em;
 }
 .juego_precio_sin-compra span {
@@ -316,9 +275,11 @@
     max-width: 2.5em;
     transition: transform 0.2s ease;
     z-index: 1;
-    /*
-    */
 }
+.juego_precio_sin-compra.juego_agregado{
+    background-color: var(--money-bg-oscuro);
+}
+
 /*
 .juego_precio_sin-compra:hover img {
     transform: scale(1.2);

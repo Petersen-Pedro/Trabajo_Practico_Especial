@@ -18,6 +18,15 @@
 
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Roboto";
+}
+
 @font-face {
     font-family: "Roboto";
     src: url(fonts/Roboto-Regular.ttf);
@@ -40,15 +49,6 @@
 }
 
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    font-family: "Roboto";
-}
 header{
     margin-bottom: 20px;
 }
@@ -100,12 +100,6 @@ button{
     font-weight: 800;
     line-height: normal;
 }
-
-
-
-
-
-
 /* Login Page */
 /* Login form */
 .login_form-container{
@@ -143,15 +137,12 @@ button{
     padding: 10px;
     background-color: var(--blanco-principal);
 }
-
 .ok {
     border: 3px solid var(--money-bg-color_base);
 }
-
 .error {
     border: 3px solid var(--secondary-bg-color_medium);
 }
-
 .login_linea-separacion-container{
     width: 100%;
     display: grid;
@@ -271,23 +262,7 @@ button{
     animation-fill-mode: forwards;
 }
 
-@keyframes hover-v {
-    0% {
-        transform: scaleX(0);
-        height: 1px;
-    }
-    45% {
-        transform: scaleX(1);
-        height: 2px;
-    }
-    55% {
-        height: 3px;
-    }
-    100% {
-        transform: scaleX(1);
-        height: 3px;
-    }
-}
+/*Home */
 
 /* Pagina Juego */
 nav{
@@ -523,15 +498,36 @@ footer{
     right: 0;
     bottom: 0;
     left: 0;
-  }
-  .underline{
+}
+.underline{
     width:100%;
     background:var(--secondary-bg-color_base);
     height:10px;
     margin-top:130px;
     animation: underline 5s ease-in-out infinite; 
-  }
+}
+
+/* KeyFrames animacions */
+@keyframes hover-v {
+    0% {
+        transform: scaleX(0);
+        height: 1px;
+    }
+    45% {
+        transform: scaleX(1);
+        height: 2px;
+    }
+    55% {
+        height: 3px;
+    }
+    100% {
+        transform: scaleX(1);
+        height: 3px;
+    }
+}
+
   @keyframes underline {
-      0%    {width:0%;float:left;}
-      50%   {width:100%;}
+    0%    { width:0%; float:left; }
+    50%   { width:100%; }
   }
+

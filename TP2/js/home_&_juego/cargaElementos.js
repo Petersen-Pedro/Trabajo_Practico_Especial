@@ -152,70 +152,13 @@ function agregarJuegoCarrito(){
     const array = mainArray[categoria].arr;
     const newJuego = array.find(juego => juego.id === idjuego);
     const addedJuego = juegosCarrito.find(juego => juego.id === newJuego.id);
-    if (addedJuego) {
-        const index = juegosCarrito.findIndex(juego => juego.id === newJuego.id);
-        juegosCarrito[index].cant = addedJuego.cant +1;
-    }else{
+    if (!addedJuego) {
         const { id, nombre, precio } = newJuego;
+        this.classList.add("juego_agregado");
         juegosCarrito.push({id, cant:1, nombre, precio});
     }
     cargarCarrito(juegosCarrito);
-    botonEnCarrito(idjuego, categoria);
+    // botonEnCarrito(idjuego, categoria);
 }
 
-function botonEnCarrito(idjuego, categoria){
-
-
-}
-
-// function cargarSeccionJuego(categorias, container){
-//     for (const categoria in categorias) {
-//         const categoriaArr = categorias[categoria].arr;
-//         const categoriaNombre = categorias[categoria].nombre;
-
-//         container.innerHTML += `
-//             <section class="home_categoria-container 
-//                 ${categoriaNombre === "juegos especiales" && "especial"} >
-//                 <h1>${categoriaNombre}</h1>
-//                 <div class="categoria-carrusel" id="${categoria.toString()}_container">
-//                     <i id="left" class="fa-solid fa-angle-left"></i>
-//                     <div class="home_categoria" id="${categoria.toString()}">
-//                     </div>
-//                     <i id="right" class="fa-solid fa-angle-right"></i>
-//                 </div>
-//             </section>
-//         `
-//         for(const elem of categoriaArr){
-//             container.innerHTML += `
-//                 <article class="home_categoria--juego">
-//                     <img src="${elem.img}" alt="juego" draggable="false">
-//                     <div class="juego_precio_sin-compra ${elem.precio > 0 ? 'precio' : 'gratis'}" 
-//                         data-idjuego="${elem.id}" data-categoria="${categoria}">
-//                         <span>$${elem.precio}</span>
-//                         <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
-//                     </div>
-//                 </article>
-//             `
-//         }
-//         const cards = document.querySelectorAll(".juego_precio_sin-compra");
-//         cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
-//     }
-// }
-
-// function cargarJuego(categoria, container){
-//     for(const elem of categoria){
-//         container.innerHTML += `
-//             <article class="home_categoria--juego">
-//                 <img src="${elem.img}" alt="juego" draggable="false">
-//                 <div class="juego_precio_sin-compra ${elem.precio > 0 ? 'precio' : 'gratis'}" 
-//                     data-idjuego="${elem.id}" data-categoria="${categoria}">
-
-//                     <span>$${elem.precio}</span>
-//                     <img src="images/logo/agregar-carrito.png" alt="add-carr" class="juego_add-carr">
-//                 </div>
-//             </article>
-//         `
-//     }
-//     const cards = document.querySelectorAll(".juego_precio_sin-compra");
-//     cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
-// }
+// function botonEnCarrito(idjuego, categoria){}
