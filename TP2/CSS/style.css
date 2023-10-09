@@ -51,7 +51,9 @@ html{
     min-height: 100%;
 }
 header{
+    /*
     margin-bottom: 20px;
+    */
 }
 body{
     background-image: linear-gradient(var(--main-bg-color_dark), var(--main-bg-color_light));
@@ -453,7 +455,7 @@ a{
 .home_main-container{
     display: flex;
     flex-direction: column;
-    max-width: 90%;
+    max-width: 59em;
     align-items: center;
     justify-content: center;
 }
@@ -464,6 +466,9 @@ a{
 .home_categoria-container.especial{
     max-width: 100%;
     color: var(--blanco-puro);
+    background-color: var(--main-bg-color_light);
+    padding: 0em 0.5em 0.1em 0.5em;
+    border-radius: var(--radius);
 }
 .home_categoria-container > h1{
     text-transform: capitalize;
@@ -477,8 +482,10 @@ a{
 .categoria-carrusel i{
     position: absolute;
     top: 50%;
+    /*
     height: 44px;
-    width: 44px;
+    */
+    width: 2.5em;
     color: #343F4F;
     cursor: pointer;
     font-size: 1.15rem;
@@ -510,6 +517,8 @@ a{
     display: flex;
     flex-direction: row;
     gap: 1em;
+    /*
+    */
     padding: 1em 0em;
     overflow-x: hidden;
     overflow-y: visible;
@@ -525,7 +534,7 @@ a{
     margin-left: 0px;
 }
 .home_categoria img {
-    width: 130px;
+    width: 8em;
 }
 /*Carta Juego*/
 .home_categoria--juego{
@@ -535,9 +544,10 @@ a{
     transform: scale(1.1);
 }
 .home_categoria--juego img{
-    height: 130px;
+    height: 7em;
     object-fit: cover;
     object-position:top;
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 .juego_precio {
     display: flex;
@@ -853,9 +863,10 @@ footer{
     50%   { width:100%; }
 }
 /* Mobile */
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 720px){
     header{
         width: 90%;
+        margin: 1em 0;
     }
     /* Header */
     .logo_back-home{
@@ -875,7 +886,7 @@ footer{
         height: 15px;
     }
     .main_header_item.carrito{
-        width: 50px;
+        width: 3em;
     }
     .main_header_item.user{
         gap: 5px;
@@ -901,7 +912,7 @@ footer{
         width: 95%;
     }
     .home_categoria{
-        width: 300px;
+        width: 22em;
     }
     .footer_main-container{
         height: 100%;
@@ -909,6 +920,24 @@ footer{
         gap: 30px;
         color: var(--blanco-principal);
         background-color: var(--gris-principal);
+    }
+    .home_categoria-container > h1{
+        color: var(--blanco-puro);
+    }
+
+    .home_categoria-container{
+        max-width: 100%;
+    }
+
+    .home_categoria img {
+        width: 7em;
+    }
+
+    .home_categoria--juego img{
+        height: 5em;
+    }
+    .main_header-searchbar-container {
+        display: none;
     }
 
 }
