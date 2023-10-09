@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos^3 - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="css/StyleTEST.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <header class="main_header">
-        <img src="images/logo/Logo.png" alt="main logo" title="home" class="header--logo">
+        <a href="index.html" class="logo_back-home">
+            <img src="images/logo/Logo.png" alt="main logo" title="home" class="header_logo">
+        </a>
         <div class="main_header-searchbar-container">
             <input type="text" class="main_header-searchbar">
             <img src="images/lupita.png" alt="lupa" class="main_header-searchbar--lupa">
@@ -18,7 +20,7 @@
 
         <div class="main_header-sub-container">
             <div class="main_header_item carrito">
-                    <img src="images/logo/carrito.png" alt="carr" title="carrito" id="carrito_img">
+                <img src="images/logo/carrito.png" alt="carr" title="carrito" id="carrito_img">
                 <ul class="carrito_lista-juegos" id="carrito_lista-juegos">
                 </ul>
             </div>
@@ -37,9 +39,7 @@
                     </li>
                     <div class="menu-desplegable_linea-separadora"></div>
                     <li class="user_opt" href="login.html">
-                        <!--<a href="login.html"></a>
-                        -->
-                        Cerrar Sesión 
+                        <a href="login.html">Cerrar Sesión </a>
                         <img src="images/logo/user/cerrar_sesion.png" alt="">
                     </li>
                     <div class="menu-desplegable_linea-separadora"></div>

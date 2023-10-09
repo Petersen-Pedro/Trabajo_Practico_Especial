@@ -21,7 +21,6 @@ const camposRegistro = {
     apellido: false,
     contrasenia: false,
     repContrasenia: false,
-    genero: false,
     email: false,
     repEmail: false,
 }
@@ -99,6 +98,7 @@ function loadInputs(){
     inputsNew.forEach(input => input.addEventListener("keyup", validarCampo));
 }
 
+// Validaciones
 function validarCampo(e){
     const input = e.target;
     const inputNombre = input.name;
@@ -155,9 +155,7 @@ function validarForm(){
                     underline.textContent = contador + "%";
                 } else {
                     clearInterval(intervalo);
-                    setTimeout(function(){
-                        window.location.replace("index.html"); 
-                    }, 0); 
+                    window.location.replace("index.html"); 
                 }
             }, 40); 
         }

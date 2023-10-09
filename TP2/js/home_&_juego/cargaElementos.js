@@ -5,7 +5,7 @@ const ulCarrito = document.querySelector("#carrito_lista-juegos");
 const imgCarrito = document.querySelector("#carrito_img");
 let mainArray = [];
 
-const jugable = "4 en linea";
+const jugable = ["4 en linea"];
 const categoriasEspeciales = [
     "juegos especiales", "juegos similares"
 ]
@@ -32,16 +32,13 @@ function cargarSeccionJuego(categorias, container){
             section.classList.add("especial");
         }
 
-        // Crear el título
         const h1 = document.createElement('h1');
         h1.textContent = categoriaNombre;
 
-        // Crear el contenedor del carrusel
         const categoriaContainer = document.createElement('div');
         categoriaContainer.classList.add('categoria-carrusel');
         categoriaContainer.id = `${categoria.toString()}_container`;
 
-        // Crear las flechas izquierda y derecha
         const leftArrow = document.createElement('i');
         leftArrow.id = 'left';
         leftArrow.classList.add('fa-solid', 'fa-angle-left');
@@ -50,50 +47,50 @@ function cargarSeccionJuego(categorias, container){
         rightArrow.id = 'right';
         rightArrow.classList.add('fa-solid', 'fa-angle-right');
 
-        // Crear el contenedor de juegos
         const homeCategoria = document.createElement('div');
         homeCategoria.classList.add('home_categoria');
         homeCategoria.id = categoria.toString();
 
         for(const elem of categoriaArr){
-            // Crear el artículo del juego
+            const isGratis = elem.precio <= 0;
+
             const juegoArticle = document.createElement('article');
             juegoArticle.classList.add('home_categoria--juego');
 
             let enlace;
+            let precioSpan;
 
-            if (elem.nombre === jugable) {
+            if (jugable.includes(elem.nombre)) {
                 enlace = document.createElement("a");
                 enlace.href = "juego4EnLinea.html";
             }
 
-            // Crear la imagen del juego
             const img = document.createElement('img');
             img.src = elem.img;
             img.alt = 'juego';
             img.draggable = false;
             img.classList.add('img_animacion');
 
-            // Crear el precio y el botón de agregar al carrito
             const juegoPrecio = document.createElement('div');
-            juegoPrecio.classList.add('juego_precio', elem.precio > 0 ? 'precio' : 'gratis');
+            juegoPrecio.classList.add('juego_precio');
             juegoPrecio.setAttribute('data-idjuego', elem.id);
             juegoPrecio.setAttribute('data-categoria', categoria);
 
             const hoverBoton = document.createElement('div');
             hoverBoton.classList.add('hover_compra');
 
-            const precioSpan = document.createElement('span');
-            precioSpan.textContent = `$${elem.precio}`;
+            if (!isGratis) {
+                precioSpan = document.createElement('span');
+                precioSpan.textContent = `$${elem.precio}`;
+            }
 
             const carritoImg = document.createElement('img');
             carritoImg.src = 'images/logo/carrito.png';
-            carritoImg.alt = 'add-carr';
-            carritoImg.classList.add('juego_add-carr');
+            carritoImg.alt = 'carr';
 
-            // Anidar los elementos
             juegoPrecio.appendChild(hoverBoton);
-            juegoPrecio.appendChild(precioSpan);
+
+            if (!isGratis) { juegoPrecio.appendChild(precioSpan); }
             juegoPrecio.appendChild(carritoImg);
             if (enlace) {
                 enlace.appendChild(img);
@@ -105,7 +102,6 @@ function cargarSeccionJuego(categorias, container){
             homeCategoria.appendChild(juegoArticle);
           
         }
-        // Anidar los elementos
         section.appendChild(h1);
         section.appendChild(categoriaContainer);
         categoriaContainer.appendChild(leftArrow);
@@ -170,7 +166,6 @@ function agregarJuegoCarrito(){
         aplicarEstilos(this);
     }
     cargarCarrito(juegosCarrito);
-    // botonEnCarrito(idjuego, categoria);
 }
 
 function aplicarEstilos(element){
@@ -178,8 +173,6 @@ function aplicarEstilos(element){
     const img = element.querySelector("img");
 
     element.classList.add("juego_agregado");
-    img.src = "images/logo/agregar-carrito.png"
-    span.classList.add("lined_text");
+    img.src = "images/logo/agregar-carrito.png";
+    if (span) { span.classList.add("lined_text"); } 
 }
-
-// function botonEnCarrito(idjuego, categoria){}

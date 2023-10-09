@@ -70,6 +70,10 @@ main{
 button{
     cursor: pointer;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 /* Buttons */
 .button-primary{
     padding: 18px 30px;
@@ -178,9 +182,20 @@ button{
     display: flex;
     justify-content: center;
 }
-.header--logo{
-    height: 30%;
-    width: 15%;
+.login_logo{
+    width: 17%;
+    height: 32%;
+}
+.logo_back-home{
+    height: 13%;
+    width: 12%;
+}
+.header_logo{
+    height: 100%;
+    width: 100%;
+}
+.logo_back-home .header_logo{
+    cursor: pointer;
 }
 /* Menu desplegable */
 .main_header_item{
@@ -473,6 +488,7 @@ button{
     border-radius: 50%;
     transform: translateY(-50%);
     transition: transform 0.1s linear;
+    z-index: 1;
 }
 .categoria-carrusel i:active{
     transform: translateY(-50%) scale(0.9);
@@ -527,8 +543,8 @@ button{
     display: flex;
     position: relative;
     justify-content: space-evenly;
-    border-radius: 0 0 15px 15px;
     align-items: center;
+    border-radius: 0 0 15px 15px;
     cursor: pointer;
     overflow: hidden;
     margin-top: -4px;
@@ -601,7 +617,25 @@ nav{
     border-radius: var(--radius);
 }
 .juego {
+    position: relative;
     flex: 1.5;
+}
+.btn_play,
+.btn_compartir{
+    position: absolute;
+    cursor: pointer;
+}
+.btn_play{
+    top: 55%;
+    left: 40%;
+    height: 50px;
+    width: 100px;
+}
+.btn_compartir{
+    top: 80%;
+    left: 38%;
+    height: 70px;
+    width: 120px;
 }
 .juego img {
     max-width: 100%; 
@@ -645,6 +679,7 @@ nav{
     flex-direction: column;
     align-items: center;
     width: 90%;
+    margin-top: 50px;
     color: var(--negro-puro);
 }
 .comentarios_logo{
@@ -652,8 +687,8 @@ nav{
     align-items: center;
     align-self: flex-start;
     gap: 0.5em;
-    padding: 0px 12%;
-    color: var(--blanco-principal);
+    padding: 5px 11%;
+    color: var(--negro-puro);
 }
 .comentario{
     display: flex;
@@ -823,10 +858,10 @@ footer{
         width: 90%;
     }
     /* Header */
-    .header--logo{
-        height: 30%;
-        width: 25%;
-    }
+    .logo_back-home{
+        height: 18%;
+        width: 16%;
+    } 
     .main_header{
         width: 90%;
     } 

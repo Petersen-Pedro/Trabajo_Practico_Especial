@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos^3 - 4 en Linea</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="css/StyleTEST.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 </head>
 
 <body>
     <header class="main_header">
-        <!--
-            <a href="index.html" class="returnHome">
-            </a>
-        -->
-            <img src="images/logo/Logo.png" alt="main logo" title="home" class="header--logo">
+        
+        <a href="index.html" class="logo_back-home">
+            <img src="images/logo/Logo.png" alt="main logo" title="home" class="header_logo">
+        </a>
         <div class="main_header-searchbar-container">
             <input type="text" class="main_header-searchbar">
             <img src="images/lupita.png" alt="lupa" class="main_header-searchbar--lupa">
@@ -24,7 +23,7 @@
 
         <div class="main_header-sub-container">
             <div class="main_header_item carrito">
-                <img src="images/logo/carrito.png" alt="carr" title="carrito">
+                <img src="images/logo/carrito.png" alt="carr" title="carrito" id="carrito_img">
                 <ul class="carrito_lista-juegos" id="carrito_lista-juegos">
                 </ul>
             </div>
@@ -73,6 +72,8 @@
             
             <section class="juego">
                 <img src="images/juegos/poster/4enLinea.png" alt="4_en_linea">
+                <img src="images/juegos/btn_play.png" alt="play" class="btn_play">
+                <img src="images/juegos/btn_compartir.png" alt="compartir" class="btn_compartir">
             </section>
             
             <section class="instrucciones">
@@ -166,12 +167,7 @@
     <div class="seccion_comentarios">
 
         <div class="comentarios_logo">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-circle-2" width="60"
-                height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
-            </svg>
+            <img src="images/logo/msg.png" alt="msg" class="comentarios_logo">
             <p>Comentarios</p>
         </div>
 
