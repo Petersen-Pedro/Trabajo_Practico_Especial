@@ -109,7 +109,7 @@
 
 
 /*
-.juego_precio_sin-compra {
+.juego_precio {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -123,15 +123,15 @@
     position: relative;
     overflow: hidden;
 }
-.juego_precio_sin-compra span {
+.juego_precio span {
     font-size: 25px;
     z-index: 1;
 }
-.juego_precio_sin-compra img {
+.juego_precio img {
     z-index: 1;
 }
 /*testeo animacion card*/
-.juego_precio_sin-compra {
+.juego_precio {
     width: 150px;
     height: 40px;
     display: flex;
@@ -154,27 +154,27 @@
     width: 100%;
     height: 100%;
 }
-.juego_precio_sin-compra img {
+.juego_precio img {
     overflow: hidden;
     max-width: 100%;
     max-height: 100%;
 }
 */
-.juego_precio_sin-compra span {
+.juego_precio span {
     font-size: 25px;
     z-index: 1;
 }
-.juego_precio_sin-compra > img {
+.juego_precio > img {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
     transition: transform 0.2s ease;
     z-index: 1;
 }
-.juego_precio_sin-compra:hover img {
+.juego_precio:hover img {
     transform: scale(1.1);
 }
-.juego_precio_sin-compra:hover {
+.juego_precio:hover {
     border: 1px solid var(--blanco-puro);
 }
 
@@ -187,7 +187,7 @@
     background-color: var(--money-bg-color_hover);
     z-index: 0;
 }
-.juego_precio_sin-compra:hover .hover_compra{
+.juego_precio:hover .hover_compra{
     width: 100%;
     transition: width 300ms;
     left: 0;

@@ -15,9 +15,7 @@
     --negro-principal: #222222;
     --negro-puro: #000;
     --radius: 20px;
-
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -48,7 +46,9 @@
     font-style: italic;
 }
 
-
+html{
+    min-height: 100%;
+}
 header{
     margin-bottom: 20px;
 }
@@ -150,7 +150,7 @@ button{
 }
 .main_header-sub-container{
     display: flex;
-    gap: 20px;
+    gap: 7%;
 }
 .main_header-sub-container > div{
     display: flex;
@@ -162,16 +162,15 @@ button{
     background-color: var(--main-bg-color_light);
 }
 .main_header_item.user{
-    width: 72px;
-}
-.main_header_item.carrito{
     gap: 10px;
     width: 120px;
+}
+.main_header_item.carrito{
+    width: 72px;
 }
 .main_header_item img{
     height: 30px;
 }
-
 /* Login Header */
 .login_header{
     width: 90%;
@@ -182,7 +181,6 @@ button{
     height: 30%;
     width: 15%;
 }
-
 /* Menu desplegable */
 .main_header_item{
     position: relative;
@@ -217,7 +215,7 @@ button{
     background: var(--main-bg-color_base);
     transform: rotate(45deg);
     top: -7px;
-    left: 20px;
+    left: 1000px;
     z-index: -1;
 }
 .carrito_juego, 
@@ -236,8 +234,8 @@ button{
 /* Carrito de compras*/
 .carrito_juego,
 .carrito_sin-juego{
-    width: 350px;
     display: flex;
+    width: 350px;
 }
 .carrito_sin-juego{
     display: flex;
@@ -301,12 +299,6 @@ button{
     width: 240px;
     padding: 10px;
     background-color: var(--blanco-principal);
-}
-.ok {
-    border: 3px solid var(--money-bg-color_base);
-}
-.error {
-    border: 3px solid var(--secondary-bg-color_medium);
 }
 .login_linea-separacion-container{
     width: 100%;
@@ -376,7 +368,6 @@ button{
     color: var(--blanco-puro);
     background-color: var(--secondary-bg-color_light);
 }
-
 .login_iniciar-sesion_btn::before {
     content: "";
     position: absolute;
@@ -394,7 +385,6 @@ button{
 .login_iniciar-sesion_btn:hover::before {
     transform: translateX(0px) skew(-20deg);
 }
-
 .login_cambiar-form_btn{
     height: 35px;
     /*
@@ -405,7 +395,6 @@ button{
     position: relative;
     overflow: hidden;
 }
-
 .login_cambiar-form_btn span::before {
     content: "";
     background: var(--blanco-puro);
@@ -419,7 +408,6 @@ button{
     animation: 1s forwards no-hover-v linear;
     animation-fill-mode: forwards;
 }
-
 .login_cambiar-form_btn:hover span::before {
     animation: 0.5s forwards hover-v linear;
     animation-fill-mode: forwards;
@@ -432,7 +420,6 @@ button{
 .home_juego-destacado > img {
     width: 100%;
 }
-
 /*Cuerpo y Categorias*/
 .home_main-container{
     display: flex;
@@ -468,7 +455,7 @@ button{
     font-size: 1.15rem;
     text-align: center;
     line-height: 44px;
-    background: #fff;
+    background: var(--blanco-puro);
     border-radius: 50%;
     transform: translateY(-50%);
     transition: transform 0.1s linear;
@@ -477,7 +464,7 @@ button{
     transform: translateY(-50%) scale(0.9);
 }
 .categoria-carrusel i:hover{
-    background: #f2f2f2;
+    background: var(--blanco-principal)
 }
 .categoria-carrusel i:first-child{
     left: -22px;
@@ -486,7 +473,6 @@ button{
 .categoria-carrusel i:last-child{
     right: -22px;
 }
-
 .categoria-carrusel .home_categoria{
     cursor: pointer;
     white-space: nowrap;
@@ -523,7 +509,7 @@ button{
     object-fit: cover;
     object-position:top;
 }
-.juego_precio_sin-compra {
+.juego_precio {
     display: flex;
     position: relative;
     justify-content: space-evenly;
@@ -536,17 +522,17 @@ button{
     color: var(--blanco-puro);
     padding: 0.1em;
 }
-.juego_precio_sin-compra span {
+.juego_precio span {
     font-size: 20px;
     z-index: 1;
 }
-.juego_precio_sin-compra > img {
+.juego_precio > img {
     max-height: 2em;
     max-width: 2em;
     transition: transform 0.2s ease;
     z-index: 1;
 }
-.juego_precio_sin-compra.juego_agregado{
+.juego_precio.juego_agregado{
     background-color: var(--money-bg-oscuro);
 }
 .hover_compra {
@@ -556,7 +542,7 @@ button{
     background-color: #025a04;
     z-index: 0;
 }
-.juego_precio_sin-compra:hover .hover_compra{
+.juego_precio:hover .hover_compra{
     width: 100%;
     transition: width 300ms;
     left: 0;
@@ -726,7 +712,12 @@ nav{
 /* Footer */
 footer{
     margin-top: 7%;
+
     width: 100%;
+    /* position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0; */
 }
 .footer_main-container{
     display: flex;
@@ -745,7 +736,6 @@ footer{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
 }
 .footer_copyright-texto{
     align-self: flex-start;
@@ -788,7 +778,12 @@ footer{
 .lined_text{
     text-decoration: line-through;
 }
-
+.ok {
+    border: 3px solid var(--money-bg-color_base);
+}
+.error {
+    border: 3px solid var(--secondary-bg-color_medium);
+}
 /* KeyFrames animacions */
 @keyframes hover-v {
     0% {
@@ -808,8 +803,57 @@ footer{
     }
 }
 
-  @keyframes underline {
+@keyframes underline {
     0%    { width:0%; float:left; }
     50%   { width:100%; }
-  }
+}
 
+/* Mobile */
+@media only screen and (max-width: 500px){
+    header{
+        width: 90%;
+    }
+    main{
+        background-color: red;
+    }
+    /* Header */
+    .main_header{
+        width: 90%;
+    } 
+    .main_header-searchbar{
+        height: 15px;
+        width: 15px;
+    }
+    .main_header-searchbar--lupa{
+        top: 8px;
+        right: 7px; 
+        height: 15px;
+    }
+    .main_header_item.carrito{
+        width: 50px;
+    }
+    .main_header_item.user{
+        gap: 5px;
+        width: 100px;
+    }
+    .main_header_item span{
+        font-size: 14px;
+    }
+    .main_header_item img{
+        height: 20px;
+    }
+    .carrito_juego,
+    .carrito_sin-juego{
+        width: 200px;
+    }
+    .user_opt{
+        justify-content: flex-start;
+        gap: 5px;
+        width: 200px;
+    }
+    /* Home */
+    .home_categoria img {
+        width: 110px;
+    }
+
+}

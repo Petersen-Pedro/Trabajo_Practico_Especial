@@ -76,7 +76,7 @@ function cargarSeccionJuego(categorias, container){
 
             // Crear el precio y el botón de agregar al carrito
             const juegoPrecio = document.createElement('div');
-            juegoPrecio.classList.add('juego_precio_sin-compra', elem.precio > 0 ? 'precio' : 'gratis');
+            juegoPrecio.classList.add('juego_precio', elem.precio > 0 ? 'precio' : 'gratis');
             juegoPrecio.setAttribute('data-idjuego', elem.id);
             juegoPrecio.setAttribute('data-categoria', categoria);
 
@@ -114,7 +114,7 @@ function cargarSeccionJuego(categorias, container){
         container.appendChild(section);
 
     }
-    const cards = document.querySelectorAll(".juego_precio_sin-compra");
+    const cards = document.querySelectorAll(".juego_precio");
     cards.forEach(card => card.addEventListener("click", agregarJuegoCarrito));
 
     const carousels = document.querySelectorAll(".home_categoria");
