@@ -69,6 +69,152 @@ main{
 button{
     cursor: pointer;
 }
+/* Header */
+/* Main header */
+.main_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+.main_header-searchbar-container{
+    position: relative;
+}
+.main_header-searchbar{
+    height: 30px;
+    width: 300px;
+    border-radius: var(--radius);
+    padding: 15px;
+    background-color: var(--blanco-principal);
+}
+.main_header-searchbar--lupa{
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    right: 11px; 
+    height: 23px;
+}
+.main_header-sub-container{
+    display: flex;
+    gap: 20px;
+}
+.main_header-sub-container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 34px;
+    color: var(--blanco-puro);
+    background-color: var(--main-bg-color_light);
+}
+.main_header_item.user{
+    width: 72px;
+}
+.main_header_item.carrito{
+    gap: 10px;
+    width: 120px;
+}
+.main_header_item img{
+    height: 30px;
+}
+
+/* Login Header */
+.login_header{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.header--logo{
+    height: 30%;
+    width: 15%;
+}
+
+/* Menu desplegable */
+.menu-desplegable_linea-separadora{
+    width: 100%;
+    height: 1px;
+    background-color: var(--blanco-principal);
+}
+.main_header_item{
+    position: relative;
+    cursor: pointer;
+}
+.main_header_item:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    height: unset;
+    transform: scaleY(1);
+}
+.main_header_item > ul{
+    background: var(--main-bg-color_base);
+    opacity: 0;
+    visibility: hidden;
+    min-width: 100%;
+    height: 100px;
+    height: 0;
+    position: absolute;
+    top: 48px;
+    gap: 5px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    z-index: 3;
+}
+.main_header_item > ul::before {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--main-bg-color_base);
+    transform: rotate(45deg);
+    top: -7px;
+    left: 20px;
+    z-index: -1;
+}
+.carrito_juego, 
+.user_opt{
+    color: var(--blanco-principal);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    padding: 0.5rem 0.5rem;
+}
+.carrito_juego.seleccionable:hover,
+.user_opt:hover{
+    color: var(--blanco-puro);
+}
+/* Carrito de compras*/
+.carrito_juego,
+.carrito_sin-juego{
+    width: 400px;
+}
+.carrito_sin-juego{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+.carrito_juego{
+    justify-content: space-between;
+}
+.carrito_juego span{
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.carrito_precio-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    color: var(--blanco-principal);
+}
+/* User desplegable */
+.user_opt{
+    justify-content: flex-end;
+    gap: 10px;
+    width: 200px;
+}
 /* Buttons */
 .button-primary{
 
@@ -101,7 +247,6 @@ button{
     line-height: normal;
 }
 /* Login Page */
-/* Login form */
 .login_form-container{
     display: grid;
     justify-items: center;
@@ -261,9 +406,138 @@ button{
     animation: 0.5s forwards hover-v linear;
     animation-fill-mode: forwards;
 }
+/* Home Page */
+.home_juego-destacado{
+    width: 90%;
+    margin-bottom: 1rem;
+}
+.home_juego-destacado > img {
+    width: 100%;
+}
 
-/*Home */
+/*Cuerpo y Categorias*/
+.home_main-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+.home_categoria-container{
+    width: 90%;
+    color: var(--negro-puro);
+}
+.home_categoria-container.especial{
+    width: 100%;
+    color: var(--blanco-puro);
+}
+.home_categoria-container > h1{
+    text-transform: capitalize;
+    padding: 10px 15px 0px 15px;
+}
+/*Carrusel */
+.categoria-carrusel{
+    position: relative;
+    max-width: 100%;
+}
+.categoria-carrusel i{
+    position: absolute;
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.categoria-carrusel i:active{
+    transform: translateY(-50%) scale(0.9);
+}
+.categoria-carrusel i:hover{
+    background: #f2f2f2;
+}
+.categoria-carrusel i:first-child{
+    left: -22px;
+    display: none;
+}
+.categoria-carrusel i:last-child{
+    right: -22px;
+}
 
+.categoria-carrusel .home_categoria{
+    cursor: pointer;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em 0em;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+.home_categoria.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.home_categoria.dragging img{
+    pointer-events: none;
+}
+.home_categoria img:first-child{
+    margin-left: 0px;
+}
+.home_categoria img {
+    width: 130px;
+}
+/*Carta Juego*/
+.home_categoria--juego  {
+    transition: transform 0.2s ease;
+}
+.home_categoria--juego:hover {
+    transform: scale(1.1);
+}
+.juego_precio_sin-compra {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    border-radius: 0 0 15px 15px;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: -4px;
+    background-color: var(--money-bg-color_base);
+    color: var(--blanco-puro);
+    padding: 0.1em;
+}
+.juego_precio_sin-compra span {
+    font-size: 20px;
+    z-index: 1;
+}
+.juego_precio_sin-compra > img {
+    max-height: 2em;
+    max-width: 2em;
+    transition: transform 0.2s ease;
+    z-index: 1;
+}
+.juego_precio_sin-compra.juego_agregado{
+    background-color: var(--money-bg-oscuro);
+}
+.hover_compra {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #025a04;
+    z-index: 0;
+}
+.juego_precio_sin-compra:hover .hover_compra{
+    width: 100%;
+    transition: width 300ms;
+    left: 0;
+}
 /* Pagina Juego */
 nav{
     text-align: left;
