@@ -155,7 +155,7 @@ function validarForm(){
                     underline.textContent = contador + "%";
                 } else {
                     clearInterval(intervalo);
-                    window.location.replace("index.html"); 
+                    window.location.replace("home.html"); 
                 }
             }, 40); 
         }

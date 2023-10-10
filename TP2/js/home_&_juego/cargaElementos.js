@@ -11,7 +11,7 @@ const categoriasEspeciales = [
 ]
 
 window.addEventListener("DOMContentLoaded", () => {
-    if (document.URL.includes("index.html")) {
+    if (document.URL.includes("home.html")) {
         mainArray = juegos_por_categoria;
     }else if(document.URL.includes("juego4EnLinea.html")){
         mainArray = juegos_similares;
