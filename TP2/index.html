@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juegos^3 - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Juegos^3 - Login</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    
-    <header class="main_header">
-        <a href="index.html" class="logo_back-home">
-            <img src="images/logo/Logo.png" alt="main logo" title="home" class="header_logo">
-        </a>
-        <div class="main_header-searchbar-container">
-            <input type="text" class="main_header-searchbar">
-            <img src="images/lupita.png" alt="lupa" class="main_header-searchbar--lupa">
-        </div>
 
-        <div class="main_header-sub-container">
-            <div class="main_header_item carrito">
-                <img src="images/logo/carrito.png" alt="carr" title="carrito" id="carrito_img">
-                <ul class="carrito_lista-juegos" id="carrito_lista-juegos">
-                </ul>
-            </div>
-            <div class="main_header_item user">
-                <span>User25</span>
-                <img src="images/logo/user/main_test-user.png" alt="user" title="usuario">
-                <ul class="user_list-opt" id="user_list-opt">
-                    <li class="user_opt">
-                        Mi Perfil 
-                        <img src="images/logo/user/mi_perfil.png" alt="">
-                    </li>
-                    <div class="menu-desplegable_linea-separadora"></div>
-                    <li class="user_opt">
-                        Configuración 
-                        <img src="images/logo/user/config.png" alt="">
-                    </li>
-                    <div class="menu-desplegable_linea-separadora"></div>
-                    <li class="user_opt" href="login.html">
-                        <a href="login.html">Cerrar Sesión </a>
-                        <img src="images/logo/user/cerrar_sesion.png" alt="">
-                    </li>
-                    <div class="menu-desplegable_linea-separadora"></div>
-                    <li class="user_opt">
-                        Acerca De 
-                        <img src="images/logo/user/acerca_de.png" alt="">
-                    </li>
-                </ul>
-            </div>
-        </div>
+<body>
+
+    <header class="login_header">
+        <img src="images/logo/Logo.png" alt="main logo" class="login_logo">
     </header>
-    
-    <main class="home_main">
-        <a href="juego4EnLinea.html" class="home_juego-destacado">
-            <img src="images/juegos/juego_destacado.png" alt="juego_destacado"  href="test2.html">
-        </a>
-        <div class="home_main-container" id="lista-categorias_container">
+
+    <main>
+        <div class="login_form-container" id="login_form_container">
+            <h2 id="login_form-titulo">Iniciar Sesion</h2>
+            <form action="" id="mainForm">
+                <section class="login_form-input--container" id="login_form_usuario--container">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" id="usuario" class="login_form-input">
+                    <p class="form_input-error hidden">El usuario debe tener más de 1 digito y solo letras, y espacios</p>
+                </section>
+
+                <section class="login_form-input--container" id="login_form_contrasenia--container">
+                    <label for="contrasenia">Contraseña</label>
+                    <input type="password" name="contrasenia" id="contrasenia" class="login_form-input">
+                    <p class="form_input-error hidden">La contraseña debe tener de 4 a 12 digitos</p>
+                </section>
+            </form>
+
+            <div class="login_linea-separacion-container">
+                <div class="login_linea-separacion"></div>
+                <span>O</span>
+                <div class="login_linea-separacion"></div>
+            </div>
+            <div class="login_sesion-externa">
+                <button class="button-social">
+                    Iniciar Sesion con <img src="images/logo/Google.png" alt="google">
+                </button>
+                <button class="button-social">
+                    Iniciar Sesion con <img src="images/logo/logos_facebook.png" alt="facebook">
+                </button>
+            </div>
+            <div>
+                <div class="login_captcha">
+                    <input type="checkbox" class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado">
+                    <p>No soy un robot</p>
+                    <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
+                </div>
+                <p class="form_input-error hidden" id="captcha_texto-error">
+                    Validar captcha
+                </p>
+            </div>
+            <button class="login_iniciar-sesion_btn button-primary" type="submit" id="submitBtn">
+                Iniciar Sesión
+            </button>
+            <button class="login_cambiar-form_btn button-terciary" id="sin-cuenta_btn">
+                <span>¿No Tienes Cuenta?</span>
+            </button>
+        </div>
+        <div id="loading" class="hidden">
+            <div class="box">
+                <div class="underline" id="loading_underline">
+                    1%
+                </div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer_main-container">
-            <h2>Acerca JuegosJuegosJuegos</h2>
-            <p class="footer_main-texto">¡Olvídate del aburrimiento con JuegosJuegosJuegos! La mayor selección de juegos está aquí, para que lleves la diversión al siguiente nivel. Juega online y sin preocupaciones: puedes jugar a todos nuestros juegos sin descargar. ¡Pero cuidado! Nuestros juegos de acción solo son aptos para los más atrevidos; competirás con grandes pilotos en nuestros juegos de carreras; podrás poner a prueba al estratega que llevas dentro en todos nuestros juegos de estrategia; y sólo los auténticos exploradores llegarán a su meta en los juegos de aventura. Y para los clásicos, las versiones clásicas y no tan clásicas de los clásicos juegos de mesa. Puedes jugar gratis o comprar nuestros juegos más destacados.</p>
-            <p class="footer_copyright-texto">Copyright © 2023 Todos los derechos reservados.</p>
-        </div>
-        <div class="footer_logo-container">
-            <img src="images/logo/Instagram Icon.png" alt="ig" title="instagram.com">
-            <img src="images/logo/Facebook Icon.png" alt="fb" title="facebook.com">
-            <img src="images/logo/Twitter Icon.png" alt="tw" title="twitter.com">
-        </div>
     </footer>
 
-    <script src="./js/json_imitation/juegos.json.js"></script>
-    <script src="./js/home_&_juego/carrusel_juegos.js"></script>
-    <script src="./js/home_&_juego/cargaElementos.js"></script>
+    <script src="./js/json_imitation/login.json.js"></script>
+    <script src="./js/componentes/buttons.js"></script>
+    <script src="./js/login.js"></script>
 </body>
+
 </html>
