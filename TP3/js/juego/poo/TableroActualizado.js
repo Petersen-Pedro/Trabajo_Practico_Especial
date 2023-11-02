@@ -47,7 +47,7 @@ class Tablero{
             }
         }
     }
-    getFila(posI){
+    getFilaVacia(posI){
         for (let j = this.columnas; j > 0; j--) {
             const casilla = this.casillas[posI][j];
             if (casilla) {
