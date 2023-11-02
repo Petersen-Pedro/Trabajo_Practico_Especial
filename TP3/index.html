@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos^3 - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="login_header">
+        <img src="images/logo/Logo.png" alt="main logo" class="login_logo">
+    </header>
+
+    <main>
+        <div class="login_form-container" id="login_form_container">
+            <h2 id="login_form-titulo">Iniciar Sesion</h2>
+            <form action="" id="mainForm">
+                <section class="login_form-input--container" id="login_form_usuario--container">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" id="usuario" class="login_form-input">
+                    <p class="form_input-error hidden">El usuario debe tener más de 1 digito y solo letras, y espacios</p>
+                </section>
+
+                <section class="login_form-input--container" id="login_form_contrasenia--container">
+                    <label for="contrasenia">Contraseña</label>
+                    <input type="password" name="contrasenia" id="contrasenia" class="login_form-input">
+                    <p class="form_input-error hidden">La contraseña debe tener de 4 a 12 digitos</p>
+                </section>
+            </form>
+
+            <div class="login_linea-separacion-container">
+                <div class="login_linea-separacion"></div>
+                <span>O</span>
+                <div class="login_linea-separacion"></div>
+            </div>
+            <div class="login_sesion-externa">
+                <button class="button-social">
+                    Iniciar Sesion con <img src="images/logo/Google.png" alt="google">
+                </button>
+                <button class="button-social">
+                    Iniciar Sesion con <img src="images/logo/logos_facebook.png" alt="facebook">
+                </button>
+            </div>
+            <div>
+                <div class="login_captcha">
+                    <input type="checkbox" class="login_captcha_cuadrado-ok" id="login_captcha_cuadrado">
+                    <p>No soy un robot</p>
+                    <img src="images/logo/logos_recaptcha.png" alt="recaptcha" id="recaptcha_btn">
+                </div>
+                <p class="form_input-error hidden" id="captcha_texto-error">
+                    Validar captcha
+                </p>
+            </div>
+            <button class="login_iniciar-sesion_btn button-primary" type="submit" id="submitBtn">
+                Iniciar Sesión
+            </button>
+            <button class="login_cambiar-form_btn button-terciary" id="sin-cuenta_btn">
+                <span>¿No Tienes Cuenta?</span>
+            </button>
+        </div>
+        <div id="loading" class="hidden">
+            <div class="box">
+                <div class="underline" id="loading_underline">
+                    1%
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="./js/json_imitation/login.json.js"></script>
+    <script src="./js/componentes/buttons.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos^3 - 4 en Linea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+</head>
+
+<body>
+    <header class="main_header">
+        
+        <a href="./home.html" class="logo_back-home">
+            <img src="images/logo/Logo.png" alt="main logo" title="home" class="header_logo">
+        </a>
+        <div class="main_header-searchbar-container">
+            <input type="text" class="main_header-searchbar">
+            <img src="images/lupita.png" alt="lupa" class="main_header-searchbar--lupa">
+        </div>
+
+        <div class="main_header-sub-container">
+            <div class="main_header_item carrito">
+                <img src="images/logo/carrito.png" alt="carr" title="carrito" id="carrito_img">
+                <ul class="carrito_lista-juegos" id="carrito_lista-juegos">
+                </ul>
+            </div>
+            <div class="main_header_item user">
+                <span>User25</span>
+                <img src="images/logo/user/main_test-user.png" alt="user" title="usuario">
+                <ul class="user_list-opt" id="user_list-opt">
+                    <li class="user_opt">
+                        Mi Perfil
+                        <img src="images/logo/user/mi_perfil.png" alt="">
+                    </li>
+                    <div class="menu-desplegable_linea-separadora"></div>
+                    <li class="user_opt">
+                        Configuración
+                        <img src="images/logo/user/config.png" alt="">
+                    </li>
+                    <div class="menu-desplegable_linea-separadora"></div>
+                    <li class="user_opt">
+                        Cerrar Sesión
+                        <img src="images/logo/user/cerrar_sesion.png" alt="">
+                    </li>
+                    <div class="menu-desplegable_linea-separadora"></div>
+                    <li class="user_opt">
+                        Acerca De
+                        <img src="images/logo/user/acerca_de.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <p class="breadcrumb">
+            Home / Especiales Para Ti /
+            <span class="jugable_breadcrumb-span">4 En Linea</span>
+        </p>
+    </nav>
+
+    <div class="juego-pag_main_container">
+
+        <article class="juego_producto">
+            <canvas id="myCanvas" ></canvas>
+            <!---
+            <section class="juego">
+                <img src="images/juegos/poster/4enLinea.png" alt="4_en_linea">
+                <img src="images/juegos/btn_play.png" alt="play" class="btn_play">
+                <img src="images/juegos/btn_compartir.png" alt="compartir" class="btn_compartir">
+            </section>
+            
+                <section class="instrucciones">
+                    <h4 class="instructivo">4 En Linea</h4>
+                <div class="instructivo">
+                    <span>Como Jugar:</span>
+                    <div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-arrow-big-left-filled" width="40" height="40"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M9.586 4l-6.586 6.586a2 2 0 0 0 0 2.828l6.586 6.586a2 2 0 0 0 2.18 .434l.145 -.068a2 2 0 0 0 1.089 -1.78v-2.586h7a2 2 0 0 0 2 -2v-4l-.005 -.15a2 2 0 0 0 -1.995 -1.85l-7 -.001v-2.585a2 2 0 0 0 -3.414 -1.414z"
+                                stroke-width="0" fill="currentColor" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="40" height="40"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z"
+                                stroke-width="0" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <p>Usa las flechas para elegir las columnas</p>
+                    <div>
+                        <svg class="espaciadora" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-space" width="100" viewBox="0 8 24 7" stroke-width="1.5"
+                            stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 10v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1 -1v-3" />
+                        </svg>
+                    </div>
+                    <p>Confirma la columna con la barra esparciadora</p>
+                </div>
+                <div class="instructivo">
+                    <span>Como Ganar:</span>
+                    <div class="flechas_contenedor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-right-left"
+                            width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M21 7l-18 0" />
+                            <path d="M18 10l3 -3l-3 -3" />
+                            <path d="M6 20l-3 -3l3 -3" />
+                            <path d="M3 17l18 0" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-up-down"
+                            width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M7 3l0 18" />
+                            <path d="M10 6l-3 -3l-3 3" />
+                            <path d="M20 18l-3 3l-3 -3" />
+                            <path d="M17 21l0 -18" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-double-sw-ne"
+                            width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M14 3l-11 11" />
+                            <path d="M3 10v4h4" />
+                            <path d="M17 10h4v4" />
+                            <path d="M10 21l11 -11" />
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-double-se-nw"
+                            width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 10l11 11" />
+                            <path d="M14 17v4h-4" />
+                            <path d="M14 3h-4v4" />
+                            <path d="M21 14l-11 -11" />
+                        </svg>
+                    </div>
+                    <p>Gana el primer jugador en armar una fila de 4 fichas consecutivas</p>
+                </div>
+            </section>
+            -->
+        </article>
+    </div>
+
+
+    <div class="home_main-container" id="lista-categorias_container"></div>
+
+    <div class="seccion_comentarios">
+
+        <div class="comentarios_logo">
+            <img src="images/logo/msg.png" alt="msg" class="comentarios_logo">
+            <p>Comentarios</p>
+        </div>
+
+        <div class="comentarios_linea-separadora"></div>
+        
+        <div class="comentario nuevo">
+            <div class="comentario_user">
+                <div class="usario_nombre_img">
+                    <img src="images/logo/user/main_test-user.png" alt="user">
+                    <p>User25</p>
+                </div>
+            </div>
+            <div class="comentario-individual_linea-separadora"></div>
+            <input type="text" placeholder="Comentario..." class="escribir-comentario">
+            <button class="comentario_send-btn button-secondary">Comentar</button>
+        </div>
+
+        <div class="comentario viejo">
+            <div class="comentario_user">
+                <div class="usario_nombre_img">
+                    <img src="images/logo/user/usuario_secundario.png" alt="user">
+                    <p>xXxRicharxXx97</p>
+                </div>
+
+                <div class="likes_comentario-viejo" id="comentario_like">
+                    <span>3 me gusta</span>
+                    <img src="images/logo/like.png" alt="like">
+                </div>
+            </div>
+            <div class="comentario-individual_linea-separadora"></div>
+            <p class="texto_comentario-viejo">Esto es arte...</p>
+            <p class="fecha_comentario-viejo">12 de Mayo de 2023</p>
+        </div>
+    </div>
+    </main>
+
+
+    <footer>
+        <div class="footer_main-container">
+            <h2>Acerca JuegosJuegosJuegos</h2>
+            <p class="footer_main-texto">¡Olvídate del aburrimiento con JuegosJuegosJuegos! La mayor selección de juegos
+                está aquí, para que lleves la diversión al siguiente nivel. Juega online y sin preocupaciones: puedes
+                jugar a todos nuestros juegos sin descargar. ¡Pero cuidado! Nuestros juegos de acción solo son aptos
+                para los más atrevidos; competirás con grandes pilotos en nuestros juegos de carreras; podrás poner a
+                prueba al estratega que llevas dentro en todos nuestros juegos de estrategia; y sólo los auténticos
+                exploradores llegarán a su meta en los juegos de aventura. Y para los clásicos, las versiones clásicas y
+                no tan clásicas de los clásicos juegos de mesa. Puedes jugar gratis o comprar nuestros juegos más
+                destacados.</p>
+            <p class="footer_copyright-texto">Copyright © 2023 Todos los derechos reservados.</p>
+        </div>
+        <div class="footer_logo-container">
+            <img src="images/logo/Instagram Icon.png" alt="ig" title="instagram.com">
+            <img src="images/logo/Facebook Icon.png" alt="fb" title="facebook.com">
+            <img src="images/logo/Twitter Icon.png" alt="tw" title="twitter.com">
+        </div>
+    </footer>
+
+    <script src="./js/json_imitation/juegos.json.js"></script>
+    <script src="./js/home_&_juego/carrusel_juegos.js"></script>
+    <script src="./js/home_&_juego/cargaElementos.js"></script>
+    <script src="./js/home_&_juego/juego.js"></script>
+    
+    <script src="js/juego/poo/Tablero.js"></script>
+    <script src="js/juego/poo/Circle.js"></script>
+    <script src="js/juego/poo/Casilla.js"></script>
+    <script src="js/juego/poo/Ficha.js"></script>
+    <script src="js/juego/main.js"></script>
+</body>
+
+</html>
