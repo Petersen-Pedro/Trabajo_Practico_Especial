@@ -7,6 +7,8 @@ const { width: canvasWidth } = canvas;
 const { height: canvasHeight } = canvas;
 canvas.style.cssText = "background-color: red;";
 
+window.addEventListener("load", playGame);
+
 function playGame(){
     canvas.addEventListener("mouseup", onMouseUp, false);
     canvas.addEventListener("mousedown", onMouseDown, false);
@@ -17,23 +19,29 @@ function playGame(){
     let clickedFicha = null;
     let isMouseDown = false;
 
+    let isTurno1 = true;
+    let isTurno2 = !isTurno1;
+
     const { 
         filas, columnas, 
         fillTable, filFicha1, filFicha2, defaultFichaFill,
         casillaHeight, casillaWidth, radio 
     } = getInitialState();
 
-    const table = new Tablero(
-        filas, columnas, casillaHeight, casillaWidth, fillTable, defaultFichaFill,  radio, ctx
-    );
-
     const ficha1Init = getFichaInitPos(filFicha1);
     const ficha2Init = getFichaInitPos(filFicha2);
 
-    const ficha1 = new Ficha(ficha1Init.initX, ficha2Init.initY, radio, filFicha1, ctx);
+    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, filFicha1, ctx);
     const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, filFicha2, ctx);
     fichas.push(ficha1);
     fichas.push(ficha2);
+    const Jugador1 = new Jugador("jugador1", ficha1);
+    const Jugador2 = new Jugador("jugador2", ficha2);
+
+    const table = new Tablero(
+        filas, columnas, Jugador1, Jugador2, 
+        casillaHeight, casillaWidth, fillTable, defaultFichaFill,  radio, ctx
+    );
     
     function drawFicha(){
         ctx.fillStyle = canvasFill;
@@ -54,6 +62,14 @@ function playGame(){
     }
     function onMouseMove(e){
         if (isMouseDown && clickedFicha) {
+            const clickedFichaFill = clickedFicha.getFill();
+
+            if (detectJugador(clickedFichaFill, Jugador1)) {
+                if (!isTurno1) return;
+            }
+            if (detectJugador(clickedFichaFill, Jugador2)) {
+                if (!isTurno2) return;
+            }
             columna = table.getColumna(e.layerX, e.layerY);
             clickedFicha.setPos(e.layerX, e.layerY);
             drawFicha();
@@ -63,22 +79,28 @@ function playGame(){
         isMouseDown = false;
         if (columna && clickedFicha) {
             const casilla = table.getFilaVacia(columna);
-            const clickedFichaFill = clickedFicha.getFill();
 
             if (casilla) {
+                const clickedFichaFill = clickedFicha.getFill();
+
                 table.setCasillaFill(columna, casilla, clickedFichaFill);
                 const { initX, initY } = getFichaInitPos(clickedFichaFill);
+
                 clickedFicha.setPos(initX, initY);
 
                 const winner = table.getGanador();
-                console.log(winner);
+                if (winner) {
+                    // alert(winner); 
+                    console.log(winner.getNombre());
+                }
 
                 drawFicha();
 
-                clickedFicha = null;
+                isTurno1 = !isTurno1;
+                isTurno2 = !isTurno2;
 
+                clickedFicha = null;
                 columna = null;     
-                // sin esto, con un click la ficha se posiciona en la ult columna seleccionada
             }
         }
     }
@@ -96,15 +118,16 @@ function playGame(){
         const initY =  canvasHeight-100;
 
         if (fill === filFicha1) {
-            initX = canvasWidth-50;
-        }else if (fill === filFicha2) {
             initX = canvasWidth-150;
+        }else if (fill === filFicha2) {
+            initX = canvasWidth-50;
         }
 
         return { initX, initY }
     }
 }
 
+// Helpers
 function getInitialState(){
     const cantFichas = 4;
 
@@ -126,30 +149,6 @@ function getInitialState(){
         casillaHeight, casillaWidth, radio
     }
 }
-
-// TODO - JUGAR POR TURNOS
-
-// let isTurno1 = false;
-// let isTurno2 = !isTurno1;
-
-// function onMouseMove(e){
-//     if (isMouseDown && clickedFicha) {
-
-//         if (clickedFicha.getFill() === Jugador1.getFicha().getFill()) {
-//             if (!isTurno1) return;
-//         }
-//         if (clickedFicha.getFill() === Jugador2.getFicha().getFill()) {
-//             if (!isTurno2) return;
-//         }
-//         columna = table.getColumna(e.layerX, e.layerY);
-//         clickedFicha.setPos(e.layerX, e.layerY);
-//         drawFicha();
-//     }
-// }
-
-// function changeTurno(){
-//     isTurno1 = !isTurno1;
-//     isTurno2 = !isTurno2;
-// }
-
-playGame();
+function detectJugador(fillFicha, jugador){
+    return fillFicha === jugador.getFicha().getFill()
+}

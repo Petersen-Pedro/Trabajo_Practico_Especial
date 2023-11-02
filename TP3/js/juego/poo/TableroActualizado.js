@@ -1,13 +1,20 @@
 class Tablero{
-    constructor(filas, columnas, casillaHeight, casillaWidth, fill, defaultFill, radio, ctx){
+    constructor(
+        filas, columnas, Jugador1, Jugador2,
+        casillaHeight, casillaWidth, 
+        fill, fichaFill, radio, ctx
+    ){
         this.filas = filas;
         this.columnas = columnas;
+
+        this.Jugador1 = Jugador1;
+        this.Jugador2 = Jugador2;
         
         this.casillaHeight = casillaHeight;
         this.casillaWidth = casillaWidth;
 
         this.fill = fill;
-        this.defaultFill = defaultFill;
+        this.fichaFill = fichaFill;
 
         this.radio = radio;
         this.ctx = ctx;
@@ -21,7 +28,7 @@ class Tablero{
                     (i * this.casillaWidth-100) + this.casillaWidth / 2.4,
                     (j * this.casillaHeight-160) + this.casillaHeight / 1,
                     this.radio,
-                    this.defaultFill,
+                    this.fichaFill,
                     this.ctx
                 );
             }
@@ -51,7 +58,7 @@ class Tablero{
         for (let j = this.columnas; j > 0; j--) {
             const casilla = this.casillas[posI][j];
             if (casilla) {
-                if (casilla.getFill() === this.defaultFill) {
+                if (casilla.getFill() === this.fichaFill) {
                     return j;
                 }
             }
@@ -128,32 +135,32 @@ class Tablero{
         return casillasDiagonal;
     }
     findGanador(array) {
-        const fichaBlue = "blue";
-        const fichaGreen = "green";
+        const fichaJug1 = this.Jugador1.getFicha().getFill(); // blue
+        const fichaJug2 = this.Jugador2.getFicha().getFill(); // green
+        let contadorJug1 = 0;
+        let contadorJug2 = 0;
         let ganador = null;
-        let contadorBlue = 0;
-        let contadorGreen = 0;
       
         for (let i = 0; i < array.length; i++) {
             const ficha = array[i];
       
-            if (ficha === fichaBlue) {
-                contadorBlue++;
-                contadorGreen = 0;
-            } else if (ficha === fichaGreen) {
-                contadorGreen++;
-                contadorBlue = 0;
+            if (ficha === fichaJug1) {
+                contadorJug1++;
+                contadorJug2 = 0;
+            } else if (ficha === fichaJug2) {
+                contadorJug2++;
+                contadorJug1 = 0;
             } else {
-                contadorBlue = 0;
-                contadorGreen = 0;
+                contadorJug1 = 0;
+                contadorJug2 = 0;
             }
         
-            if (contadorBlue >= 4) {
-                ganador = fichaBlue;
+            if (contadorJug1 >= 4) {
+                ganador = this.Jugador1;
                 break;
             }
-            if (contadorGreen >= 4) {
-                ganador = fichaGreen;
+            if (contadorJug2 >= 4) {
+                ganador = this.Jugador2;
                 break;
             }
         }
