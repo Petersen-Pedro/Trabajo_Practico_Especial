@@ -79,9 +79,9 @@ function playGame(){
     }
     function onMouseUp(){
         isMouseDown = false;
+
         if (columna && clickedFicha) {
             const casilla = table.getFilaVacia(columna);
-
             if (casilla) {
                 const clickedFichaFill = clickedFicha.getFill();
 
@@ -92,8 +92,11 @@ function playGame(){
 
                 const winner = table.getGanador();
                 if (winner) {
-                    // alert(winner); 
+                    showWinner(winner);
+                    //alert(winner); 
                     console.log(winner.getNombre());
+                } else{
+                    console.log("No gano nadie");
                 }
 
                 drawFicha();
@@ -106,6 +109,19 @@ function playGame(){
             }
         }
     }
+    /**
+     * 
+    */
+    function showWinner(winner){
+        let winnerPantalla = document.getElementById("ganadorMensaje");
+        winnerPantalla.classList.add("winnerPantalla");
+        winnerPantalla.classList.remove("invisible");
+        canvas.classList.add("invisible");
+        winnerPantalla.innerHTML = `<div> <h3>El ganador es: ${winner.getNombre()}</h3> </div>
+        <button class="button-secondary">JUGAR DE NUEVO</button>
+        `;
+    }
+
     // Find functions
     function findClickedFigure(x, y){
         for (const ficha of fichas) {

@@ -621,11 +621,10 @@ nav{
 }
 .juego_producto {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 100%; 
-    /*
-    height: 600px;
-    width: 800px;
-    */
     background-color: var(--main-bg-color_dark);
     border: var(--main-bg-color_dark) solid 1em;
     border-radius: var(--radius);
@@ -866,15 +865,29 @@ footer{
     0%    { width:0%; float:left; }
     50%   { width:100%; }
 }
+
+
+
 /*CANVAS*/
 #myCanvas{
     height: 600px;
     width: 800px;
-    /*
-    */
     z-index: 1;
 }
+.invisible{
+    display: none;
+}
+.winnerPantalla{
+    background-color: var(--main-bg-color_light);
+    z-index: 2;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 600px;
+}
 
 
 
