@@ -622,6 +622,10 @@ nav{
 .juego_producto {
     display: flex;
     max-width: 100%; 
+    /*
+    height: 600px;
+    width: 800px;
+    */
     background-color: var(--main-bg-color_dark);
     border: var(--main-bg-color_dark) solid 1em;
     border-radius: var(--radius);
@@ -864,8 +868,11 @@ footer{
 }
 /*CANVAS*/
 #myCanvas{
-    height: 100%;
-    width: 100%;
+    height: 600px;
+    width: 800px;
+    /*
+    */
+    z-index: 1;
 }
 
 

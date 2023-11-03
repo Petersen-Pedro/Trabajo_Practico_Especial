@@ -1,4 +1,6 @@
 "use strict"
+/** @type {CanvasRenderingContext2D} */
+
 
 const canvas = document.querySelector("#myCanvas");
 const ctx = canvas.getContext("2d");
@@ -15,21 +17,21 @@ function playGame(){
     canvas.addEventListener("mousemove", onMouseMove, false);
 
     const fichas = [];
-    let columna = null;
-    let clickedFicha = null;
-    let isMouseDown = false;
+    let columna = null;         //  Columna donde se solto la ficha
+    let clickedFicha = null;    //  Ficha que se clickeo
+    let isMouseDown = false;    //  Se clickeo una ficha
 
-    let isTurno1 = true;
-    let isTurno2 = !isTurno1;
+    let isTurno1 = true;        //  Turno del jugador 1
+    let isTurno2 = !isTurno1;   //  Turno del jugador 2
 
-    const { 
+    const { // Llamamos a iniciar todo
         filas, columnas, 
         fillTable, filFicha1, filFicha2, defaultFichaFill,
         casillaHeight, casillaWidth, radio 
-    } = getInitialState();
+    } = getInitialState();      
 
-    const ficha1Init = getFichaInitPos(filFicha1);
-    const ficha2Init = getFichaInitPos(filFicha2);
+    const ficha1Init = getFichaInitPos(filFicha1);  //   Posicion inicial de la ficha 1
+    const ficha2Init = getFichaInitPos(filFicha2);  //   Posicion inicial de la ficha 2
 
     const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, filFicha1, ctx);
     const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, filFicha2, ctx);
@@ -133,8 +135,8 @@ function getInitialState(){
 
     const filas = cantFichas+2;
     const columnas = cantFichas+3;
-    const fillTable = "black";
-    const defaultFichaFill = "white";
+    const fillTable = "black";          //  Color de las casillas
+    const defaultFichaFill = "white";   //  Color de las fichas
     const filFicha1 = "blue";
     const filFicha2 = "green";
 
