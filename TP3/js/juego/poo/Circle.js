@@ -7,7 +7,8 @@ class Circle{
         this.posX = posX;
         this.posY = posY;
     }
-
+    
+    draw(){}
     
     isPointerInside(x, y){
         const _x = this.posX - x;

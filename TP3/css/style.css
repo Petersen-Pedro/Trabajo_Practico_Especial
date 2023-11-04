@@ -437,8 +437,7 @@ a{
     animation: 0.5s forwards hover-v linear;
     animation-fill-mode: forwards;
 }
-.form_input-error,
-.choose-ficha_error{
+.form_input-error{
     word-wrap: break-word; 
     color: var(--error);
 }
@@ -894,14 +893,8 @@ footer{
 }
 .choose-ficha_btn_container{
     overflow: hidden;
-    grid-area: "btn";
-    grid-column: auto;
     display: flex;
     flex-direction: column;
-}
-.choose-ficha_error{
-    padding: 20px;
-    width: 200px;
 }
 .ficha_container{
     grid-area: "fichas";

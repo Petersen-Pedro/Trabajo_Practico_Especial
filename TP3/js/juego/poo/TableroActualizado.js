@@ -1,6 +1,6 @@
 class Tablero{
     constructor(
-        filas, columnas, Jugador1, Jugador2,
+        filas, columnas, Jugador1, Jugador2, cantFichas,
         casillaHeight, casillaWidth, 
         fill, fichaFill, radio, ctx
     ){
@@ -21,26 +21,41 @@ class Tablero{
 
         this.casillas = [];
 
-        this.fichasParaGanar = 4;
+        this.cantFichas = cantFichas;
+
+        const widthResta = 100;
+        const heightResta = cantFichas === 4 ? 160 : 120;
 
         for (let i = 0; i < this.filas; i++) {
             this.casillas[i] = [];
             for (let j = 0; j < this.columnas; j++) {
                 this.casillas[i][j] = new Casilla(
-                    (i * this.casillaWidth-100) + this.casillaWidth / 2.4,
-                    (j * this.casillaHeight-160) + this.casillaHeight / 1,
+                    (i * this.casillaWidth-widthResta) + this.casillaWidth / 3,
+                    (j * this.casillaHeight-heightResta) + this.casillaHeight / 1,
                     this.radio,
                     this.fichaFill,
                     this.ctx
                 );
             }
         }
-        this.draw();
+        // this.draw();
+
+        this.fill.onload = () => {
+            this.draw();
+        }
     }
 
+    // draw(){
+    //     this.ctx.fillStyle = this.fill;
+    //     this.ctx.fillRect(25, 25, 550, 550);
+    //     for (let i = 0; i < this.filas; i++) {
+    //         for (let j = 0; j < this.columnas; j++) {
+    //             this.casillas[i][j].draw();
+    //         }
+    //     }
+    // }
     draw(){
-        this.ctx.fillStyle = this.fill;
-        this.ctx.fillRect(25, 25, 550, 550);
+        this.ctx.drawImage(this.fill, 0, 0, 600, 600);
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j < this.columnas; j++) {
                 this.casillas[i][j].draw();
@@ -156,11 +171,11 @@ class Tablero{
                 contadorJug2 = 0;
             }
         
-            if (contadorJug1 >= this.fichasParaGanar) {
+            if (contadorJug1 >= this.cantFichas) {
                 ganador = this.Jugador1;
                 break;
             }
-            if (contadorJug2 >= this.fichasParaGanar) {
+            if (contadorJug2 >= this.cantFichas) {
                 ganador = this.Jugador2;
                 break;
             }

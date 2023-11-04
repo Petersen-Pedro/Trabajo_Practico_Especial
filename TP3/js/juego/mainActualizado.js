@@ -13,19 +13,20 @@ const chooseFichaError = document.querySelector("#choose-ficha_error");
 
 const winnerPantalla = document.querySelector("#ganadorMensaje");
 
-const canvasFill = "red";
-const { width: canvasWidth } = canvas;
-const { height: canvasHeight } = canvas;
-canvas.style.cssText = "background-color: red;";
-
+const lightPurple = "#8788A4"
 const invisibleClass = "hidden";
 const idJugador1 = "jugador1";
 const idJugador2 = "jugador2";
 
+const canvasFill = lightPurple;
+const { width: canvasWidth } = canvas;
+const { height: canvasHeight } = canvas;
+canvas.style.cssText = `background-color: ${lightPurple};`;
+
 let fillFicha1;
 let fillFicha2;
 
-startBtn.addEventListener("click", chooseFicha);
+startBtn.addEventListener("click", chooseFichaScreen);
 choseFichaBtn.addEventListener("click", runGame);
 
 function playGame(){
@@ -38,26 +39,26 @@ function playGame(){
     let clickedFicha = null;    //  Ficha que se clickeo
     let isMouseDown = false;    //  Se clickeo una ficha
 
-    let isTurno1 = true;        //  Turno del jugador 1
-    let isTurno2 = !isTurno1;   //  Turno del jugador 2
+    let isTurno1 = Math.random()>0.5;   //  Turno del jugador 1; 50% chanche que le toque primero;
+    let isTurno2 = !isTurno1;           //  Turno del jugador 2
 
     const { // Llamamos a iniciar todo
-        filas, columnas, fillTable, defaultFichaFill,
-        casillaHeight, casillaWidth, radio
+        filas, columnas, cantFichas, fillTable, defaultFichaFill,
+        casillaHeight, casillaWidth , radio
     } = getInitialState();      
 
     const ficha1Init = getFichaInitPos(idJugador1);  //   Posicion inicial de la ficha 1
     const ficha2Init = getFichaInitPos(idJugador2);  //   Posicion inicial de la ficha 2
 
-    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, fillFicha1, ctx);
-    const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, fillFicha2, ctx);
+    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, fillFicha1, isTurno1, ctx);
+    const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, fillFicha2, isTurno2, ctx);
     fichas.push(ficha1);
     fichas.push(ficha2);
     const Jugador1 = new Jugador(idJugador1, "jugador1", ficha1);
     const Jugador2 = new Jugador(idJugador2, "jugador2", ficha2);
 
-    let table = new Tablero(
-        filas, columnas, Jugador1, Jugador2, 
+    const table = new Tablero(
+        filas, columnas, Jugador1, Jugador2, cantFichas,
         casillaHeight, casillaWidth, fillTable, defaultFichaFill,  radio, ctx
     );
     
@@ -118,6 +119,9 @@ function playGame(){
 
                 isTurno1 = !isTurno1;
                 isTurno2 = !isTurno2;
+
+                ficha1.setMoves(isTurno1);
+                ficha2.setMoves(isTurno2);
 
                 clickedFicha = null;
                 columna = null;   
@@ -187,7 +191,7 @@ function playGame(){
 }
 
 // Game Handlers
-function chooseFicha(){
+function chooseFichaScreen(){
     startPantalla.classList.add(invisibleClass);
     choseFichaPantalla.classList.remove(invisibleClass);
 
@@ -199,7 +203,7 @@ function chooseFicha(){
 }
 function playAgain(){
     winnerPantalla.classList.add(invisibleClass);
-    chooseFicha();
+    chooseFichaScreen();
 }
 function runGame(){
     if (fillFicha1 && fillFicha2) {
@@ -229,7 +233,7 @@ function selectFicha(e){
     ficha.classList.add("contorneada");
 
     if (fillFicha1 && fillFicha2) {
-        chooseFichaError.classList.add(invisibleClass);
+        choseFichaBtn.classList.remove(invisibleClass);
     }
 }
 function clearContorno(jug, fill){ 
@@ -242,12 +246,14 @@ function clearContorno(jug, fill){
 }
 // Helpers
 function getInitialState(){
-    const cantFichas = 4;
+    const cantFichas = 5;   // viene de una funcion; 4 / 5 / 6;
 
+    const fillTable = new Image();
+    fillTable.src = "images/juegos/fondo_4EnLinea.png";
+    
     const filas = cantFichas+2;
     const columnas = cantFichas+3;
-    const fillTable = "black";          //  Color de las tabla
-    const defaultFichaFill = "white";   //  Color de las casillas
+    const defaultFichaFill = "black";   //  Color de las casillas; puede ser white /...
 
     const casillaHeight = canvasHeight / filas;
     const casillaWidth = canvasWidth / columnas;
@@ -255,7 +261,7 @@ function getInitialState(){
     const radio = Math.min(casillaWidth, casillaHeight) * 0.25;
 
     return {
-        filas, columnas, fillTable, defaultFichaFill,
+        filas, columnas, cantFichas, fillTable, defaultFichaFill,
         casillaHeight, casillaWidth, radio
     }
 }
