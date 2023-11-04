@@ -65,8 +65,53 @@
     <div class="juego-pag_main_container">
         
         <article class="juego_producto">
-            <canvas id="myCanvas"  width="800" height="600"></canvas>
-            <div id="ganadorMensaje" class="invisible"></div>
+
+            <div class="start_game" id="start_game-container">
+                <img src="images/juegos/btn_play.svg" alt="play" 
+                    class="start_game-btn" id="play-game_btn">
+                <img src="images/juegos/btn_compartir.svg" alt="compartir" 
+                    class="start_game-btn">
+            </div>
+
+            <div class="choose-ficha_container hidden" id="choose-ficha_container">
+
+                <div class="chose-ficha_jugador-container">
+                    <div class="ficha_container jug1">
+                        <h3>Jugador 1</h3>
+                        <div class="ficha_subcontainer">
+                            <div class="ficha_selector jug1 blue" data-id="jugador1"></div>
+                            <div class="ficha_selector jug1 purple" data-id="jugador1"></div>
+                        </div>
+                    </div>
+    
+                    <div class="ficha_container jug2">
+                        <h3>Jugador 2</h3>
+                        <div class="ficha_subcontainer">
+                            <div class="ficha_selector jug2 green" data-id="jugador2"></div>
+                            <div class="ficha_selector jug2 yellow" data-id="jugador2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choose-ficha_btn_container">
+                    <button class="button-secondary choose-ficha_btn" id="choose-ficha_btn">
+                        Empezar Juego
+                    </button>
+                    <p class="choose-ficha_error hidden" id="choose-ficha_error">
+                        Seleccione una ficha para ambos jugadores
+                    </p>
+                </div>
+            </div>
+
+            <canvas id="myCanvas"  width="800" height="600" class="hidden"></canvas>
+            
+            <div id="ganadorMensaje" class=" winnerPantalla hidden">
+                <h3 class="titulo_ganador">Esperando ganador...</h3>
+                <button class="button-secondary replayBtn" id="play-again_btn">
+                    JUGAR DE NUEVO
+                </button>
+            </div>
+
         </article>
     </div>
 

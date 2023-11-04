@@ -21,6 +21,8 @@ class Tablero{
 
         this.casillas = [];
 
+        this.fichasParaGanar = 4;
+
         for (let i = 0; i < this.filas; i++) {
             this.casillas[i] = [];
             for (let j = 0; j < this.columnas; j++) {
@@ -58,9 +60,8 @@ class Tablero{
         for (let j = this.columnas; j > 0; j--) {
             const casilla = this.casillas[posI][j];
             if (casilla) {
-                if (casilla.getFill() === this.fichaFill) {
+                if (casilla.getFill() === this.fichaFill)
                     return j;
-                }
             }
         }
     }
@@ -135,8 +136,8 @@ class Tablero{
         return casillasDiagonal;
     }
     findGanador(array) {
-        const fichaJug1 = this.Jugador1.getFicha().getFill(); // blue
-        const fichaJug2 = this.Jugador2.getFicha().getFill(); // green
+        const fichaJug1 = this.Jugador1.getFicha().getFill();
+        const fichaJug2 = this.Jugador2.getFicha().getFill();
         let contadorJug1 = 0;
         let contadorJug2 = 0;
         let ganador = null;
@@ -155,11 +156,11 @@ class Tablero{
                 contadorJug2 = 0;
             }
         
-            if (contadorJug1 >= 4) {
+            if (contadorJug1 >= this.fichasParaGanar) {
                 ganador = this.Jugador1;
                 break;
             }
-            if (contadorJug2 >= 4) {
+            if (contadorJug2 >= this.fichasParaGanar) {
                 ganador = this.Jugador2;
                 break;
             }

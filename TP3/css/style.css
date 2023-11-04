@@ -437,11 +437,14 @@ a{
     animation: 0.5s forwards hover-v linear;
     animation-fill-mode: forwards;
 }
+.form_input-error,
+.choose-ficha_error{
+    word-wrap: break-word; 
+    color: var(--error);
+}
 .form_input-error{
     padding: 6px;
     width: 240px;
-    word-wrap: break-word; 
-    color: var(--error);
 }
 /* Home Page */
 .home_juego-destacado{
@@ -830,19 +833,6 @@ footer{
     background:var(--secondary-bg-color_base);
     animation: underline 5s ease-in-out infinite; 
 }
-/* Clases agregadas por js */
-.hidden{
-    display: none;
-}
-.lined_text{
-    text-decoration: line-through;
-}
-.ok {
-    border: 3px solid var(--money-bg-color_base);
-}
-.error {
-    border: 3px solid var(--secondary-bg-color_medium);
-}
 /* KeyFrames animacions */
 @keyframes hover-v {
     0% {
@@ -865,34 +855,117 @@ footer{
     0%    { width:0%; float:left; }
     50%   { width:100%; }
 }
-
-
-
 /*CANVAS*/
 #myCanvas{
     height: 600px;
     width: 800px;
     z-index: 1;
 }
-.invisible{
-    display: none;
-}
-.winnerPantalla{
-    background-color: var(--main-bg-color_light);
-    z-index: 2;
-
+.winnerPantalla,
+.start_game,
+.choose-ficha_container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    z-index: 2;
     width: 800px;
     height: 600px;
 }
-
-
-
-
-
+.winnerPantalla, 
+.choose-ficha_container{
+    background-color: var(--main-bg-color_light);
+    justify-content: center;
+    gap: 40px;
+}
+.choose-ficha_container{
+    justify-content: space-evenly;
+}
+.start_game{
+    justify-content: flex-end;
+    gap: 90px;
+    background-image: url("../images/juegos/gta_sa_main_juego.svg");
+    background-size: cover;
+}
+/* Fichas Canvas */
+.chose-ficha_jugador-container{
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+.choose-ficha_btn_container{
+    overflow: hidden;
+    grid-area: "btn";
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
+}
+.choose-ficha_error{
+    padding: 20px;
+    width: 200px;
+}
+.ficha_container{
+    grid-area: "fichas";
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.ficha_container h3{
+    padding-left: 20px;
+    font-size: 20px;
+}
+.ficha_subcontainer{
+    display: flex;
+    gap: 50px;
+}
+.ficha_selector{
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.ficha_selector.blue{
+    background-color: blue;
+}
+.ficha_selector.purple{
+    background-color: purple;
+}
+.ficha_selector.green{
+    background-color: green;
+}
+.ficha_selector.yellow{
+    background-color: yellow;
+}
+.ficha_selector.contorneada{
+    border: 6px solid red;
+}
+/* Canvas btn */
+.button-secondary.replayBtn,
+.button-secondary.choose-ficha_btn{
+    padding: 5px 20px;
+}
+.button-secondary.choose-ficha_btn{
+    width: 200px;
+    height: 80px;
+    font-size: 20px;
+}
+.start_game-btn{
+    cursor: pointer;
+    height: 80px;
+    width: 247px;
+}
+/* Clases agregadas por js */
+.lined_text{
+    text-decoration: line-through;
+}
+.ok {
+    border: 3px solid var(--money-bg-color_base);
+}
+.error {
+    border: 3px solid var(--secondary-bg-color_medium);
+}
+.hidden{
+    display: none;
+}
 /* Mobile */
 @media only screen and (max-width: 720px){
     header{
