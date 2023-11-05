@@ -11,6 +11,9 @@ const choseFichaPantalla = document.querySelector("#choose-ficha_container");
 const choseFichaBtn = document.querySelector("#choose-ficha_btn");
 const chooseFichaError = document.querySelector("#choose-ficha_error");
 
+const fichasCantidad =  document.querySelector("#choose-ficha_cantidad");
+
+
 const winnerPantalla = document.querySelector("#ganadorMensaje");
 
 const lightPurple = "#8788A4"
@@ -200,6 +203,8 @@ function chooseFichaScreen(){
 
     const fichasSeleccionablesJ1 = document.querySelectorAll(".ficha_selector.jug1");
     const fichasSeleccionablesJ2 = document.querySelectorAll(".ficha_selector.jug2");
+    //const fichasCantidad =  document.querySelector("#choose-ficha_cantidad");
+    //console.log("Cantidad de fichas escogidas"+fichasCantidad)
 
     fichasSeleccionablesJ1.forEach(ficha => ficha.addEventListener("click", selectFicha));
     fichasSeleccionablesJ2.forEach(ficha => ficha.addEventListener("click", selectFicha));
@@ -223,6 +228,7 @@ function selectFicha(e){
     const { id } = this.dataset;
     const ficha = e.target;
     const fill = ficha.classList[2]; // class="ficha_selector jug1 blue" - (blue selected)
+
 
     console.log("id: "+id + " - fill:" +fill);
     if (id === idJugador1) {
@@ -263,8 +269,14 @@ function clearContorno(jug, fill){
 }
 // Helpers
 function getInitialState(){
-    const cantFichas = 5;   // viene de una funcion; 4 / 5 / 6;
+    
+    console.log("Cantidad de fichas escogidas "+fichasCantidad.value)
+    //const cantFichas = 6;   // viene de una funcion; 4 / 5 / 6;
+    const cantFichas = parseInt(fichasCantidad.value); // Obtener el valor seleccionado y convertirlo a un número entero
 
+    console.log("Cantidad de fichas escogidas: " + cantFichas);
+
+    
     const fillTable = new Image();
     fillTable.src = "images/juegos/fondo_4EnLinea.png";
     
