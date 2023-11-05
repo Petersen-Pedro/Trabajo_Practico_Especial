@@ -19,7 +19,7 @@ class Ficha extends Circle{
         }
 
         if(this.image){
-            this.ctx.drawImage(this.image, this.posX, this.posY, this.radius, this.radius);
+            this.ctx.drawImage(this.image, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
         }
         /**
          this.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
