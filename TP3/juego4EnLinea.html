@@ -79,19 +79,32 @@
                     <div class="ficha_container jug1">
                         <h3>Jugador 1</h3>
                         <div class="ficha_subcontainer">
-                            <div class="ficha_selector jug1 blue" data-id="jugador1"></div>
-                            <div class="ficha_selector jug1 purple" data-id="jugador1"></div>
+                            <img class="ficha_selector jug1 blue" data-id="jugador1" src="images/juegos/Dragons.png" alt="">
+                            <img class="ficha_selector jug1 purple" data-id="jugador1" src="images/juegos/Ballas.png" alt="">
                         </div>
                     </div>
-    
+
                     <div class="ficha_container jug2">
                         <h3>Jugador 2</h3>
                         <div class="ficha_subcontainer">
-                            <div class="ficha_selector jug2 green" data-id="jugador2"></div>
-                            <div class="ficha_selector jug2 yellow" data-id="jugador2"></div>
+                            <img class="ficha_selector jug2 green" data-id="jugador2" src="images/juegos/GroveStreet.png" alt="">
+                            <img class="ficha_selector jug2 yellow" data-id="jugador2" src="images/juegos/Aztec.png" alt="">
+                            
                         </div>
                     </div>
+
+                    <p for="choose-ficha_cantidad">Seleccion de fichas a alinear</p>
+                    <form>
+                        <select name="choose-ficha_cantidad" id="choose-ficha_cantidad">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </form>
                 </div>
+
+
 
                 <div class="choose-ficha_btn_container">
                     <button class="button-secondary choose-ficha_btn hidden" id="choose-ficha_btn">

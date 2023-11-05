@@ -26,6 +26,9 @@ canvas.style.cssText = `background-color: ${lightPurple};`;
 let fillFicha1;
 let fillFicha2;
 
+let image1 = new Image();
+let image2 = new Image();
+
 startBtn.addEventListener("click", chooseFichaScreen);
 choseFichaBtn.addEventListener("click", runGame);
 
@@ -50,8 +53,8 @@ function playGame(){
     const ficha1Init = getFichaInitPos(idJugador1);  //   Posicion inicial de la ficha 1
     const ficha2Init = getFichaInitPos(idJugador2);  //   Posicion inicial de la ficha 2
 
-    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, fillFicha1, isTurno1, ctx);
-    const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, fillFicha2, isTurno2, ctx);
+    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, fillFicha1, isTurno1, ctx, image1);
+    const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, fillFicha2, isTurno2, ctx, image2);
     fichas.push(ficha1);
     fichas.push(ficha2);
     const Jugador1 = new Jugador(idJugador1, "jugador1", ficha1);
@@ -221,13 +224,27 @@ function selectFicha(e){
     const ficha = e.target;
     const fill = ficha.classList[2]; // class="ficha_selector jug1 blue" - (blue selected)
 
+    console.log("id: "+id + " - fill:" +fill);
     if (id === idJugador1) {
+        console.log("Jugador 1");
         clearContorno("jug1", fill);
         fillFicha1 = fill;
+        if (fill === "blue") {
+            image1.src = "images/juegos/Dragons.png";
+        } else {
+            image1.src = "images/juegos/Ballas.png";
+        }
+
     }
     else if (id === idJugador2) {
+        console.log("Jugador 2");
         clearContorno("jug2", fill);
         fillFicha2 = fill;
+        if (fill === "green") {
+            image2.src = "images/juegos/GroveStreet.png";
+        } else {        
+            image2.src = "images/juegos/Aztec.png";
+        }
     }
 
     ficha.classList.add("contorneada");

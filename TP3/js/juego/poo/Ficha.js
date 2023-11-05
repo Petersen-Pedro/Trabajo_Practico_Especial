@@ -1,27 +1,36 @@
 class Ficha extends Circle{
-    constructor(posX, posY, radius, fill, moves, ctx){
+    constructor(posX, posY, radius, fill, moves, ctx, image){
         super(posX, posY, radius, fill, ctx);
         this.moves = moves;
+        this.image = image; //agregado para la imagen
         this.draw();
     }
 
     draw(){
+        /**
+        
         this.ctx.fillStyle = this.fill;
         this.ctx.beginPath();
+        */
 
         if (this.moves) {
             this.ctx.strokeStyle = "red";
             this.ctx.lineWidth = 4;
         }
 
-        this.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
-        this.ctx.fill();
+        if(this.image){
+            this.ctx.drawImage(this.image, this.posX, this.posY, this.radius, this.radius);
+        }
+        /**
+         this.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
+         this.ctx.fill();
+         */
 
         if (this.moves) { 
             this.ctx.stroke();
         }
 
-        ctx.closePath();
+        //ctx.closePath();
     }
 
     setMoves(moves){
@@ -32,4 +41,9 @@ class Ficha extends Circle{
         this.posX = x;
         this.posY = y;
     }
+
+    setImage(image) {
+        this.image = image;
+    }
+
 }

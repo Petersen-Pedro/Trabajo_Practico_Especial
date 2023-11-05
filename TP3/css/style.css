@@ -874,7 +874,7 @@ footer{
 .choose-ficha_container{
     background-color: var(--main-bg-color_light);
     justify-content: center;
-    gap: 40px;
+    gap: 1rem;
 }
 .choose-ficha_container{
     justify-content: space-evenly;
@@ -888,8 +888,9 @@ footer{
 /* Fichas Canvas */
 .chose-ficha_jugador-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 200px;
+    gap: 1rem;
 }
 .choose-ficha_btn_container{
     overflow: hidden;
@@ -915,6 +916,12 @@ footer{
     width: 80px;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.ficha_selector img{
+    max-width: 10%;
+    height: auto;
+    z-index: -1;
 }
 .ficha_selector.blue{
     background-color: blue;
