@@ -89,7 +89,7 @@
                     <div class="ficha_container jug1">
                         <h3>Jugador 1</h3>
                         <div class="ficha_subcontainer">
-                            <img class="ficha_selector jug1 blue" data-id="jugador1" src="images/juegos/Dragons.png" alt="">
+                            <img class="ficha_selector jug1 red" data-id="jugador1" src="images/juegos/Dragons.png" alt="">
                             <img class="ficha_selector jug1 purple" data-id="jugador1" src="images/juegos/Ballas.png" alt="">
                         </div>
                     </div>
@@ -103,9 +103,12 @@
                         </div>
                     </div>
 
-                    <p for="choose-ficha_cantidad">Seleccion de fichas a alinear</p>
+                </div>
+
+                <div class="choose-ficha_cantidad-container">
+                    <p for="choose-ficha_cantidad">Cantidad de fichas</p>
                     <form>
-                        <select name="choose-ficha_cantidad" id="choose-ficha_cantidad">
+                        <select name="choose-ficha_cantidad" class="choose-ficha_cantidad_select" id="choose-ficha_cantidad" >
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
@@ -203,12 +206,13 @@
     <script src="./js/home_&_juego/cargaElementos.js"></script>
     <script src="./js/home_&_juego/juego.js"></script>
     
-    <script src="js/juego/poo/TableroActualizado.js"></script>
-    <script src="js/juego/poo/Circle.js"></script>
-    <script src="js/juego/poo/Casilla.js"></script>
-    <script src="js/juego/poo/Ficha.js"></script>
-    <script src="js/juego/poo/Jugador.js"></script>
-    <script src="js/juego/mainActualizado.js"></script>
+    <script src="./js/juego/poo/Tablero.js"></script>
+    <script src="./js/juego/poo/Circle.js"></script>
+    <script src="./js/juego/poo/Casilla.js"></script>
+    <script src="./js/juego/poo/Ficha.js"></script>
+    <script src="./js/juego/poo/Jugador.js"></script>
+    <script src="./js/juego/state_4Linea.js"></script>
+    <script src="./js/juego/main_4Linea.js"></script>
 </body>
 
 </html>

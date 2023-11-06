@@ -882,7 +882,6 @@ footer{
 .tutorial-container{
     justify-content: space-evenly;
 }
-
 .tutorial-container{
     padding-left: 10%;
     padding-right: 10%;
@@ -905,6 +904,7 @@ footer{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    min-height: 100px;
 }
 .ficha_container{
     grid-area: "fichas";
@@ -926,14 +926,32 @@ footer{
     border-radius: 40px;
     cursor: pointer;
 }
-
+.choose-ficha_cantidad-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.choose-ficha_cantidad_select{
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    /* color: var(--negro-principal);
+    background-color: var(--blanco-principal); */
+    color: var(--blanco-principal);
+    background-color: var(--negro-principal);
+}
 .ficha_selector img{
     max-width: 10%;
     height: auto;
     z-index: -1;
 }
-.ficha_selector.blue{
-    background-color: blue;
+.ficha_selector.red{
+    background-color: red;
 }
 .ficha_selector.purple{
     background-color: purple;
@@ -945,7 +963,7 @@ footer{
     background-color: yellow;
 }
 .ficha_selector.contorneada{
-    border: 6px solid red;
+    border: 6px solid blue;
 }
 /* Canvas btn */
 .button-secondary.replayBtn,

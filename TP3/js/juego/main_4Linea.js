@@ -10,56 +10,56 @@ const tutorialBtn = startPantalla.querySelector("#instrucciones_btn");
 
 const choseFichaPantalla = document.querySelector("#choose-ficha_container");
 const choseFichaBtn = document.querySelector("#choose-ficha_btn");
-const chooseFichaError = document.querySelector("#choose-ficha_error");
 
-const fichasCantidad =  document.querySelector("#choose-ficha_cantidad");
-
+const fichasCantidadInput =  document.querySelector("#choose-ficha_cantidad");
 
 const winnerPantalla = document.querySelector("#ganadorMensaje");
-
-const lightPurple = "#8788A4"
-const invisibleClass = "hidden";
-const idJugador1 = "jugador1";
-const idJugador2 = "jugador2";
 
 const canvasFill = lightPurple;
 const { width: canvasWidth } = canvas;
 const { height: canvasHeight } = canvas;
 canvas.style.cssText = `background-color: ${lightPurple};`;
 
-let fillFicha1;
-let fillFicha2;
-
-let image1 = new Image();
-let image2 = new Image();
+let fillFicha1 = "";
+let fillFicha2 = "";
+let fillFicha1Img = "";
+let fillFicha2Img = "";
 
 startBtn.addEventListener("click", chooseFichaScreen);
 tutorialBtn.addEventListener("click", showTutorialScreen);
 choseFichaBtn.addEventListener("click", runGame);
 
-function playGame(){
+function playGame(imgFicha1, imgFicha2){
     canvas.addEventListener("mouseup", onMouseUp, false);
     canvas.addEventListener("mousedown", onMouseDown, false);
     canvas.addEventListener("mousemove", onMouseMove, false);
 
     const fichas = [];
-    let columna = null;         //  Columna donde se solto la ficha
-    let clickedFicha = null;    //  Ficha que se clickeo
-    let isMouseDown = false;    //  Se clickeo una ficha
+    let columna = null;
+    let clickedFicha = null;    
+    let isMouseDown = false;    
 
-    let isTurno1 = Math.random()>0.5;   //  Turno del jugador 1; 50% chanche que le toque primero;
-    let isTurno2 = !isTurno1;           //  Turno del jugador 2
+    let isTurno1 = Math.random()>0.5; 
+    let isTurno2 = !isTurno1;     
 
-    const { // Llamamos a iniciar todo
-        filas, columnas, cantFichas, fillTable, defaultFichaFill,
+    const { 
+        filas, columnas, cantFichas, fillTable, defaultCasillaFill,
         casillaHeight, casillaWidth , radio
     } = getInitialState();      
 
-    const ficha1Init = getFichaInitPos(idJugador1);  //   Posicion inicial de la ficha 1
-    const ficha2Init = getFichaInitPos(idJugador2);  //   Posicion inicial de la ficha 2
+    const ficha1Init = getFichaInitPos(idJugador1); 
+    const ficha2Init = getFichaInitPos(idJugador2);
 
-    const ficha1 = new Ficha(ficha1Init.initX, ficha1Init.initY, radio, fillFicha1, isTurno1, ctx, image1);
-    const ficha2 = new Ficha(ficha2Init.initX, ficha2Init.initY, radio, fillFicha2, isTurno2, ctx, image2);
+    const ficha1 = new Ficha(
+        ficha1Init.initX, ficha1Init.initY, radio, 
+        fillFicha1, imgFicha1, isTurno1, ctx, cantFichas
+    );
+    
+    const ficha2 = new Ficha(
+        ficha2Init.initX, ficha2Init.initY, radio, 
+        fillFicha2, imgFicha2, isTurno2, ctx, cantFichas
+    );
+
     fichas.push(ficha1);
     fichas.push(ficha2);
     const Jugador1 = new Jugador(idJugador1, "jugador1", ficha1);
@@ -67,7 +67,7 @@ function playGame(){
 
     const table = new Tablero(
         filas, columnas, Jugador1, Jugador2, cantFichas,
-        casillaHeight, casillaWidth, fillTable, defaultFichaFill,  radio, ctx
+        casillaHeight, casillaWidth, fillTable, defaultCasillaFill,  radio, ctx
     );
     
     function drawCanvas(){
@@ -121,10 +121,8 @@ function playGame(){
                     resetGame();
                     showWinner(winner);
                     return;
-                } else{
-                    console.log("No gano nadie");
                 }
-
+                
                 isTurno1 = !isTurno1;
                 isTurno2 = !isTurno2;
 
@@ -138,9 +136,7 @@ function playGame(){
             }
         }
     }
-    /**
-     * 
-    */
+    // Winner
     function showWinner(winner){
         winnerPantalla.classList.remove(invisibleClass);
         canvas.classList.add(invisibleClass);
@@ -151,7 +147,6 @@ function playGame(){
         const playAgainBtn = winnerPantalla.querySelector("#play-again_btn");
         playAgainBtn.addEventListener("click", playAgain);
     }
-
     // Find functions
     function findClickedFigure(x, y){
         for (const ficha of fichas) {
@@ -180,7 +175,7 @@ function playGame(){
             return getFichaInitPos(idJugador2);
         }
     }
-    // Resetea para jugar de nuevo
+    // Resetear
     function resetGame(){
         canvas.removeEventListener("mouseup", onMouseUp, false);
         canvas.removeEventListener("mousedown", onMouseDown, false);
@@ -197,7 +192,6 @@ function playGame(){
         isTurno2 = !isTurno1;
     }
 }
-
 // Game Handlers
 function chooseFichaScreen(){
     startPantalla.classList.add(invisibleClass);
@@ -205,11 +199,9 @@ function chooseFichaScreen(){
 
     const fichasSeleccionablesJ1 = document.querySelectorAll(".ficha_selector.jug1");
     const fichasSeleccionablesJ2 = document.querySelectorAll(".ficha_selector.jug2");
-    //const fichasCantidad =  document.querySelector("#choose-ficha_cantidad");
-    //console.log("Cantidad de fichas escogidas"+fichasCantidad)
 
-    fichasSeleccionablesJ1.forEach(ficha => ficha.addEventListener("click", selectFicha));
-    fichasSeleccionablesJ2.forEach(ficha => ficha.addEventListener("click", selectFicha));
+    fichasSeleccionablesJ1.forEach(ficha => ficha.addEventListener("click", selectFichaToPlay));
+    fichasSeleccionablesJ2.forEach(ficha => ficha.addEventListener("click", selectFichaToPlay));
 }
 
 function showTutorialScreen(){
@@ -230,45 +222,44 @@ function playAgain(){
 }
 function runGame(){
     if (fillFicha1 && fillFicha2) {
+
+        const imgFicha1 = new Image();
+        const imgFicha2 = new Image();
+        imgFicha1.src = fillFicha1Img;
+        imgFicha2.src = fillFicha2Img;
+
         choseFichaPantalla.classList.add(invisibleClass);
         startPantalla.classList.add(invisibleClass);
         canvas.classList.remove(invisibleClass);
-        playGame();
-    }else{
-        chooseFichaError.classList.remove(invisibleClass);
+        playGame(imgFicha1, imgFicha2);
     }
 }
 // Seleccionar ficha
-function selectFicha(e){
+function selectFichaToPlay(e){
     const { id } = this.dataset;
     const ficha = e.target;
     const fill = ficha.classList[2]; // class="ficha_selector jug1 blue" - (blue selected)
 
-
-    console.log("id: "+id + " - fill:" +fill);
     if (id === idJugador1) {
-        console.log("Jugador 1");
         clearContorno("jug1", fill);
         fillFicha1 = fill;
-        if (fill === "blue") {
-            image1.src = "images/juegos/Dragons.png";
-        } else {
-            image1.src = "images/juegos/Ballas.png";
+        if (fill === fichaFillJug1.dragons.color) {
+            fillFicha1Img = fichaFillJug1.dragons.img;
+        } else if(fill === fichaFillJug1.ballas.color) {
+            fillFicha1Img = fichaFillJug1.ballas.img;
         }
-
     }
     else if (id === idJugador2) {
-        console.log("Jugador 2");
         clearContorno("jug2", fill);
         fillFicha2 = fill;
-        if (fill === "green") {
-            image2.src = "images/juegos/GroveStreet.png";
-        } else {        
-            image2.src = "images/juegos/Aztec.png";
+        if (fill === fichaFillJug2.grove.color) {
+            fillFicha2Img = fichaFillJug2.grove.img;
+        } else if(fill === fichaFillJug2.aztec.color){        
+            fillFicha2Img = fichaFillJug2.aztec.img;
         }
     }
 
-    ficha.classList.add("contorneada");
+    ficha.classList.add(contorneadaClass);
 
     if (fillFicha1 && fillFicha2) {
         choseFichaBtn.classList.remove(invisibleClass);
@@ -278,26 +269,20 @@ function clearContorno(jug, fill){
     const fichasSeleccionables = document.querySelectorAll(`.ficha_selector.${jug}`);
     fichasSeleccionables.forEach((ficha) => {
         if (ficha.classList[2] !== fill) {
-            ficha.classList.remove("contorneada");
+            ficha.classList.remove(contorneadaClass);
         }
     });
 }
 // Helpers
 function getInitialState(){
-    
-    console.log("Cantidad de fichas escogidas "+fichasCantidad.value)
-    //const cantFichas = 6;   // viene de una funcion; 4 / 5 / 6;
-    const cantFichas = parseInt(fichasCantidad.value); // Obtener el valor seleccionado y convertirlo a un número entero
-
-    console.log("Cantidad de fichas escogidas: " + cantFichas);
-
+    const cantFichas = parseInt(fichasCantidadInput.value);
     
     const fillTable = new Image();
-    fillTable.src = "images/juegos/fondo_4EnLinea.png";
+    fillTable.src = tableImg;
     
     const filas = cantFichas+2;
     const columnas = cantFichas+3;
-    const defaultFichaFill = "black";   //  Color de las casillas; puede ser white /...
+    const defaultCasillaFill = casillaFill;   //  Color de las casillas; puede ser white /...
 
     const casillaHeight = canvasHeight / filas;
     const casillaWidth = canvasWidth / columnas;
@@ -305,7 +290,7 @@ function getInitialState(){
     const radio = Math.min(casillaWidth, casillaHeight) * 0.25;
 
     return {
-        filas, columnas, cantFichas, fillTable, defaultFichaFill,
+        filas, columnas, cantFichas, fillTable, defaultCasillaFill,
         casillaHeight, casillaWidth, radio
     }
 }

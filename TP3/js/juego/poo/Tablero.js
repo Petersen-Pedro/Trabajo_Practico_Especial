@@ -1,48 +1,58 @@
 class Tablero{
-    constructor(filas, columnas, casillaHeight, casillaWidth, fill, defaultFill, radio, ctx){
+    constructor(
+        filas, columnas, Jugador1, Jugador2, cantFichas,
+        casillaHeight, casillaWidth, 
+        fill, fichaFill, radio, ctx
+    ){
         this.filas = filas;
         this.columnas = columnas;
+
+        this.Jugador1 = Jugador1;
+        this.Jugador2 = Jugador2;
         
         this.casillaHeight = casillaHeight;
         this.casillaWidth = casillaWidth;
 
         this.fill = fill;
-        this.defaultFill = defaultFill;
+        this.fichaFill = fichaFill;
 
         this.radio = radio;
         this.ctx = ctx;
 
         this.casillas = [];
 
+        this.cantFichas = cantFichas;
+
+        const widthResta = 100;
+        const heightResta = cantFichas === 4 ? 160 : 120;
+
         for (let i = 0; i < this.filas; i++) {
             this.casillas[i] = [];
             for (let j = 0; j < this.columnas; j++) {
                 this.casillas[i][j] = new Casilla(
-                    (i * this.casillaWidth-100) + this.casillaWidth / 2.4,
-                    (j * this.casillaHeight-160) + this.casillaHeight / 1,
+                    (i * this.casillaWidth-widthResta) + this.casillaWidth / 3,
+                    (j * this.casillaHeight-heightResta) + this.casillaHeight / 1,
                     this.radio,
-                    this.defaultFill,
+                    this.fichaFill,
                     this.ctx
                 );
             }
         }
-        this.draw();
+
+        this.fill.onload = () => {
+            this.draw();
+        }
     }
 
     draw(){
-        this.ctx.fillStyle = this.fill;
-        this.ctx.fillRect(25, 25, 550, 550);
+        this.ctx.drawImage(this.fill, 0, 0, 600, 600);
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j < this.columnas; j++) {
                 this.casillas[i][j].draw();
             }
         }
     }
-
-    getCasillas(){
-        return this.casillas;
-    }
-
+    // Getters
     getColumna(posX, posY){
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j < this.columnas; j++) {
@@ -51,31 +61,30 @@ class Tablero{
             }
         }
     }
-
-    setCasillaFill(posI, posJ, fill){
-        this.casillas[posI][posJ].setFill(fill)
-    }
-
-    getFila(posI){
+    getFilaVacia(posI){
         for (let j = this.columnas; j > 0; j--) {
             const casilla = this.casillas[posI][j];
             if (casilla) {
-                if (casilla.getFill() === this.defaultFill) {
+                if (casilla.getFill() === this.fichaFill)
                     return j;
-                }
             }
         }
     }
-
     getGanador(){
         const verticalWinner = this.isGanadorVertical();
         if (verticalWinner) return verticalWinner;
 
         const horizontalWinner = this.isGanadorHorizontal();
         if (horizontalWinner) return horizontalWinner;
-          
-    }
 
+        const diagonalalWinner = this.isGanadorDiagonal();
+        if (diagonalalWinner) return diagonalalWinner;
+    }
+    // Setters
+    setCasillaFill(posI, posJ, fill){
+        this.casillas[posI][posJ].setFill(fill)
+    }
+    // Local Functions
     isGanadorVertical(){
         for (let i = 0; i < this.filas; i++) {
             const casillasVertical = [];
@@ -98,48 +107,70 @@ class Tablero{
             if (winner) return winner;
         }
     }
-
-    // isGanadorHorizontal() {
-    //     for (let i = 0; i < this.filas; i++) {
-    //         const fila = this.casillas[i].map(casilla => casilla.getFill());
-    //         const winner = this.encontrarGanadorHorizontal(fila);
-    //         if (winner) return winner;
-    //     }
-    // }
-
-    findGanador(array) {
-        const fichaBlue = "blue";
-        const fichaGreen = "green";
+    isGanadorDiagonal(){
+        let casillasDiagonal = [];
         let ganador = null;
-        let contadorBlue = 0;
-        let contadorGreen = 0;
+        const maxJ = Math.ceil(this.filas/2);
+
+        casillasDiagonal = this.recorrerDiagonal(1, 0);
+        ganador = this.findGanador(casillasDiagonal);
+        if (ganador) return ganador;
+        casillasDiagonal = [];
+
+        let i = 0;
+        for (let j = 0; j < maxJ; j++) {
+            casillasDiagonal = this.recorrerDiagonal(i, j);
+            ganador = this.findGanador(casillasDiagonal);
+            if (ganador) return ganador;
+            casillasDiagonal = [];
+        }
+
+        return null;
+    }
+    recorrerDiagonal(i, j){
+        const filasCount = this.filas;
+        const columnasCount = this.columnas;
+        let casillasDiagonal = [];
+
+        while (i<filasCount && j<columnasCount) {
+            const casilla = this.casillas[i][j];
+            casillasDiagonal.push(casilla.getFill());
+            i++;
+            j++;
+        }
+        return casillasDiagonal;
+    }
+    findGanador(array) {
+        const fichaJug1 = this.Jugador1.getFicha().getFill();
+        const fichaJug2 = this.Jugador2.getFicha().getFill();
+        let contadorJug1 = 0;
+        let contadorJug2 = 0;
+        let ganador = null;
       
         for (let i = 0; i < array.length; i++) {
             const ficha = array[i];
       
-            if (ficha === fichaBlue) {
-                contadorBlue++;
-                contadorGreen = 0;
-            } else if (ficha === fichaGreen) {
-                contadorGreen++;
-                contadorBlue = 0;
+            if (ficha === fichaJug1) {
+                contadorJug1++;
+                contadorJug2 = 0;
+            } else if (ficha === fichaJug2) {
+                contadorJug2++;
+                contadorJug1 = 0;
             } else {
-                contadorBlue = 0;
-                contadorGreen = 0;
+                contadorJug1 = 0;
+                contadorJug2 = 0;
             }
         
-            if (contadorBlue >= 4) {
-                ganador = fichaBlue;
+            if (contadorJug1 >= this.cantFichas) {
+                ganador = this.Jugador1;
                 break;
             }
-            if (contadorGreen >= 4) {
-                ganador = fichaGreen;
+            if (contadorJug2 >= this.cantFichas) {
+                ganador = this.Jugador2;
                 break;
             }
         }
       
         return ganador;
     }
-
-
 }
