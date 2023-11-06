@@ -9,6 +9,9 @@ const idJugador2 = "jugador2";
 const tableImg = "images/juegos/fondo_4EnLinea.png";
 const casillaFill = lightPurple;
 
+const segundosIniciales = 300;
+// const segundosIniciales = 5;
+
 const fichaFillJug1 = {
     dragons: {
         color: "red",

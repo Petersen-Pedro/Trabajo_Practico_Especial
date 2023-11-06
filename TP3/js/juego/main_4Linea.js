@@ -15,6 +15,8 @@ const fichasCantidadInput =  document.querySelector("#choose-ficha_cantidad");
 
 const winnerPantalla = document.querySelector("#ganadorMensaje");
 
+const temporizador = document.querySelector("#temporizador");
+
 const canvasFill = lightPurple;
 const { width: canvasWidth } = canvas;
 const { height: canvasHeight } = canvas;
@@ -34,6 +36,8 @@ function playGame(imgFicha1, imgFicha2){
     canvas.addEventListener("mousedown", onMouseDown, false);
     canvas.addEventListener("mousemove", onMouseMove, false);
 
+    const temporizadorInterval = setInterval(actualizarTemporizador, 1000)
+
     const fichas = [];
     let columna = null;
     let clickedFicha = null;    
@@ -41,6 +45,7 @@ function playGame(imgFicha1, imgFicha2){
 
     let isTurno1 = Math.random()>0.5; 
     let isTurno2 = !isTurno1;     
+    let tiempoInicial = segundosIniciales;
 
     const { 
         filas, columnas, cantFichas, fillTable, defaultCasillaFill,
@@ -80,11 +85,11 @@ function playGame(imgFicha1, imgFicha2){
             fichas[i].draw();        
         }
     }
-
     // Mouse events
     function onMouseDown(e){
         isMouseDown = true;
         clickedFicha = findClickedFigure(e.layerX, e.layerY);
+        console.log(clickedFicha); 
         drawCanvas();
     }
     function onMouseMove(e){
@@ -137,12 +142,16 @@ function playGame(imgFicha1, imgFicha2){
         }
     }
     // Winner
-    function showWinner(winner){
+    function showWinner(winner = null){
         winnerPantalla.classList.remove(invisibleClass);
         canvas.classList.add(invisibleClass);
 
         const ganadorH3 = winnerPantalla.querySelector(".titulo_ganador");
-        ganadorH3.textContent =  `El ganador es: ${winner.getNombre()}`
+        if (winner) {
+            ganadorH3.textContent =  `El ganador es: ${winner.getNombre()}`;
+        }else{
+            ganadorH3.textContent =  "Se acabo el tiempo"
+        }
 
         const playAgainBtn = winnerPantalla.querySelector("#play-again_btn");
         playAgainBtn.addEventListener("click", playAgain);
@@ -175,6 +184,17 @@ function playGame(imgFicha1, imgFicha2){
             return getFichaInitPos(idJugador2);
         }
     }
+    // Temporizador
+    function actualizarTemporizador() {
+
+        if (tiempoInicial > 0) {
+            temporizador.innerHTML = tiempoInicial;
+            tiempoInicial--;
+        } else {
+            intervalReset();
+            showWinner();
+        }
+    }
     // Resetear
     function resetGame(){
         canvas.removeEventListener("mouseup", onMouseUp, false);
@@ -190,6 +210,15 @@ function playGame(imgFicha1, imgFicha2){
         isMouseDown = false;
         isTurno1 = true;
         isTurno2 = !isTurno1;
+
+        // clearInterval(temporizadorInterval);
+        // temporizador.innerHTML = "---";
+        intervalReset();
+    }
+
+    function intervalReset(){
+        clearInterval(temporizadorInterval);
+        temporizador.innerHTML = "---";
     }
 }
 // Game Handlers

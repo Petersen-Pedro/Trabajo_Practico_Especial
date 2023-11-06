@@ -860,6 +860,11 @@ footer{
     width: 800px;
     z-index: 1;
 }
+.temporizador{
+    user-select: none;
+    font-size: 30px;
+    color: var(--blanco-principal);
+}
 .winnerPantalla,
 .tutorial-container,
 .start_game,

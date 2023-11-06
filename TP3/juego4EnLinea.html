@@ -62,9 +62,12 @@
         </p>
     </nav>
 
+
     <div class="juego-pag_main_container">
         
         <article class="juego_producto">
+            <span class="temporizador" id="temporizador"></span>
+
 
             <div class="start_game" id="start_game-container">
                 <img src="images/juegos/btn_play.svg" alt="play" 
@@ -78,8 +81,8 @@
 
             <div class="tutorial-container hidden" id="tutorial-container">
                 <h1>Como Jugar...</h1>
-                <p>El objetivo del juego es alinear las fichas de manera vertical, diagonal u horizontal de forma ininterrupida, antes que tu rival.</p>
-                <p>Para hacer esto debes de utilizar el mouse y arrastrar tu ficha (en el espacio de la derecha) y solarlo en la cima de la columna que escojas.</p>
+                <p>El objetivo del juego es alinear x cantidad fichas de manera vertical, diagonal u horizontal de forma ininterrupida, antes que tu rival.</p>
+                <p>Para hacer esto debes de utilizar el mouse y arrastrar tu ficha (en el espacio de la derecha) y solarla sobre la columna que escojas.</p>
                 <button class="button-primary choose-ficha_btn" id="back-to-play_btn">Regresar a Jugar</button>
             </div>
 
@@ -116,8 +119,6 @@
                     </form>
                 </div>
 
-
-
                 <div class="choose-ficha_btn_container">
                     <button class="button-secondary choose-ficha_btn hidden" id="choose-ficha_btn">
                         Empezar Juego
@@ -128,7 +129,7 @@
             <canvas id="myCanvas"  width="800" height="600" class="hidden"></canvas>
             
             <div id="ganadorMensaje" class=" winnerPantalla hidden">
-                <h3 class="titulo_ganador">Esperando ganador...</h3>
+                <h3 class="titulo_ganador">...</h3>
                 <button class="button-secondary replayBtn" id="play-again_btn">
                     JUGAR DE NUEVO
                 </button>
