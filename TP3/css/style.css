@@ -861,6 +861,7 @@ footer{
     z-index: 1;
 }
 .winnerPantalla,
+.tutorial-container,
 .start_game,
 .choose-ficha_container{
     display: flex;
@@ -871,13 +872,21 @@ footer{
     height: 600px;
 }
 .winnerPantalla, 
+.tutorial-container,
 .choose-ficha_container{
     background-color: var(--main-bg-color_light);
     justify-content: center;
     gap: 1rem;
 }
-.choose-ficha_container{
+.choose-ficha_container,
+.tutorial-container{
     justify-content: space-evenly;
+}
+
+.tutorial-container{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: large;
 }
 .start_game{
     justify-content: flex-end;

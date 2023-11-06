@@ -6,6 +6,7 @@ const ctx = canvas.getContext("2d");
 
 const startPantalla = document.querySelector("#start_game-container");
 const startBtn = startPantalla.querySelector("#play-game_btn");
+const tutorialBtn = startPantalla.querySelector("#instrucciones_btn");
 
 const choseFichaPantalla = document.querySelector("#choose-ficha_container");
 const choseFichaBtn = document.querySelector("#choose-ficha_btn");
@@ -33,6 +34,7 @@ let image1 = new Image();
 let image2 = new Image();
 
 startBtn.addEventListener("click", chooseFichaScreen);
+tutorialBtn.addEventListener("click", showTutorialScreen);
 choseFichaBtn.addEventListener("click", runGame);
 
 function playGame(){
@@ -209,6 +211,19 @@ function chooseFichaScreen(){
     fichasSeleccionablesJ1.forEach(ficha => ficha.addEventListener("click", selectFicha));
     fichasSeleccionablesJ2.forEach(ficha => ficha.addEventListener("click", selectFicha));
 }
+
+function showTutorialScreen(){
+    const tutorialPantalla = document.querySelector("#tutorial-container");
+    startPantalla.classList.add(invisibleClass);
+    tutorialPantalla.classList.remove(invisibleClass);
+
+    const backToPlay = document.querySelector("#back-to-play_btn");
+    backToPlay.addEventListener("click", () => {
+        tutorialPantalla.classList.add(invisibleClass);
+        startPantalla.classList.remove(invisibleClass);
+    });
+}
+
 function playAgain(){
     winnerPantalla.classList.add(invisibleClass);
     chooseFichaScreen();
