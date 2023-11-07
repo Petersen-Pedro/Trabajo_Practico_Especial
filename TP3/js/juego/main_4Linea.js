@@ -16,7 +16,7 @@ const fichasCantidadInput =  document.querySelector("#choose-ficha_cantidad");
 const winnerPantalla = document.querySelector("#ganadorMensaje");
 
 const temporizador = document.querySelector("#temporizador");
-const toMainScreenBtn = document.querySelector("#to-main_screen_btn");
+const startOverBtn = document.querySelector("#start-over_btn");
 
 const canvasFill = lightPurple;
 const { width: canvasWidth } = canvas;
@@ -36,10 +36,12 @@ function playGame(imgFicha1, imgFicha2){
     canvas.addEventListener("mouseup", onMouseUp, false);
     canvas.addEventListener("mousedown", onMouseDown, false);
     canvas.addEventListener("mousemove", onMouseMove, false);
-    toMainScreenBtn.addEventListener("click", goMainScreen);
-    temporizador.classList.remove("hidden");
 
-    const temporizadorInterval = setInterval(actualizarTemporizador, 1000)
+    temporizador.classList.remove(invisibleClass);
+    const temporizadorInterval = setInterval(actualizarTemporizador, 1000);
+
+    startOverBtn.classList.remove(invisibleClass);
+    startOverBtn.addEventListener("click", startOver);
 
     const fichas = [];
     let columna = null;
@@ -197,17 +199,12 @@ function playGame(imgFicha1, imgFicha2){
             showWinner();
         }
     }
-    // To home
-    function goMainScreen(){
+    // Resetear
+    function startOver(){
         resetGame();
         canvas.classList.add(invisibleClass);
-        choseFichaPantalla.classList.add(invisibleClass);
-        winnerPantalla.classList.add(invisibleClass);
-        toMainScreenBtn.classList.add(invisibleClass);
-        temporizador.classList.add(invisibleClass);
-        startPantalla.classList.remove(invisibleClass);
+        chooseFichaScreen();
     }
-    // Resetear
     function resetGame(){
         canvas.removeEventListener("mouseup", onMouseUp, false);
         canvas.removeEventListener("mousedown", onMouseDown, false);
@@ -233,7 +230,6 @@ function playGame(imgFicha1, imgFicha2){
 // Game Handlers
 function chooseFichaScreen(){
     startPantalla.classList.add(invisibleClass);
-    toMainScreenBtn.classList.remove(invisibleClass);
     choseFichaPantalla.classList.remove(invisibleClass);
 
     const fichasSeleccionablesJ1 = document.querySelectorAll(".ficha_selector.jug1");

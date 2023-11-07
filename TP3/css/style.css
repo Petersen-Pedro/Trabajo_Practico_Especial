@@ -865,7 +865,7 @@ footer{
     font-size: 30px;
     color: var(--blanco-principal);
 }
-.to-main_screen_btn{
+.start-over_btn{
     margin-top: 20px;
     background-color: transparent;
     height: 50px;
@@ -873,7 +873,7 @@ footer{
     border: var(--negro-puro) 1px solid;
     border-radius: 100%;
 }
-.to-main_screen_btn:hover{
+.start-over_btn:hover{
     border: var(--blanco-puro) 1px solid;
 }
 .winnerPantalla,
