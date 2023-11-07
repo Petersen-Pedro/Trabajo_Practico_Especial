@@ -16,6 +16,7 @@ const fichasCantidadInput =  document.querySelector("#choose-ficha_cantidad");
 const winnerPantalla = document.querySelector("#ganadorMensaje");
 
 const temporizador = document.querySelector("#temporizador");
+const toMainScreenBtn = document.querySelector("#to-main_screen_btn");
 
 const canvasFill = lightPurple;
 const { width: canvasWidth } = canvas;
@@ -35,6 +36,8 @@ function playGame(imgFicha1, imgFicha2){
     canvas.addEventListener("mouseup", onMouseUp, false);
     canvas.addEventListener("mousedown", onMouseDown, false);
     canvas.addEventListener("mousemove", onMouseMove, false);
+    toMainScreenBtn.addEventListener("click", goMainScreen);
+    temporizador.classList.remove("hidden");
 
     const temporizadorInterval = setInterval(actualizarTemporizador, 1000)
 
@@ -89,7 +92,6 @@ function playGame(imgFicha1, imgFicha2){
     function onMouseDown(e){
         isMouseDown = true;
         clickedFicha = findClickedFigure(e.layerX, e.layerY);
-        console.log(clickedFicha); 
         drawCanvas();
     }
     function onMouseMove(e){
@@ -166,7 +168,7 @@ function playGame(imgFicha1, imgFicha2){
     }
     function getFichaInitPos(idJugador){
         let initX;
-        const initY = canvasHeight-100;
+        const initY = canvasHeight-300;
 
         if (idJugador === idJugador1) {
             initX = canvasWidth-150;
@@ -195,6 +197,16 @@ function playGame(imgFicha1, imgFicha2){
             showWinner();
         }
     }
+    // To home
+    function goMainScreen(){
+        resetGame();
+        canvas.classList.add(invisibleClass);
+        choseFichaPantalla.classList.add(invisibleClass);
+        winnerPantalla.classList.add(invisibleClass);
+        toMainScreenBtn.classList.add(invisibleClass);
+        temporizador.classList.add(invisibleClass);
+        startPantalla.classList.remove(invisibleClass);
+    }
     // Resetear
     function resetGame(){
         canvas.removeEventListener("mouseup", onMouseUp, false);
@@ -211,11 +223,8 @@ function playGame(imgFicha1, imgFicha2){
         isTurno1 = true;
         isTurno2 = !isTurno1;
 
-        // clearInterval(temporizadorInterval);
-        // temporizador.innerHTML = "---";
         intervalReset();
     }
-
     function intervalReset(){
         clearInterval(temporizadorInterval);
         temporizador.innerHTML = "---";
@@ -224,6 +233,7 @@ function playGame(imgFicha1, imgFicha2){
 // Game Handlers
 function chooseFichaScreen(){
     startPantalla.classList.add(invisibleClass);
+    toMainScreenBtn.classList.remove(invisibleClass);
     choseFichaPantalla.classList.remove(invisibleClass);
 
     const fichasSeleccionablesJ1 = document.querySelectorAll(".ficha_selector.jug1");
@@ -232,7 +242,6 @@ function chooseFichaScreen(){
     fichasSeleccionablesJ1.forEach(ficha => ficha.addEventListener("click", selectFichaToPlay));
     fichasSeleccionablesJ2.forEach(ficha => ficha.addEventListener("click", selectFichaToPlay));
 }
-
 function showTutorialScreen(){
     const tutorialPantalla = document.querySelector("#tutorial-container");
     startPantalla.classList.add(invisibleClass);
@@ -244,7 +253,6 @@ function showTutorialScreen(){
         startPantalla.classList.remove(invisibleClass);
     });
 }
-
 function playAgain(){
     winnerPantalla.classList.add(invisibleClass);
     chooseFichaScreen();
