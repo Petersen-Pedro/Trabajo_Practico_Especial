@@ -40,7 +40,6 @@
 }
 
 * {
-    width: 1080px;
     font-family: "Lato";
     text-align: left;
     font-size: 20px;
@@ -62,26 +61,26 @@
     text-align: center;
 }
 
-.titulo-subseccion {
-    font-size: 40px;
-    line-height: 38px;
+.titulo-subseccion,.txt-btn{
     font-weight: bold;
 }
 
+.titulo-subseccion {
+    font-size: 40px;
+    line-height: 38px;
+}
+
 .txt-btn {
-    font-weight: bold;
-    line-height: 19px;
     letter-spacing: 0.11em;
     color: var(--primary-dark-color);
 }
 
 .txt-footer, .placeholder {
-    line-height: 19px;
     letter-spacing: 0.11em;
 }
 
-.txt-declaracion-legal {
-    /*Este seria para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
+.txt-footer, .txt-btn, .placeholder, .txt-declaracion-legal {
+    /*.txt-declaracion-legal seria para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
     line-height: 19px;
 }
 
@@ -89,3 +88,6 @@
     color: rgba(0, 0, 0, 0.39);
     font-weight: lighter;
 }
+
+
+
