@@ -1,0 +1,91 @@
+:root {
+    --main-bg-color: #FFFFFF;
+    /* Tambien hay fuentes con este color*/
+    --second-bg-color: #8F6AA6;
+    --pure-dark-color: #000000;
+    --primary-base-color: #2982FF;
+    --primary-dark-color: #02187E;
+    --secondary-base-color: #FFE901;
+
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(Fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(Fonts/Lato-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(Fonts/Lato-Italic.ttf);
+    font-weight: italic;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(Fonts/Lato-BlackItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(Fonts/Lato-Light.ttf);
+    font-weight: lighter;
+}
+
+* {
+    width: 1080px;
+    font-family: "Lato";
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0em;
+    font-weight: 400;
+}
+
+.txt {
+    line-height: 24px;
+}
+
+.titulo-seccion {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 57px;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.titulo-subseccion {
+    font-size: 40px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+.txt-btn {
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    color: var(--primary-dark-color);
+}
+
+.txt-footer, .placeholder {
+    line-height: 19px;
+    letter-spacing: 0.11em;
+}
+
+.txt-declaracion-legal {
+    /*Este seria para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
+    line-height: 19px;
+}
+
+.placeholder {
+    color: rgba(0, 0, 0, 0.39);
+    font-weight: lighter;
+}
