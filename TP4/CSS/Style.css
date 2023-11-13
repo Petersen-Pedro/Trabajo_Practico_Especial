@@ -3,7 +3,7 @@
     /* Tambien hay fuentes con este color*/
     --second-bg-color: #8F6AA6;
     --pure-dark-color: #000000;
-    --primary-base-color: #2982FF;
+    --primary-base-color: #5499F8;
     --primary-dark-color: #02187E;
     --secondary-base-color: #FFE901;
 
@@ -37,6 +37,7 @@
     font-family: 'Lato';
     src: url(Fonts/Lato-Light.ttf);
     font-weight: lighter;
+    background-color: var(--main-bg-color);
 }
 
 * {
@@ -46,6 +47,8 @@
     letter-spacing: 0em;
     font-weight: 400;
 }
+
+/* Texto*/
 
 .txt {
     line-height: 24px;
@@ -61,7 +64,8 @@
     text-align: center;
 }
 
-.titulo-subseccion,.txt-btn{
+.titulo-subseccion,
+.txt-btn {
     font-weight: bold;
 }
 
@@ -73,13 +77,18 @@
 .txt-btn {
     letter-spacing: 0.11em;
     color: var(--primary-dark-color);
+    padding: 1rem 0.5rem;
 }
 
-.txt-footer, .placeholder {
+.txt-footer,
+.placeholder {
     letter-spacing: 0.11em;
 }
 
-.txt-footer, .txt-btn, .placeholder, .txt-declaracion-legal {
+.txt-footer,
+.txt-btn,
+.placeholder,
+.txt-declaracion-legal {
     /*.txt-declaracion-legal seria para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
     line-height: 19px;
 }
@@ -89,5 +98,27 @@
     font-weight: lighter;
 }
 
+/*Secciones*/
 
 
+.header-container {
+    min-width: 100%;
+    background-color: var(--primary-base-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-container > div{
+    margin: 0% 5%;
+}
+
+/* BOTONES */
+.button-primary {
+    text-align: center;
+    flex-shrink: 0;
+    border-radius: 111px;
+    border: 8px solid var(--primary-base-color);
+    background: var(--secondary-base-color);
+    box-shadow: 4px 5px 0px 0px var(--primary-dark-color);
+    max-width: 10em;
+}
