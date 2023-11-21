@@ -1,12 +1,13 @@
-:root {
-    --main-bg-color: #FFFFFF;
-    /* Tambien hay fuentes con este color*/
-    --second-bg-color: #8F6AA6;
-    --pure-dark-color: #000000;
-    --primary-base-color: #5499F8;
-    --primary-dark-color: #02187E;
-    --secondary-base-color: #FFE901;
-
+:root{
+    --dark-gray: #5E5E5D;
+    --main-black: #242424;
+    --pure-white: #FFF;
+    --pure-black: #000;
+    --main-yellow: #FFE901;
+    --main-purple:#8F6AA6;
+    --dark-blue: #02187E;
+    --light-blue: #2982FF;
+    --sky-blue:rgb(84, 152, 248)
 }
 
 @font-face {
@@ -40,13 +41,12 @@
     background-color: var(--main-bg-color);
 }
 
-* {
-    font-family: "Lato";
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 0em;
-    font-weight: 400;
-    line-height: 24px;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
 }
 
 /* Texto*/
@@ -99,27 +99,558 @@
     font-weight: lighter;
 }
 
-/*Secciones*/
-
-
-.header-container {
-    min-width: 100%;
-    background-color: var(--primary-base-color);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, 
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--pure-white);
+}
+body{
+    overflow-x: hidden;
+}
+.primary_btn{
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 900;
+    border-radius: 111px;
+    color: var(--dark-blue);
+    background-color: var(--main-yellow);
+}
+/* HEADER */
+/*
+.main-header{
     display: flex;
     justify-content: space-between;
+    height: 200px;
+    padding: 20px;
+    margin-bottom: -100px;
+    background-color: var(--sky-blue);
+}
+.menu-hamburguesa{
+    height: 26px;
+    width: 34px;
+}
+.header-btn{
+    width: 200px;
+    height: 50px;
+    border: 7px solid var(--light-blue);
+}
+*/
+.main-header{
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: var(--sky-blue);
+    /* background: linear-gradient(rgb(84, 152, 248, 1), rgb(84, 152, 248, 0)); */
+}
+.header-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.menu-hamburguesa{
+    height: 26px;
+    width: 34px;
+}
+.header-btn{
+    width: 200px;
+    height: 50px;
+    border: 7px solid var(--light-blue);
 }
 
-.header-container > div{
-    margin: 0% 5%;
+.header-miniLogo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header-miniLogo img{
+    opacity: 0;
 }
 
-/* BOTONES */
-.button-primary {
+.miniLogo img {
+    height: 70px;
+}
+
+main{
+    overflow: hidden;
+}
+/*
+NACHO, SI ENTRASTE EN UN ESTADO DE PSICOTAPTIA NOCTAMBULA PROGRAMADORA INTENSA, NO TE PREOCUPES. ESTE CACHO DE CODIGO NO FUE ABANDONADO A MEDIO HACER SIN ESPERANZAS DE VER UN MA;ANA, ESTA BIEN ENCAMINADO, TAN SOLO PERDI TIEMPO VIENDO COMO MIERDA HACER QUE LOS EDIFICOS SE MUEVAN.
+NO TE PREOCUPES, NO ES UNA LOCURA, ES UNA LOCURA PROGRAMADORA.
+*/
+/*Paralax Spidermans*/
+.first-section{
+    background-image: url(../Images/first-section/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 940px;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    position: relative;
+}
+
+.edificio_izq {
+    background-image: url(../Images/first-section/left-building.png);
+    width: 450px;
+    height: 720px;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+    bottom: 0;
+    left: -50px;
+}
+
+.edificio_centro{
+    background-image: url(../Images/first-section/center_building.png);
+    height: 520px;
+    width: 210px;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+    bottom: 15px;
+
+}
+
+.edificio_der {
+    background-image: url(../Images/first-section/right-building.png);
+    width: 450px;
+    height: 720px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+}
+
+.big-Logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+
+
+
+/* FIRST SECTION */
+.first-section_title{
+    position: absolute;
+    left: 350px;
+    top: -30px;
+    z-index: 3;
+}
+.first-section_bg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.lt-building{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.ct-building{
+    position: absolute;
+    bottom: 15px;
+    left: 380px;
+}
+.rt-building{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.first-section_gwen{
+    position: absolute;
+    left: 80px;
+    top: 270px;
+    z-index: 1;
+}
+.first-section_peter{
+    position: absolute;
+    left: 400px;
+    top: 300px;
+    z-index: 1;
+}
+.first-section_miles{
+    position: absolute;
+    right: 190px;
+    bottom: 135px;
+    z-index: 1;
+}
+.miles-web{
+    position: absolute;
+    right: 0px;
+    bottom: 90px;
+    z-index: 2;
+}
+.peter-web{
+    position: absolute;
+    left: -10px;
+    /* left: 0; */
+    bottom: -190px;
+    z-index: 2;
+}
+/* DUENDE VERDE */
+.duende-verde_container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    color: var(--pure-white);
+    background-color: var(--main-purple);
+}
+.duende-verde_info-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 590px;
+    position: absolute;
+    top: 160px;
+    left: 120px;
+}
+.duende-verde_info-text > h4{
+    font-size: 50px;
+}
+.duende-verde_info-text > p{
+    font-size: 22px;
+}
+.duende-verde_img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.duende-verde_pjs{
+    position: absolute;
+    bottom: 70px;
+    left: 80px;
+}
+/* PRESENTACION PJ */
+.presentacion-pj_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.presentacion_pj{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 20px;
+    gap: 20px;
+}
+.presentacion_pj > p{
+    margin: 0 auto;
+    width: 90%;
+}
+/* GWEN - VENGADORES */
+.gwen_vengadores{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 1600px;
+    margin-bottom: 10%;
+    background-color: var(--pure-black);
+}
+.gwen_container, 
+.vengadores_container{
+    position: relative;
+    width: 100%;
+}
+/* GWEN */
+.gwen_container{
+    height: 750px;
+}
+.gwen_bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.gwen_sub1{
+    position: absolute;
+    top: -160px;
+    left: 0;
+}
+.gwen_sub2{
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+.gwen_sub3{
+    position: absolute;
+    top: 170px;
+    left: 0;
+}
+/* VENGADORES */
+.vengadores_container{
+    justify-self: flex-end;
+    height: 750px;
+    margin-left: 7.5%;
+}
+.vengadores_container > h3 {
+    width: 40%;
+    font-size: 50px;
+    color: var(--pure-white);
+}
+.vengadores_pantera{
+    width: 368px;
+    height: 552px;
+    position: absolute;
+    bottom: 200px;
+    left: 500px;
+    z-index: 1;
+}
+.vengadores_elastic{
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+    z-index: 1;
+}
+.vengadores_hulk{
+    position: absolute;
+    bottom: -50px;
+    right: 140px;
+    z-index: 1;
+}
+.vengadores_sky{
+    position: absolute;
+    bottom: -84px;
+    right: 120px;
+}
+.vengadores_trees,
+.vengadores_upfront{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.vengadores_upfront{
+    z-index: 2;
+}
+/* EJEMPLOS JUEGO */
+.ejemplos-juego_container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 50px;
+    width: 95%;
+    margin-left: auto;
+}
+.ejemplos-juego_container > h3{
+    font-size: 50px;
+    font-weight: 500;
+}
+.ejemplos-juego_article-container{
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+.ejemplos-juego{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90px;
+    gap: 70px;
+}
+.ejemplos-juego_text-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.ejemplos-juego_text-info > h4{
+    font-size: 45px;
+    font-weight: 500;
+}
+.ejemplos-juego_text-info > p{
+    font-size: 20px;
+    width: 90%;
+}
+/* SPIDEYS CONTAINER */
+.spideys_bg-white{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* bg black */
+/* TODO - efecto geometrico */
+.spideys_text-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    font-size: 20px;
+    height: 350px;
+    padding-left: 5%;
+    color: var(--pure-white);
+    background-color: var(--pure-black);
+}
+.spideys_text-info > p{
+    width: 40%;
+    font-size: 40px;
+}
+.primary_btn.btn_buy-now{
+    width: 292px;
+    height: 50px;
+    font-size: 21px;
+    box-shadow: 4px 5px;
+    border: 7px solid var(--light-blue);
+}
+/* bg white */
+.spideys_img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+/* PRE-FOOTER */
+.pre-footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1296px;
+    background: linear-gradient(#8FBEFC, #F7E3D8);
+    position: relative;
+}
+.city_pre-footer{
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+}
+/* Mail input */
+.pre-footer_mail-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    left: 200px; 
+}
+.pre-footer_email-title{
+    font-size: 50px;
+    width: 80%;
     text-align: center;
-    flex-shrink: 0;
+    padding: 0 100px 30px 40px;
+}
+.pre-footer_email-conditions{
+    font-size: 20px;
+    width: 70%;
+    padding: 40px 7%;
+}
+.pre-footer_email-conditions > span{
+    text-decoration: underline;
+}
+.pre-footer-form_input-container{
+    position: relative;
+    display: inline-block;
+    width: 780px;
+    box-shadow: 4px 5px;
     border-radius: 111px;
-    border: 8px solid var(--primary-base-color);
-    background: var(--secondary-base-color);
-    box-shadow: 4px 5px 0px 0px var(--primary-dark-color);
-    max-width: 10em;
+    border: 7px solid var(--light-blue);
+}
+.email_input{
+    width: 600px;
+    padding: 0 40px;
+    border-radius: 111px;
+    border: none;
+}
+.email_submit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 218px;
+    border: none;
+    border-left: 7px solid var(--light-blue);
+    border-radius: 0 111px 111px 0;
+}
+.email_input,
+.email_submit{
+    height: 100px;
+  
+}
+/* Positions */
+.pre-footer_age-rate{
+    width: 231px;
+    height: 145px;
+    position: absolute;
+    bottom: 500px;
+    left: 300px; 
+}
+.pre-footer_miles{
+    width: 97px;
+    height: 89px;
+    position: absolute;
+    bottom: 65px;
+    left: 200px;
+}
+.pre-footer_gwen{
+    width: 58px;
+    height: 64px;
+    position: absolute;
+    bottom: 163px;
+    left: 532px;
+}
+.pre-footer_peter{
+    width: 94px;
+    height: 88px;
+    position: absolute;
+    bottom: 245px;
+    right: 200px;
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+}
+.footer_playable-platforms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: var(--main-black);
+}
+.footer_main-info_container{
+    height: 598px;
+    background-color: var(--dark-gray);
+    color: var(--pure-white);
+}
+.footer_main-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 70%;
+    margin: 0 50px 0 60px;
+    padding-top: 50px;
+    gap: 50px;
+    font-size: 23px;
+}
+.footer_main-info > img{
+    width: 212px;
+    height: 41px;
 }
