@@ -27,9 +27,9 @@ document.addEventListener("scroll", () => {
 const edificioIzq = document.querySelector(".edificio_izq");
 const edificioCentro = document.querySelector(".edificio_centro");
 const edificioDer = document.querySelector(".edificio_der");
-const spiderWoman = document.querySelector("spiderWoman");
-const spiderMan = document.querySelector("spiderMan");
-const spiderBlack = document.querySelector("spiderBlack");
+const spiderWoman = document.querySelector("spiderman_izq");
+const spiderMan = document.querySelector("spiderman_centro");
+const spiderBlack = document.querySelector("spiderman_der");
 const tIzq = document.querySelector(".t_izq");
 const tDer = document.querySelector(".t_der");
 
@@ -40,9 +40,9 @@ document.addEventListener("scroll", () => {
     edificioDer.style.transform = `translateY(${window.scrollY * 0.2}px)`;
 
     // Spiders
-    spiderWoman.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-    spiderMan.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-    spiderBlack.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+    spiderWoman.style.transform = `translateY(${-window.scrollY * 0.2}px)`;
+    spiderMan.style.transform = `translateY(${-window.scrollY * 0.2}px)`;
+    spiderBlack.style.transform = `translateY(${-window.scrollY * 0.2}px)`;
 
     // Telarañas
     tIzq.style.transform = `translateY(${window.scrollY * 0.2}px)`;

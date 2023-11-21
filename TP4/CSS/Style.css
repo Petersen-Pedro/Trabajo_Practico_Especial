@@ -195,56 +195,18 @@ NO TE PREOCUPES, NO ES UNA LOCURA, ES UNA LOCURA PROGRAMADORA.
 /*Paralax Spidermans*/
 .first-section{
     background-image: url(../Images/first-section/bg.png);
+    width: 100%;
+    height: 761px;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 940px;
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 103px;
     position: relative;
 }
 
-.edificio_izq {
-    background-image: url(../Images/first-section/left-building.png);
-    width: 450px;
-    height: 720px;
-    position: absolute;
-    z-index: 1;
-    opacity: 1;
-    transition: all 0.3s ease-in;
-    transition-delay: 0.3s;
-    bottom: 0;
-    left: -50px;
-}
-
-.edificio_centro{
-    background-image: url(../Images/first-section/center_building.png);
-    height: 520px;
-    width: 210px;
-    position: absolute;
-    z-index: 1;
-    opacity: 1;
-    transition: all 0.3s ease-in;
-    transition-delay: 0.3s;
-    bottom: 15px;
-
-}
-
-.edificio_der {
-    background-image: url(../Images/first-section/right-building.png);
-    width: 450px;
-    height: 720px;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-    opacity: 1;
-    transition: all 0.3s ease-in;
-    transition-delay: 0.3s;
-}
-
-.big-Logo{
-    width: 100%;
+.frente-first-section{
+    width: 1080px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -252,8 +214,115 @@ NO TE PREOCUPES, NO ES UNA LOCURA, ES UNA LOCURA PROGRAMADORA.
     z-index: 2;
 }
 
+.edificio_izq {
+    background-image: url(../Images/first-section/left-building.png);
+    width: 452px;
+    height: 720px;
+    z-index: 1;
+    left: -53px;
+    bottom: 0;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.2s;
+}
 
+.edificio_centro{
+    background-image: url(../Images/first-section/center_building.png);
+    height: 543px;
+    width: 213px;
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+}
 
+.edificio_der {
+    background-image: url(../Images/first-section/right-building.png);
+    width: 374px;
+    height: 727.5px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.2s;
+}
+
+.big-Logo{
+    width: 590px;
+    height: 301px;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    scale: 1;
+    transition: all 0.4s ease-in;
+    transition-delay: 0.9s;
+}
+.big-Logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.spidermans-container{
+    width: 100%;
+    display: flex;
+    position: relative;    
+}
+.spidermans-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.spiderman_izq{
+    background-image: url(../images/first-section/gwen.png);
+    width: 360px;
+    height: 444px;
+    position: absolute;
+    top: -10px;
+    left: -13px;
+    opacity: 1;
+    transition: all 0.3s ease-in;   
+    transition-delay: 0.3s;    
+}
+
+.spiderman_centro {
+    background-image: url(../images/first-section/peter.png);
+    width: 465px;
+    height: 465px;
+    position: absolute;
+    left: 330px;
+    top: 20px;
+    opacity: 1;
+    transition: all 0.3s ease-in;   
+    transition-delay: 0.3s;    
+}
+
+.spiderman_der {
+    background-image: url(../images/first-section/miles.png);
+    width: 393px;
+    height: 393px;
+    position: absolute;
+    top: -60px;
+    left: 360px;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+}
+
+.t_izq{
+    background-image: url(../images/first-section/gwen-web.png);
+    width: 578px;
+    height: 671px;
+    position: absolute;
+    top: -200px;
+    left: -400px;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+
+}
 
 /* FIRST SECTION */
 .first-section_title{
