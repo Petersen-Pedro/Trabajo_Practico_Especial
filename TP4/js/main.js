@@ -76,3 +76,16 @@ window.addEventListener("scroll", function () {
         duendeVerde.style.transform = `translateY(${(scroll - x.top) * 0.025}px)`;
     }
 });
+
+//-----------------------------
+
+//SECCION TARJETAS DE PERSONAJE
+
+//const tarjetas = document.querySelectorAll(".ficha_pj");
+Window.addEventListener("scroll", function () {
+    if(window.scrollY > 1400){
+        document.querySelector(".imgPeter").classList.add("fichaImg_animacion");
+        document.querySelector(".imgMiles").classList.add("fichaImg_animacion");
+        document.querySelector(".imgGwen").classList.add("fichaImg_animacion");
+    }
+});
