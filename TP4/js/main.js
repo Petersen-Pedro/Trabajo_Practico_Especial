@@ -84,8 +84,8 @@ window.addEventListener("scroll", function () {
 //const tarjetas = document.querySelectorAll(".ficha_pj");
 Window.addEventListener("scroll", function () {
     if(window.scrollY > 1400){
-        document.querySelector(".imgPeter").classList.add("fichaImg_animacion");
-        document.querySelector(".imgMiles").classList.add("fichaImg_animacion");
-        document.querySelector(".imgGwen").classList.add("fichaImg_animacion");
+        document.querySelector("#imgTransition1").classList.add(".fichaImg_animacion");
+        document.querySelector("#imgTransition2").classList.add(".fichaImg_animacion");
+        document.querySelector("#imgTransition3").classList.add(".fichaImg_animacion");
     }
 });
