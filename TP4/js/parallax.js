@@ -11,9 +11,15 @@ document.addEventListener("scroll", threeSpideysSectionToWhite);
 // Mini Logo Header - aparece y desaparece al hacer scroll
 function parallaxLogoHeader() {
     if (window.scrollY < 100) {
+        header.classList.remove(headerLow);
+        header.classList.add(headerTop);
+        header.style.cssText = "height: 100px;";
         miniLogo.style.opacity = 0;
     }
-    if (window.scrollY > 20) { // scroll mayor a 100px
+    if (window.scrollY > 20) {
+        header.classList.remove(headerTop);
+        header.classList.add(headerLow);
+        header.style.cssText = "height: 90px;";
         miniLogo.style.opacity = window.scrollY / 500;
     }
 }

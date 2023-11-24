@@ -4,12 +4,14 @@
     --pure-white: #FFF;
     --pure-black: #000;
     --main-yellow: #FFE901;
-    --main-orange: #FFBB00;
-    --main-red: #e02f39;
+    --primary_btn-hover: #FFBB00;
+    --loader-bg: #e02f39;
     --main-purple: #8F6AA6;
     --dark-blue: #02187E;
     --light-blue: #2982FF;
-    --sky-blue: #59a1fc;
+    --sky-top: #5468F8;
+    --sky-bottom: #5499F8;
+    --sky-dark-botom:#5499F800;
 }
 
 @font-face {
@@ -57,7 +59,6 @@ header{
     background-color: var(--pure-white);
 }
 html{
-    /* max-height: auto; */
     min-height: 100%;
 }
 body,
@@ -124,7 +125,7 @@ main{
 .primary_btn > span{
     position: relative;
     z-index: 2;
-    transition: .3s ease all;
+    transition: .5s ease all;
 }
 .primary_btn::after{
     content: "";
@@ -140,7 +141,7 @@ main{
 }
 .primary_btn:hover::after{
     transform: scale(400);
-    background-color: var(--main-orange)
+    background-color: var(--primary_btn-hover)
 }
 /* HEADER */
 .main-header {
@@ -152,14 +153,15 @@ main{
     padding: 0 5%;
     top: 0;
     z-index: 100;
-    transition: all 0.3s ease;
-    background-color: var(--sky-blue);
-    /* background: linear-gradient(rgb(84, 152, 248, 1), rgb(84, 152, 248, 0)); */
+    transition: all 0.5s ease;
 }
-
-
-
-
+.header_at_top{
+    background: linear-gradient(var(--sky-top), var(--sky-bottom) 80%, var(--sky-dark-botom));
+}
+.header_low{
+    background: var(--sky-bottom);
+}
+/* Menu amborguesa mal hecho*/
 .menu-hamburguesa,
 .menu_desplegado{
     display: flex;
@@ -191,9 +193,7 @@ main{
     0%    { width:0%; float:right; }
     50%   { width:100%; }
 }
-
-
-
+/* Menu amborguesa fin*/
 
 
 
@@ -448,26 +448,27 @@ main{
     justify-content: center;
     margin-top: 150px;
 }
-
 .presentaciones_pjs {
-    width: 1080px;
+    width: 90%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
 }
-
 .ficha_pj {
     width: 333px;
     height: 544px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 23;
+    gap: 23px;
     opacity: 0;
     transform: translate(0, 100px);
     transition: all 0.5s ease-in;
+}
+.ficha_pj > p{
+    width: 80%;
 }
 .fichaImg{
     width: 333px;
@@ -508,9 +509,9 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    height: 1600px;
+    height: 1500px;
+    margin-top: 2%;
     margin-bottom: 10%;
-    background-color: var(--pure-black);
 }
 .gwen_container,
 .vengadores_container {
@@ -523,11 +524,14 @@ main{
 }
 /* GWEN */
 .gwen_container {
-    height: 750px;
+    height: 650px;
 }
 .gwen_bg {
     top: 0;
     right: 0;
+}
+.gwen_card{
+    z-index: 2;
 }
 .gwen_card.sub1{
     top: -160px;
@@ -542,18 +546,25 @@ main{
     left: 0;
 }
 /* VENGADORES */
+.vengadores_great-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: var(--pure-black);
+    clip-path: polygon(0 10%, 100% 2%, 100% 100%, 0 100%);
+    /* arriba izq - arriba der - abajo izq - abajo der*/
+}
 .vengadores_container {
     justify-self: flex-end;
     height: 750px;
     margin-left: 7.5%;
 }
-
 .vengadores_container>h3 {
     width: 40%;
     font-size: 50px;
     color: var(--pure-white);
 }
-
 .vengadores_pantera {
     width: 368px;
     height: 552px;
@@ -561,34 +572,28 @@ main{
     left: 500px;
     z-index: 1;
 }
-
 .vengadores_elastic {
     bottom: -50px;
     left: 20px;
     z-index: 1;
 }
-
 .vengadores_hulk {
     bottom: -50px;
     right: 140px;
     z-index: 1;
 }
-
 .vengadores_sky {
     bottom: -84px;
     right: 120px;
 }
-
 .vengadores_trees,
 .vengadores_upfront {
     bottom: 0;
     left: 0;
 }
-
 .vengadores_upfront {
     z-index: 2;
 }
-
 /* EJEMPLOS JUEGO */
 .ejemplos-juego_container {
     display: flex;
@@ -651,9 +656,11 @@ main{
     gap: 50px;
     width: 100%;
     font-size: 20px;
-    height: 350px;
+    height: 450px;
     padding-left: 5%;
     color: var(--pure-white);
+    clip-path: polygon(0 0, 100% 15%, 100% 70%, 0 100%);
+     /* arriba izq - arriba der - abajo izq - abajo der*/
     background-color: var(--pure-black);
 }
 
@@ -677,7 +684,7 @@ main{
     justify-content: center;
     padding: 5%;
     transition: 1s;
-
+    height: 100%;
 }
 .threeSpideys{
     transition: 0.8s;
@@ -685,7 +692,7 @@ main{
 .three_gwen_bg,
 .three_miles_bg,
 .three_peter_bg{
-    background-size: 100%;
+    object-fit:cover;
     background-repeat: no-repeat;
     background: white;
 }
@@ -859,7 +866,7 @@ footer {
     width: 100%;
     margin-top:130px;
     color: var(--pure-white);
-    background: var(--main-red);
+    background: var(--loader-bg);
     animation: underline 5s ease-in-out; 
 }
 .underline > img{

@@ -31,6 +31,8 @@ const gwenCards = document.querySelectorAll(".gwen_card");
 const threeSection = document.querySelector("#spideys_img-container");
 const threeSpideys = threeSection.querySelectorAll(".threeSpideys");
 
-// Global Strings
+// Global Classes
 const classInvisible = "hidden";
 const animationFicha = "fichaImg_animacion";
+const headerTop = "header_at_top";
+const headerLow = "header_low";
