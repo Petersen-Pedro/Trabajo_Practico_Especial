@@ -1,91 +1,54 @@
 "use strict"
 
-const emailSubmit = document.querySelector("#email_submit");
-emailSubmit.addEventListener("click", (e) => e.preventDefault())
+emailSubmit.addEventListener("click", (e) => e.preventDefault());
 
-// Pralax principal del HOME
+gwenCards.forEach(c => c.addEventListener("mouseover", (e) => blurGwenCards(e)));
+threeSpideys.forEach(spidey => spidey.addEventListener("mouseover", destacarSpidey));
 
-const header = document.querySelector("#header");
-const logo = document.querySelector("#logo");
-const miniLogo = document.querySelector(".miniLogo");
-
-// mini logo aparece y desaparece al hacer scroll
-document.addEventListener("scroll", () => {
-    if (window.scrollY < 100) { // Si el scroll es menor a 100px
-        miniLogo.style.opacity = 0;
-    }
-    if (window.scrollY > 100) { // Si el scroll es mayor a 100px
-        miniLogo.style.opacity = window.scrollY / 500;
-    }
-    //logo.style.opacity = 1 - window.scrollY / 100;
-    //logo.style.scale = 1 - window.scrollY / 100;
+menuHamburguesa.addEventListener("click", () => {
+    menuDesplegado.classList.remove(classInvisible);
+    menuHamburguesa.classList.add(classInvisible);
+});
+menuDesplegado.addEventListener("click", () => {
+    // const rec = menuDesplegado.querySelectorAll("img");
+    // rec.forEach(r => r.classList.add("alternate-animation"));
+    menuDesplegado.classList.add(classInvisible);
+    menuHamburguesa.classList.remove(classInvisible);
 });
 
-// paralax de los spiders
-//NACHO, SI ENTRASTE EN UN ESTADO DE PSICOTAPTIA NOCTAMBULA PROGRAMADORA INTENSA, NO TE PREOCUPES. ESTE CACHO DE CODIGO NO FUE ABANDONADO A MEDIO HACER SIN ESPERANZAS DE VER UN MA;ANA, ESTA BIEN ENCAMINADO, TAN SOLO PERDI TIEMPO VIENDO COMO MIERDA HACER QUE LOS EDIFICOS SE MUEVAN.
-//NO TE PREOCUPES, NO ES UNA LOCURA, ES UNA LOCURA PROGRAMADORA.
+// Gwen Section
+/*
+    Destaca la carta seleccionada blureando las otras dos y poniendola por delante
+*/
+// TODO - quedan muy pegadas y son dificiles de seleccionar
+function blurGwenCards(e){
+    const selectedCard = e.currentTarget.classList[1];
 
-const edificioIzq = document.querySelector(".edificio_izq");
-const edificioCentro = document.querySelector(".edificio_centro");
-const edificioDer = document.querySelector(".edificio_der");
-const spiderWoman = document.querySelector("spiderman_izq");
-const spiderMan = document.querySelector("spiderman_centro");
-const spiderBlack = document.querySelector("spiderman_der");
-const tIzq = document.querySelector(".t_izq");
-const tDer = document.querySelector(".t_der");
-
-document.addEventListener("scroll", () => {
-    //Edificios
-    edificioIzq.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
-    edificioDer.style.transform = `translateX(${window.scrollY * 0.3}px)`;
-    edificioCentro.style.transform = `scale(${1 + window.scrollY * 0.0002}px)`;
-
-    /*
-    // Spiders
-    spiderWoman.style.transform = `translateY(${-window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
-    spiderMan.style.transform = `translateY(${-window.scrollY * 0.2}px) translateY(${window.scrollY * 0.2}px)`;
-    spiderBlack.style.transform = `translateY(${-window.scrollY * 0.2}px) translateX(${window.scrollY * 0.2}px)`;
-
-    // Telarañas
-    tIzq.style.transform = `translateY(${window.scrollY * 0.2}px) translateY(${-window.scrollY * 0.2}px)`;
-    tDer.style.transform = `translateY(${window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
-    */
-
-
-    // Spiders
-    spiderWoman.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
-    spiderMan.style.transform = `translateX(${window.scrollY * 0.3}px)`;
-    spiderBlack.style.transform = `translateY(${-window.scrollY * 0.2}px) translateX(${window.scrollY * 0.2}px)`;
-
-    // Telarañas
-    tIzq.style.transform = `translateY(${window.scrollY * 0.2}px) translateY(${-window.scrollY * 0.2}px)`;
-    tDer.style.transform = `translateY(${window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
-});
-
-//-----------------------------
-
-//SECCION DUENDE VERDE
-
-const duendeVerde = document.querySelector(".duende-verde_img");
-
-window.addEventListener("scroll", function () {
-
-    const x = duendeVerde.getBoundingClientRect();
-    const scroll = window.scrollY;
-    if (x.top < window.innerHeight && x.bottom > 0) {
-        duendeVerde.style.transform = `translateY(${(scroll - x.top) * 0.025}px)`;
+    for (const card of gwenCards) {
+        const classToCheck = card.classList[1];
+        if(classToCheck === selectedCard)
+            card.style.cssText = "z-index: 4; filter: blur(0);";
+        else
+            card.style.cssText = "z-index: 2; filter: blur(1.5px);";
     }
-});
-
-//-----------------------------
-
-//SECCION TARJETAS DE PERSONAJE
-
-//const tarjetas = document.querySelectorAll(".ficha_pj");
-Window.addEventListener("scroll", function () {
-    if(window.scrollY > 1400){
-        document.querySelector("#imgTransition1").classList.add(".fichaImg_animacion");
-        document.querySelector("#imgTransition2").classList.add(".fichaImg_animacion");
-        document.querySelector("#imgTransition3").classList.add(".fichaImg_animacion");
-    }
-});
+}
+// Three Spideys Section
+/*
+    Destaca al spidey seleccionada y pone su fondo en la seccion.
+    Tambien quita la de los otros dos para poder volver a agregarlas.
+*/
+// TODO - acomodar fondo
+function destacarSpidey(){
+    const currentId = this.id;
+    threeSpideys.forEach(spidey => {
+        const spideyName = spidey.dataset.name;
+        if (spidey.id === currentId) {
+            spidey.style.cssText = "filter: blur(0); transform: scale(1.2);"
+            threeSection.classList.remove("bg_white");
+            threeSection.classList.add(`three_${spideyName}_bg`);
+        }else{
+            threeSection.classList.remove(`three_${spideyName}_bg`);
+            spidey.style.cssText = "filter: blur(5px); transform: scale(1);"
+        }
+    })
+}

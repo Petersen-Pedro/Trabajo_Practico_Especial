@@ -10,25 +10,40 @@
 
 <body>
 
-    <header class="main-header">
-        <div class="header-section">
-            <img src="./images/header/menu-hamburguesa.png" alt="menu" class="menu-hamburguesa">
-            <div class="miniLogo"><img src="images/first-section/title.png" alt=""></div>
-            <button class="primary_btn header-btn">COMPRAR</button>
+    <!-- LOADER -->
+    <div id="loading">
+        <div class="box">
+            <div class="underline" id="loading_underline">
+                <img src="images/loader.png" alt="spidey">
+                <!-- <span>1%</span> -->
+            </div>
         </div>
+    </div>
+
+    <header id="home-header" class="main-header">
+        <div class="menu_desplegado hidden" id="menu_desplegado">
+            <img src="images/header/rectangle_hamburguesa.png" alt="recHam" class="menu_rec rec1">
+            <img src="images/header/rectangle_hamburguesa.png" alt="recHam" class="menu_rec rec2">
+        </div>
+
+        <div class="menu-hamburguesa" id="menu-hamburguesa">
+            <img src="images/header/rectangle_hamburguesa.png" alt="recHam" class="menuH_rec rec1">
+            <img src="images/header/rectangle_hamburguesa.png" alt="recHam" class="menuH_rec rec1">
+            <img src="images/header/rectangle_hamburguesa.png" alt="recHam" class="menuH_rec rec1">
+        </div>
+        <div id="miniLogo" class="miniLogo"><img src="images/first-section/title.png" alt="spidey"></div>
+        <button class="primary_btn header-btn">
+            <span>COMPRAR</span>
+        </button>
     </header>
 
-    <!---
-    NACHO, SI ENTRASTE EN UN ESTADO DE PSICOTAPTIA NOCTAMBULA PROGRAMADORA INTENSA, NO TE PREOCUPES. ESTE CACHO DE CODIGO NO FUE ABANDONADO A MEDIO HACER SIN ESPERANZAS DE VER UN MA;ANA, ESTA BIEN ENCAMINADO, TAN SOLO PERDI TIEMPO VIENDO COMO MIERDA HACER QUE LOS EDIFICOS SE MUEVAN.
-    NO TE PREOCUPES, NO ES UNA LOCURA, ES UNA LOCURA PROGRAMADORA.
-    -->
-    <main>
+    <main id="home-main">
         <!-- Parte 1 -->
         <article class="first-section">
             <!--Edificios-->
-            <div class="edificio_izq"></div>
-            <div class="edificio_centro"></div>
-            <div class="edificio_der"></div>
+            <div id="edificio_izq" class="edificio_izq"></div>
+            <div id="edificio_centro" class="edificio_centro"></div>
+            <div id="edificio_der" class="edificio_der"></div>
 
             <section class="front-first-section">
                 <!--Logo Grande-->
@@ -37,11 +52,11 @@
                 </div>
                 <!--Spidermans-->
                 <div class="spidermans-container">
-                    <div class="spiderman_izq"></div>
-                    <div class="spiderman_centro"></div>
-                    <div class="spiderman_der"></div>
-                    <div class="t_izq"></div>
-                    <div class="t_der"></div>
+                    <div id="spiderman_izq" class="spiderman_izq"></div>
+                    <div id="spiderman_centro" class="spiderman_centro"></div>
+                    <div id="spiderman_der" class="spiderman_der"></div>
+                    <div id="t_izq" class="t_izq"></div>
+                    <div id="t_der" class="t_der"></div>
                 </div>
             </section>
 
@@ -53,11 +68,10 @@
 
 
         <!-- Parte 2 -->
-        <section class="duende-verde_container">
+        <section class="duende-verde_container" id="duende-verde-section">
 
-            <div class="morado_container">
+            <div class="morado_bg_container"></div>
 
-            </div>
             <article class="duende-verde_info-text">
 
                 <div class="txt">
@@ -74,7 +88,9 @@
                     </p>
                 </div>
                 <div class="amigos-pelean_img"></div>
-                <div class="duende-verde_img"></div>
+                <!-- <img src="images/duende-verde/duende-verde.png" alt="duende-verde" 
+                    id="duende-verde_img" class="duende-verde_img"> -->
+                <div id="duende-verde_img" class="duende-verde_img"></div>
             </article>
         </section>
 
@@ -108,11 +124,11 @@
         <!-- Parte 4 -->
 
         <section class="gwen_vengadores">
-            <article class="gwen_container">
-                <img src="./images/gwen/gwen_bg.png" alt="gwen" class="gwen_bg">
-                <img src="./images/gwen/gwen_sub1.png" alt="gwen_sub1" class="gwen_sub1">
-                <img src="./images/gwen/gwen_sub2.png" alt="gwen_sub2" class="gwen_sub2">
-                <img src="./images/gwen/gwen_sub3.png" alt="gwen_sub3" class="gwen_sub3">
+            <article class="gwen_container" id="gwen_container">
+                <img src="./images/gwen/gwen_bg.png" alt="gwen" class="gwen_bg" id="gwen_bg">
+                <img src="./images/gwen/gwen_sub1.png" alt="gwen_sub1" class="gwen_card sub1" id="gwen_sub1">
+                <img src="./images/gwen/gwen_sub2.png" alt="gwen_sub2" class="gwen_card sub2" id="gwen_sub2">
+                <img src="./images/gwen/gwen_sub3.png" alt="gwen_sub3" class="gwen_card sub3" id="gwen_sub3">
             </article>
             <article class="vengadores_container">
                 <h3>Los vengadores acompañando tu aventura</h3>
@@ -187,19 +203,26 @@
         </section>
 
         <section class="spideys_bg-white">
-            <div class="spideys_text-info">
+            <article class="spideys_text-info">
                 <p>
                     ”un gran poder conlleva una gran responsabilidad”
                 </p>
                 <button class="primary_btn btn_buy-now">
-                    comprar ahora
+                    <span>comprar ahora</span>
                 </button>
-            </div>
-            <div class="spideys_img-container">
-                <img src="./images/spideys/gwen.png" alt="gwen">
-                <img src="./images/spideys/peter.png" alt="peter">
-                <img src="./images/spideys/miles.png" alt="miles">
-            </div>
+            </article>
+            <article class="spideys_img-container" id="spideys_img-container">
+                
+                <img src="./images/spideys/gwen.png" alt="gwen" 
+                    class="threeSpideys" id="threeSpideys-gwen" data-name="gwen">
+
+                <img src="./images/spideys/peter.png" alt="peter" 
+                    class="threeSpideys" id="threeSpideys-peter" data-name="peter">
+
+                <img src="./images/spideys/miles.png" alt="miles" 
+                    class="threeSpideys" id="threeSpideys-miles" data-name="miles">
+                    
+            </article>
         </section>
 
         <section class="pre-footer">
@@ -211,7 +234,9 @@
                 <form>
                     <div class="pre-footer-form_input-container">
                         <input type="email" placeholder="Ingresa aquí tu correo" class="email_input">
-                        <input type="submit" id="email_submit" class="primary_btn email_submit" value="SUSCRIBIRSE">
+                        <button type="submit" id="email_submit" class="primary_btn email_submit" >
+                            <span>SUSCRIBIRSE</span>
+                        </button>
                     </div>
                 </form>
 
@@ -230,7 +255,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="home-footer">
         <div class="footer_playable-platforms">
             <img src="./images/footer/footer_playable-platforms.png" alt="platforms">
         </div>
@@ -258,7 +283,10 @@
         </section>
     </footer>
 
+    <script src="./js/global.constants.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/parallax.js"></script>
 </body>
 
 </html>
