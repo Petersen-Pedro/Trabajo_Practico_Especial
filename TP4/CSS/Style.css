@@ -55,7 +55,7 @@
 html, 
 body,
 header{
-    width: 1280px;
+    width: 100%;
     background-color: var(--pure-white);
 }
 html{

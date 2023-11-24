@@ -43,14 +43,20 @@ function parallaxFirstSection(){
     tIzq.style.transform = `translateY(${window.scrollY * 0.2}px) translateY(${-window.scrollY * 0.2}px)`;
     tDer.style.transform = `translateY(${window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
 }
+
+
+
 // Seccion Duende Verde
 function parallaxDuendeVerde(){
     const x = duendeVerdeSection.getBoundingClientRect();
     if (x.top < window.innerHeight && x.bottom > 0) {
-        // Hace lo que se pide pero invertido xdn't
-        // duendeVerde.style.transform = `translateY(${(window.scrollY - x.top) * -0.25}px)`;
+        // Estuve como 10 minutos tratando de arreglarlo, hasta que con simplemente cambie el 0.25 por 0.03 y quedó perfecto
+        duendeVerde.style.transform = `translateY(${(window.scrollY - x.top) * 0.03}px)`;
     }
 }
+
+
+
 // Seccion Tarjetas de personajes
 function parallaxTarjetasPj(){
     if(window.scrollY > 1400){
