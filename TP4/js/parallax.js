@@ -74,17 +74,20 @@ function gwenSectionReset(){
     const x = gwenSection.getBoundingClientRect();
     if (!(x.top < window.innerHeight && x.bottom > 0)) {
         gwenCards.forEach(card => {
-            card.style.cssText = "z-index: 2; filter: blur(1.5px);"
-        })
+            card.classList.remove("gwen_card_visible");
+            card.style.cssText = "z-index: 2;";
+        });
     }
 }
+/* 
+    TODO - el tiempo de transition deberia aplicarse a translateX pero no a rotate. 
+    Sin embargo ambas son propiedas de transform por lo que no se como solucionarlo.
+*/ 
 function parallaxGwen(){
-    // const x = gwenSection.getBoundingClientRect();
-    // if (x.top < window.innerHeight && x.bottom > 0) {
-        
-    // gwenFirstCard.style.top = `${window.scrollY/4 * -1}px`;
-    // }
-    // console.log(gwenFirstCard.style);
+    const x = gwenSection.getBoundingClientRect();
+    if (x.top < window.innerHeight && x.bottom > 0) {
+        gwenCards.forEach(card => card.classList.add("gwen_card_visible"));
+    }
 }
 
 // Seccion de tres spideys

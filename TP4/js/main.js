@@ -1,5 +1,7 @@
 "use strict"
 
+const gwenCardsDegrees = { sub1 : 20, sub2: 30, sub3: 40 }
+
 emailSubmit.addEventListener("click", (e) => e.preventDefault());
 
 gwenCards.forEach(c => c.addEventListener("mouseover", (e) => blurGwenCards(e)));
@@ -23,11 +25,11 @@ menuDesplegado.addEventListener("click", () => {
 // TODO - quedan muy pegadas y son dificiles de seleccionar
 function blurGwenCards(e){
     const selectedCard = e.currentTarget.classList[1];
-
+    const deg = gwenCardsDegrees[selectedCard];
     for (const card of gwenCards) {
         const classToCheck = card.classList[1];
         if(classToCheck === selectedCard)
-            card.style.cssText = "z-index: 4; filter: blur(0);";
+            card.style.cssText = "z-index: 4; filter: blur(0); transform: rotate("+ deg +"deg);";
         else
             card.style.cssText = "z-index: 2; filter: blur(1.5px);";
     }
