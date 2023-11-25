@@ -10,6 +10,9 @@ const main = document.querySelector("#home-main");
 const footer = document.querySelector("#home-footer");
 const logo = document.querySelector("#logo");
 
+const menuList = document.querySelector("#menu_desplegado_list");
+const menuItems = menuList.querySelectorAll(".menu_list-item");
+
 // First Section
 const edificioIzq = document.querySelector("#edificio_izq");
 const edificioCentro = document.querySelector("#edificio_centro");

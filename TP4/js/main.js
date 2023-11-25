@@ -8,6 +8,8 @@ gwenCards.forEach(c => c.addEventListener("mouseover", (e) => blurGwenCards(e)))
 threeSpideys.forEach(spidey => spidey.addEventListener("mouseover", destacarSpidey));
 
 menuHamburguesa.addEventListener("click", () => {
+    menuList.classList.remove(classInvisible);
+    menuItems.forEach(menu => menu.classList.add("visible"));
     menuDesplegado.classList.remove(classInvisible);
     menuHamburguesa.classList.add(classInvisible);
 });
@@ -15,6 +17,8 @@ menuDesplegado.addEventListener("click", () => {
     // const rec = menuDesplegado.querySelectorAll("img");
     // rec.forEach(r => r.classList.add("alternate-animation"));
     menuDesplegado.classList.add(classInvisible);
+    menuItems.forEach(menu => menu.classList.remove("visible"));
+    menuList.classList.add(classInvisible);
     menuHamburguesa.classList.remove(classInvisible);
 });
 
