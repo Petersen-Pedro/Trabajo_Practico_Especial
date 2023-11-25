@@ -55,8 +55,10 @@
 html, 
 body,
 header{
-    /* width: 100%; */
+    /* 
     width: 1280px;
+    */
+    width: 100%; 
     background-color: var(--pure-white);
 }
 html{
@@ -599,53 +601,107 @@ ul{
 .gwen_card_visible{
     transform: translateX(0);
 }
+/* Parte 5 */
+
 /* VENGADORES */
-.vengadores_great-container{
+
+.vengadores_great-container {
+    width: 100%;
+    height: 984px;
+    margin-bottom: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.vengadores_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100px;
+    background-color: var(--pure-black);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 85%);
+    z-index: 1;
+}
+
+.vengadores_front {
+    width: 1080px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    background-color: var(--pure-black);
-    clip-path: polygon(0 10%, 100% 2%, 100% 100%, 0 100%);
-    /* arriba izq - arriba der - abajo izq - abajo der*/
+    align-items: start;
+    z-index: 2;
+    padding-top: 140px;
+    box-sizing: border-box;
+    gap: 55.11px;
 }
-.vengadores_container {
-    justify-self: flex-end;
-    height: 750px;
-    margin-left: 7.5%;
-}
-.vengadores_container>h3 {
-    width: 40%;
-    font-size: 50px;
+
+.vengadores_front > .titulo-seccion{
+    width: 667px;
     color: var(--pure-white);
 }
-.vengadores_pantera {
-    width: 368px;
-    height: 552px;
-    bottom: 200px;
-    left: 500px;
-    z-index: 1;
+
+.vengadores_container{
+    width: 100%;
+    height: 527px;
+    display: flex;
+    transition: all 0.5s ease-in;
 }
-.vengadores_elastic {
-    bottom: -50px;
-    left: 20px;
-    z-index: 1;
+
+.vengadores_upfront{
+    background-image: url(../images/vengadores/upfront.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    background-size: cover;
 }
-.vengadores_hulk {
-    bottom: -50px;
-    right: 140px;
-    z-index: 1;
+
+.vengadores_trees{
+    background-image: url(../images/vengadores/trees.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-size: cover;
 }
-.vengadores_sky {
-    bottom: -84px;
-    right: 120px;
+
+.vengadores_elastic{
+    background-image: url(../images/vengadores/elastic.png);
+    width: 569px;
+    height: 675px;
+    position: relative;
+    top: -100px;
+    left: 32px;
+    z-index: 4;
 }
-.vengadores_trees,
-.vengadores_upfront {
-    bottom: 0;
-    left: 0;
+
+.vengadores_pantera{
+    background-image: url(../images/vengadores/pantera.png);
+    width: 488px;
+    height: 624px;
+    position: relative;
+    top: -234px;
+    left: -117px;
+    z-index: 4;
 }
-.vengadores_upfront {
+
+.vengadores_hulk{
+    background-image: url(../images/vengadores/hulk.png);
+    width: 464px;
+    height: 488px;
+    position: relative;
+    top: 89px;
+    left: -43px;
+    z-index: 4;
+}
+
+.vengadores_sky{
+    background-image: url(../images/vengadores/sky.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
     z-index: 2;
 }
 /* EJEMPLOS JUEGO */
