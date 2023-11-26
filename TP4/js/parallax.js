@@ -112,7 +112,7 @@ function threeSpideysSectionToWhite(){
 
 // Parte 5 - Vengadores
 /*
-HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
+HAY UN PROBLEMA, EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
 */
 vengadores.addEventListener("mousemove", (e) => {
     let posX = e.clientX;
@@ -124,4 +124,38 @@ vengadores.addEventListener("mousemove", (e) => {
 
     hojas.style.transform = `trscale(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
     arboles.style.transform = `translateX(${-posX * 0.005}px) scale(${1 + posY * 0.000001})`;
+});
+
+//Parte 6 - Ejemplos de Juego
+
+document.addEventListener("scroll", () => {
+
+    if (window.scrollY > 4000) {
+        removeView();
+        document.querySelector(".ejemplos-juego_text-1").classList.add(".EjJueText-view");
+        document.querySelector(".ejemplos-juego_text-1").classList.add(".EjJueImg-view");
+    }   
+
+    if (window.scrollY > 4080 && window.scrollY < 4450) {
+        removeView();
+        document.querySelector(".ejemplos-juego_text-2").classList.add(".EjJueText-view");
+        document.querySelector(".ejemplos-juego_text-2").classList.add(".EjJueImg-view");
+    }    
+
+    if (window.scrollY > 4450 && window.scrollY < 4950) {
+        removeView();
+        document.querySelector(".ejemplos-juego_text-3").classList.add(".EjJueText-view");
+        document.querySelector(".ejemplos-juego_text-3").classList.add(".EjJueImg-view");
+    }    
+
+    if (window.scrollY > 4950) {
+        removeView();
+        document.querySelector(".ejemplos-juego_text-4").classList.add(".EjJueText-view");
+        document.querySelector(".ejemplos-juego_text-4").classList.add(".EjJueImg-view");
+    }    
+
+    function removeView() {
+        document.querySelector(".EjJueText-view").classList.remove(".EjJueText-view");
+        document.querySelector(".EjJueImg-view").classList.remove(".EjJueImg-view");
+    }
 });
