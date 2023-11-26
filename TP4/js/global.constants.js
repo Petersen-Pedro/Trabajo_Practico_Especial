@@ -39,3 +39,15 @@ const classInvisible = "hidden";
 const animationFicha = "fichaImg_animacion";
 const headerTop = "header_at_top";
 const headerLow = "header_low";
+
+// Parte 5 - Vengadores
+//NACHO, NO ME MATES SI ENCONTRAS ESTO, HICE EL JAVASCRIPT ACA PORQUE ME ES MAS COMODO, Y UNA VEZ QUE LO TERMINE LO ORDENO
+const vengadores = document.querySelector(".vengadores_great-container");
+const hojas = document.querySelector(".vengadores_upfront");
+const arboles = document.querySelector(".vengadores_trees");
+const pantera = document.querySelector(".vengadores_pantera");
+const elastic = document.querySelector(".vengadores_elastic");
+const hulk = document.querySelector(".vengadores_hulk");
+/*
+HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
+*/

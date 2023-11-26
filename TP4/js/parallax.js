@@ -108,3 +108,19 @@ function threeSpideysSectionToWhite(){
         threeSection.classList.add("bg_white");
     }
 }
+
+// Parte 5 - Vengadores
+/*
+HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
+*/
+vengadores.addEventListener("mousemove", (e) => {
+    let posX = e.clientX;
+    let posY = e.clientY;
+
+    pantera.style.transform = `translateX(${posX * 0.05}px) translateY(${posY * 0.05}px) rotate(${posX * 0.01}deg)`;
+    elastic.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${posY * 0.02}px) rotate(${-posX * 0.01}deg)`;
+    hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${20 + posY * 0.02}px) rotate(${posX * 0.01}deg)`;
+
+    hojas.style.transform = `trscale(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
+    arboles.style.transform = `translateX(${-posX * 0.005}px) scale(${1 + posY * 0.000001})`;
+});

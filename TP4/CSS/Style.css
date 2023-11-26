@@ -604,7 +604,9 @@ ul{
 /* Parte 5 */
 
 /* VENGADORES */
-
+/*
+HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
+*/
 .vengadores_great-container {
     width: 100%;
     height: 984px;
@@ -644,6 +646,7 @@ ul{
 .vengadores_container{
     width: 100%;
     height: 527px;
+    position: relative;
     display: flex;
     transition: all 0.5s ease-in;
 }
@@ -668,32 +671,35 @@ ul{
 
 .vengadores_elastic{
     background-image: url(../images/vengadores/elastic.png);
-    width: 569px;
-    height: 675px;
+    width: 452px;
+    height: 593px;
     position: relative;
-    top: -100px;
-    left: 32px;
+    top: -55px;
+    left: 80px;
     z-index: 4;
+    background-repeat: no-repeat;
 }
 
 .vengadores_pantera{
     background-image: url(../images/vengadores/pantera.png);
-    width: 488px;
-    height: 624px;
+    width: 370px;
+    height: 554px;
     position: relative;
-    top: -234px;
-    left: -117px;
+    top: -220px;
+    left: 55px;
     z-index: 4;
+    background-repeat: no-repeat;
 }
 
 .vengadores_hulk{
     background-image: url(../images/vengadores/hulk.png);
-    width: 464px;
-    height: 488px;
+    width: 411px;
+    height: 439px;
     position: relative;
     top: 89px;
     left: -43px;
     z-index: 4;
+    background-repeat: no-repeat;
 }
 
 .vengadores_sky{
