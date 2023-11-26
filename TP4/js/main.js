@@ -7,21 +7,14 @@ emailSubmit.addEventListener("click", (e) => e.preventDefault());
 gwenCards.forEach(c => c.addEventListener("mouseover", (e) => blurGwenCards(e)));
 threeSpideys.forEach(spidey => spidey.addEventListener("mouseover", destacarSpidey));
 
-menuHamburguesa.addEventListener("click", () => {
-    menuList.classList.remove(classInvisible);
-    menuItems.forEach(menu => menu.classList.add("visible"));
-    menuDesplegado.classList.remove(classInvisible);
-    menuHamburguesa.classList.add(classInvisible);
+menuHamburguesa.addEventListener("mouseover", () => {
+    menuHamburguesaRects.forEach(rect => rect.classList.add(rectToX));
+    menuDesplegadoItems.forEach(item => item.classList.add(visibleMenuItem));
 });
-menuDesplegado.addEventListener("click", () => {
-    // const rec = menuDesplegado.querySelectorAll("img");
-    // rec.forEach(r => r.classList.add("alternate-animation"));
-    menuDesplegado.classList.add(classInvisible);
-    menuItems.forEach(menu => menu.classList.remove("visible"));
-    menuList.classList.add(classInvisible);
-    menuHamburguesa.classList.remove(classInvisible);
+menuHamburguesa.addEventListener("mouseout", () => {
+    menuHamburguesaRects.forEach(rect => rect.classList.remove(rectToX));
+    menuDesplegadoItems.forEach(item => item.classList.remove(visibleMenuItem))
 });
-
 // Gwen Section
 /*
     Destaca la carta seleccionada blureando las otras dos y poniendola por delante

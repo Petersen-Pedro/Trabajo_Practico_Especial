@@ -3,8 +3,6 @@
 const loading = document.querySelector("#loading");
 const underline = document.querySelector("#loading_underline");
 
-const body = document.querySelector("body");
-
 /*
     Se le coloca un display:none; a main, header y footer.
     Se muestra el loader que comienza en 0 y va hasta 100. 

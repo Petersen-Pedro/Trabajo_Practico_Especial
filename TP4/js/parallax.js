@@ -8,6 +8,8 @@ document.addEventListener("scroll", parallaxGwen);
 document.addEventListener("scroll", gwenSectionReset);
 document.addEventListener("scroll", threeSpideysSectionToWhite);
 
+document.addEventListener("DOMContentLoaded", parallaxLogoHeader);
+
 // Mini Logo Header - aparece y desaparece al hacer scroll
 function parallaxLogoHeader() {
     if (window.scrollY < 100) {
@@ -50,7 +52,6 @@ function parallaxFirstSection(){
 function parallaxDuendeVerde(){
     const x = duendeVerdeSection.getBoundingClientRect();
     if (x.top < window.innerHeight && x.bottom > 0) {
-        // Estuve como 10 minutos tratando de arreglarlo, hasta que con simplemente cambie el 0.25 por 0.03 y quedó perfecto
         duendeVerde.style.transform = `translateY(${(window.scrollY - x.top) * 0.03}px)`;
     }
 }

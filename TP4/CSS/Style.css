@@ -55,10 +55,8 @@
 html, 
 body,
 header{
-    /* 
     width: 1280px;
-    */
-    width: 100%; 
+    /* width: 100%;  */
     background-color: var(--pure-white);
 }
 html{
@@ -71,48 +69,6 @@ main{
 }
 ul{
     list-style: none;
-}
-.menu_desplegado_list{
-    position: absolute;
-    bottom: -140px;
-    left: 20px;
-}
-.menu_list-item{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    transform: translateX(-300px);
-    gap: 5px;
-    padding: 10px 3px;
-    font-weight: 500;
-    width: 200px;
-    text-transform: capitalize;
-    border-bottom: 1px solid var(--pure-black);
-    color: var(--pure-black);
-    background-color: var(--main-yellow);
-    opacity: 0;
-}
-.menu_list-item.item1{
-    transition: 1s ease-out;
-}
-.menu_list-item.item2{
-    transition: 1.5s ease-out;
-}
-.menu_list-item.item3{
-    transition: 2s ease-out;
-}
-.menu_list-item.visible{
-    opacity: 1;
-    transform: translateX(0);
-}
-.menu_list-item > img{
-    height: 30px;
-    width: 30px;
-    color: var(--pure-black);
-}
-.menu_list-item:last-child{
-    border: none;
 }
 /* Texto*/
 .txt {
@@ -193,7 +149,6 @@ ul{
 }
 /* HEADER */
 .main-header {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +157,7 @@ ul{
     padding: 0 5%;
     top: 0;
     z-index: 100;
-    transition: all 0.5s ease;
+    transition: all 0.5s ease-in-out;
 }
 .header_at_top{
     background: linear-gradient(var(--sky-top), var(--sky-bottom) 80%, var(--sky-dark-botom));
@@ -210,42 +165,97 @@ ul{
 .header_low{
     background: var(--sky-bottom);
 }
-/* Menu amborguesa mal hecho*/
+/* Menu hamburguesa*/
+.menu_main-container{
+    position: relative;
+    width: 100px;
+    height: 500px;
+}
 .menu-hamburguesa,
 .menu_desplegado{
     display: flex;
 }
 .menu-hamburguesa{
+    cursor: pointer;
+    position: relative;
     flex-direction: column;
     height: 26px;
     width: 34px;
 }
-.menu_rec.rec1{
-    transform: rotate(55deg);
-    animation: desplegarRec1 3s ease-in-out; 
+.menuH_rec.rec1,
+.menuH_rec.rec2,
+.menuH_rec.rec3{
+    position: absolute;
+    left: 20px;
+    transition: 1s ease-in;
 }
-.menu_rec.rec2{
-    transform: rotate(-55deg);
-    margin-left: -42px;
-    animation: desplegarRec2 3s ease-in-out;   
+.menuH_rec.rec1{
+    top: 0;
+    opacity: 1;
 }
-
-.alternate-animation {
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+.menuH_rec.rec2{
+    top: 10px;
 }
-@keyframes desplegarRec1 {
-    0%    { width:0%; float:left; }
-    50%   { width:100%; }
+.menuH_rec.rec3{
+    top: 20px;
 }
-@keyframes desplegarRec2 {
-    0%    { width:0%; float:right; }
-    50%   { width:100%; }
+.menuH_rec.rec1.rec-to-x{
+    top: -100px;
+    opacity: 0;
 }
-/* Menu amborguesa fin*/
-
-
-
+.menuH_rec.rec2.rec-to-x{
+    transform: rotate(45deg);
+}
+.menuH_rec.rec3.rec-to-x{
+    top: 10px;
+    transform: rotate(-45deg);
+}
+.menu_desplegado_list{
+    position: absolute;
+    top: 40px;
+    left: -45px;
+    /* menu al costado - no funcional*/
+    /*
+        top: -2px;
+        left: 60px; 
+    */
+}
+.menu_list-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    padding: 10px 3px;
+    width: 200px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--pure-black);
+    color: var(--pure-black);
+    background-color: var(--main-yellow);
+    opacity: 0;
+    transform: translateX(-300px);
+}
+.menu_list-item > img{
+    height: 30px;
+    width: 30px;
+}
+.menu_list-item:last-child{
+    border: none;
+}
+.menu_list-item.item1{
+    transition: 1s ease-out;
+}
+.menu_list-item.item2{
+    transition: 1.5s ease-out;
+}
+.menu_list-item.item3{
+    transition: 2s ease-out;
+}
+.menu_list-item.visible-item{
+    opacity: 1;
+    transform: translateX(0);
+}
 .header-btn {
     width: 200px;
     height: 50px;
@@ -257,9 +267,6 @@ ul{
     align-items: center;
 }
 .miniLogo{
-    opacity: 0;
-}
-.header-miniLogo img {
     opacity: 0;
 }
 .miniLogo img {
@@ -754,16 +761,7 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     width: 90%;
 }
 
-/* SPIDEYS CONTAINER */
-.spideys_bg-white {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* bg black */
-/* TODO - efecto geometrico */
+/* Un gran poder - SECTION */
 .spideys_text-info {
     display: flex;
     flex-direction: column;
@@ -774,17 +772,14 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     font-size: 20px;
     height: 450px;
     padding-left: 5%;
+    clip-path: polygon(0 0, 100% 15%, 100% 71%, 0 100%);
     color: var(--pure-white);
-    clip-path: polygon(0 0, 100% 15%, 100% 70%, 0 100%);
-     /* arriba izq - arriba der - abajo izq - abajo der*/
     background-color: var(--pure-black);
 }
-
 .spideys_text-info>p {
     width: 40%;
     font-size: 40px;
 }
-
 .primary_btn.btn_buy-now {
     width: 292px;
     height: 50px;
@@ -792,37 +787,35 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     box-shadow: 4px 5px;
     border: 7px solid var(--light-blue);
 }
-
-/* three spideys section */
+/* THREE SPIDEYS SECTION */
 .spideys_img-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5%;
     transition: 1s;
-    height: 100%;
+    margin-bottom: -10px;
+    margin-top: -133px;
+    height: 850px;
+    width: 1280px;
 }
 .threeSpideys{
     transition: 0.8s;
 }
+.three_gwen_bg{
+    background: url(../images/spideys/bg_gwen.png);
+}
+.three_peter_bg{
+    background: url(../images/spideys/bg_peter.png);
+}
+.three_miles_bg{
+    background: url(../images/spideys/bg_miles.png);
+}
 .three_gwen_bg,
 .three_miles_bg,
 .three_peter_bg{
-    object-fit:cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background: white;
 }
-
-.three_gwen_bg{
-    background-image: url(../images/spideys/bg_gwen.png);
-}
-.three_peter_bg{
-    background-image: url(../images/spideys/bg_peter.png);
-}
-.three_miles_bg{
-    background-image: url(../images/spideys/bg_miles.png);
-}
-
 /* PRE-FOOTER */
 .pre-footer {
     display: flex;
@@ -832,13 +825,11 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     background: linear-gradient(#8FBEFC, #F7E3D8);
     position: relative;
 }
-
 .city_pre-footer {
     position: absolute;
     bottom: 0;
     right: 0;
 }
-
 /* Mail input */
 .pre-footer_mail-input-container {
     display: flex;
@@ -848,24 +839,20 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     top: 150px;
     left: 200px;
 }
-
 .pre-footer_email-title {
     font-size: 50px;
     width: 80%;
     text-align: center;
     padding: 0 100px 30px 40px;
 }
-
 .pre-footer_email-conditions {
     font-size: 20px;
     width: 70%;
     padding: 40px 7%;
 }
-
 .pre-footer_email-conditions>span {
     text-decoration: underline;
 }
-
 .pre-footer-form_input-container {
     position: relative;
     display: inline-block;
@@ -874,14 +861,12 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     border-radius: 111px;
     border: 7px solid var(--light-blue);
 }
-
 .email_input {
     width: 600px;
     padding: 0 40px;
     border-radius: 111px;
     border: none;
 }
-
 .email_submit {
     position: absolute;
     top: 0;
@@ -891,13 +876,10 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     border-left: 7px solid var(--light-blue);
     border-radius: 0 111px 111px 0;
 }
-
 .email_input,
 .email_submit {
     height: 100px;
-
 }
-
 /* Positions */
 .pre-footer_age-rate {
     width: 231px;

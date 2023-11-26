@@ -1,17 +1,17 @@
 const emailSubmit = document.querySelector("#email_submit");
 
+// body main elements
+const main = document.querySelector("#home-main");
+const footer = document.querySelector("#home-footer");
 // Header
 const header = document.querySelector("#home-header");
 const miniLogo = document.querySelector("#miniLogo");
 const menuHamburguesa = document.querySelector("#menu-hamburguesa");
-const menuDesplegado = document.querySelector("#menu_desplegado");
 
-const main = document.querySelector("#home-main");
-const footer = document.querySelector("#home-footer");
+const menuHamburguesaRects = document.querySelectorAll(".menuH_rec");
+const menuDesplegadoItems = document.querySelectorAll(".menu_list-item");
+
 const logo = document.querySelector("#logo");
-
-const menuList = document.querySelector("#menu_desplegado_list");
-const menuItems = menuList.querySelectorAll(".menu_list-item");
 
 // First Section
 const edificioIzq = document.querySelector("#edificio_izq");
@@ -39,6 +39,8 @@ const classInvisible = "hidden";
 const animationFicha = "fichaImg_animacion";
 const headerTop = "header_at_top";
 const headerLow = "header_low";
+const rectToX = "rec-to-x";
+const visibleMenuItem = "visible-item";
 
 // Parte 5 - Vengadores
 //NACHO, NO ME MATES SI ENCONTRAS ESTO, HICE EL JAVASCRIPT ACA PORQUE ME ES MAS COMODO, Y UNA VEZ QUE LO TERMINE LO ORDENO
