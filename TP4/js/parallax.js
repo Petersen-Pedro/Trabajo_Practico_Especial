@@ -26,7 +26,7 @@ function parallaxLogoHeader() {
     }
 }
 // parallax de los spiders
-function parallaxFirstSection(){
+function parallaxFirstSection() {
     //Edificios
     edificioIzq.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
     edificioDer.style.transform = `translateX(${window.scrollY * 0.3}px)`;
@@ -49,7 +49,7 @@ function parallaxFirstSection(){
 
 
 // Seccion Duende Verde
-function parallaxDuendeVerde(){
+function parallaxDuendeVerde() {
     const x = duendeVerdeSection.getBoundingClientRect();
     if (x.top < window.innerHeight && x.bottom > 0) {
         duendeVerde.style.transform = `translateY(${(window.scrollY - x.top) * 0.03}px)`;
@@ -59,19 +59,19 @@ function parallaxDuendeVerde(){
 
 
 // Seccion Tarjetas de personajes
-function parallaxTarjetasPj(){
-    if(window.scrollY > 1400){
+function parallaxTarjetasPj() {
+    if (window.scrollY > 1400) {
         for (const ficha of fichasPj) {
             ficha.classList.add(animationFicha)
         }
-    }else{
+    } else {
         for (const ficha of fichasPj) {
             ficha.classList.remove(animationFicha)
         }
     }
 }
 // Seccion Gwen
-function gwenSectionReset(){
+function gwenSectionReset() {
     const x = gwenSection.getBoundingClientRect();
     if (!(x.top < window.innerHeight && x.bottom > 0)) {
         gwenCards.forEach(card => {
@@ -83,8 +83,8 @@ function gwenSectionReset(){
 /* 
     TODO - el tiempo de transition deberia aplicarse a translateX pero no a rotate. 
     Sin embargo ambas son propiedas de transform por lo que no se como solucionarlo.
-*/ 
-function parallaxGwen(){
+*/
+function parallaxGwen() {
     const x = gwenSection.getBoundingClientRect();
     if (x.top < window.innerHeight && x.bottom > 0) {
         gwenCards.forEach(card => card.classList.add("gwen_card_visible"));
@@ -98,7 +98,7 @@ function parallaxGwen(){
     Si se llama a la funcion cuando ya la seccion estaba en blanco, 
     simplemente retorna.
 */
-function threeSpideysSectionToWhite(){
+function threeSpideysSectionToWhite() {
     if (threeSection.classList.contains("bg_white")) return;
 
     const x = threeSection.getBoundingClientRect();
@@ -128,34 +128,48 @@ vengadores.addEventListener("mousemove", (e) => {
 
 //Parte 6 - Ejemplos de Juego
 
+
+
 document.addEventListener("scroll", () => {
 
-    if (window.scrollY > 4000) {
-        removeView();
-        document.querySelector(".ejemplos-juego_text-1").classList.add(".EjJueText-view");
-        document.querySelector(".ejemplos-juego_text-1").classList.add(".EjJueImg-view");
-    }   
+    //ES PARA SABER DONDE ESTA EL SCROLL Y ASI PODER REGULAR LOS IF
+    addEventListener("scroll", () => { console.log(window.scrollY); });
 
-    if (window.scrollY > 4080 && window.scrollY < 4450) {
+    if (window.scrollY < 3600) {
+        console.log("hola < 3600");
         removeView();
-        document.querySelector(".ejemplos-juego_text-2").classList.add(".EjJueText-view");
-        document.querySelector(".ejemplos-juego_text-2").classList.add(".EjJueImg-view");
-    }    
+        document.querySelector(".ej_text-1").classList.add(".EjJueText-view");
+        document.querySelector(".ej_text-1").classList.add(".EjJueImg-view");
+    }
 
-    if (window.scrollY > 4450 && window.scrollY < 4950) {
+    if (window.scrollY > 3600 && window.scrollY < 4000) {
+        console.log("hola > 3600 && < 4000");
         removeView();
-        document.querySelector(".ejemplos-juego_text-3").classList.add(".EjJueText-view");
-        document.querySelector(".ejemplos-juego_text-3").classList.add(".EjJueImg-view");
-    }    
+        document.querySelector(".ej_text-2").classList.add(".EjJueText-view");
+        document.querySelector(".ej_text-2").classList.add(".EjJueImg-view");
+    }
 
-    if (window.scrollY > 4950) {
+    if (window.scrollY > 4000 && window.scrollY < 4400) {
+        console.log("hola > 4000 && < 4400");
         removeView();
-        document.querySelector(".ejemplos-juego_text-4").classList.add(".EjJueText-view");
-        document.querySelector(".ejemplos-juego_text-4").classList.add(".EjJueImg-view");
-    }    
+        document.querySelector(".ej_text-3").classList.add(".EjJueText-view");
+        document.querySelector(".ej_text-3").classList.add(".EjJueImg-view");
+    }
+
+    if (window.scrollY > 4400) {
+        console.log("hola > 4400");
+        removeView();
+        document.querySelector(".ej_text-4").classList.add(".EjJueText-view");
+        document.querySelector(".ej_text-4").classList.add(".EjJueImg-view");
+    }
 
     function removeView() {
-        document.querySelector(".EjJueText-view").classList.remove(".EjJueText-view");
-        document.querySelector(".EjJueImg-view").classList.remove(".EjJueImg-view");
+        console.log("hola removeView()");
+        //document.querySelector(".EjJueText-view").classList.remove(".EjJueText-view");
+        document.querySelectorAll(".EjJueImg-view").classList.remove(".EjJueImg-view");
+
+        //document.querySelector(".EjJueImg-view").classList.remove(".EjJueImg-view");
+        document.querySelectorAll(".EjJueText-view").classList.remove(".EjJueText-view");
+        console.log("hola remove EjJueText-view");
     }
 });

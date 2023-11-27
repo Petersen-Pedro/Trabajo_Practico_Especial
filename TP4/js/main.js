@@ -1,5 +1,5 @@
 "use strict"
-
+ 
 const gwenCardsDegrees = { sub1 : 20, sub2: 30, sub3: 40 }
 
 emailSubmit.addEventListener("click", (e) => e.preventDefault());
