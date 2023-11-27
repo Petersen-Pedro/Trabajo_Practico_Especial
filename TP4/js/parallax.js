@@ -1,11 +1,16 @@
 "use strict"
 
+const segundoEjemploJuegoScroll = 4250;
+const tercerEJemploJuegoScroll = 4750;
+const cuartoEjemploJuegoScroll = 5200;
+
 document.addEventListener("DOMContentLoaded", parallaxLogoHeader);
 
 document.addEventListener("scroll", parallaxLogoHeader);
 document.addEventListener("scroll", parallaxFirstSection);
 document.addEventListener("scroll", parallaxDuendeVerde);
 document.addEventListener("scroll", parallaxTarjetasPj);
+document.addEventListener("scroll", gwenSectionReset);
 document.addEventListener("scroll", parallaxGwen);
 document.addEventListener("scroll", threeSpideysSectionToWhite);
 document.addEventListener("scroll", parallaxEjemplosJuego);
@@ -67,15 +72,14 @@ function parallaxTarjetasPj() {
     }
 }
 // Seccion Gwen
-// function gwenSectionReset() {
-//     const x = gwenSection.getBoundingClientRect();
-//     if (!(x.top < window.innerHeight && x.bottom > 0)) {
-//         gwenCards.forEach(card => {
-//             card.classList.remove("gwen_card_visible");
-//             card.style.cssText = "z-index: 2;";
-//         });
-//     }
-// }
+function gwenSectionReset() {
+    const x = gwenSection.getBoundingClientRect();
+    if (!(x.top < window.innerHeight && x.bottom > 0)) {
+        for (const card of gwenCards) {
+            card.style.cssText = "z-index: 2; filter: blur(0); transform: rotate(0deg);";
+        }
+    }
+}
 /* 
     TODO - el tiempo de transition deberia aplicarse a translateX pero no a rotate. 
     Sin embargo ambas son propiedas de transform por lo que no se como solucionarlo.
@@ -99,10 +103,12 @@ function threeSpideysSectionToWhite() {
 
     const x = threeSection.getBoundingClientRect();
     if (!(x.top < window.innerHeight && x.bottom > 0)) {
-        threeSpideys.forEach(spidey => {
+
+        for (const spidey of threeSpideys) {
             spidey.style.cssText = "filter: blur(0); transform: scale(1);"
-        });
+        }
         threeSection.classList.add("bg_white");
+        preFooter.classList.remove("clipped");
     }
 }
 
@@ -115,66 +121,70 @@ function moveVengadoresByMouse(e){
     elastic.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${posY * 0.02}px) rotate(${-posX * 0.01}deg)`;
     hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${20 + posY * 0.02}px) rotate(${posX * 0.01}deg)`;
 
-    hojas.style.transform = `trscale(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
+    hojas.style.transform = `translateX(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
     arboles.style.transform = `translateX(${-posX * 0.005}px) scale(${1 + posY * 0.000001})`;
 }
 
 //Parte 6 - Ejemplos de Juego
 function parallaxEjemplosJuego(){
+    const { scrollY } = window;
 
-    // console.log(window.scrollY);
+    const displayedImg = document.querySelector("."+visibleEjemploJuego);
 
-    if (window.scrollY<4250) {
-        removeView();
-        const img1 = document.querySelector("#ej-juego1");
-        img1.classList.add("EjJueImg-view");
+    if (scrollY < segundoEjemploJuegoScroll) {
+        if (displayedImg.id !== ejemplo1.id) {
+            hideEjemploJuego(displayedImg);
+            ejemplo1.classList.add(visibleEjemploJuego);
+        }
     }
 
-    else if(window.scrollY > 4250 && window.scrollY < 4750){
-        removeView();
-        const img2 = document.querySelector("#ej-juego2");
-        img2.classList.add("EjJueImg-view");
+    else if(scrollY > segundoEjemploJuegoScroll && scrollY < tercerEJemploJuegoScroll){
+        if (displayedImg.id !== ejemplo2.id) {
+            hideEjemploJuego(displayedImg);
+            ejemplo2.classList.add(visibleEjemploJuego);
+        }
     }
 
-    else if(window.scrollY >= 4750 && window.scrollY < 5200){
-        removeView();
-        const img3 = document.querySelector("#ej-juego3");
-        img3.classList.add("EjJueImg-view");
+    else if(scrollY >= tercerEJemploJuegoScroll && scrollY < cuartoEjemploJuegoScroll){
+        if (displayedImg.id !== ejemplo3.id) {
+            hideEjemploJuego(displayedImg);
+            ejemplo3.classList.add(visibleEjemploJuego);
+        }
     }
 
-    else if(window.scrollY > 5200){
-        removeView();
-        const img4 = document.querySelector("#ej-juego4");
-        img4.classList.add("EjJueImg-view");
+    else if(scrollY > cuartoEjemploJuegoScroll){
+        if (displayedImg.id !== ejemplo4.id) {
+            hideEjemploJuego(displayedImg);
+            ejemplo4.classList.add(visibleEjemploJuego);
+        }
     }
     
     // if (window.scrollY < 3600) {
-    //     removeView();
+    //     hideEjemploJuego();
     //     const img1 = document.querySelector("#ej-juego1");
-    //     img1.classList.add("EjJueImg-view");
+    //     img1.classList.add(visibleEjemploJuego);
     // }
 
     // if (window.scrollY > 3600 && window.scrollY < 4000) {
-    //     removeView();
+    //     hideEjemploJuego();
     //     const img2 = document.querySelector("#ej-juego2");
-    //     img2.classList.add("EjJueImg-view");
+    //     img2.classList.add(visibleEjemploJuego);
     // }
 
     // if (window.scrollY > 4000 && window.scrollY < 4400) {
-    //     removeView();
+    //     hideEjemploJuego();
     //     const img3 = document.querySelector("#ej-juego3");
-    //     img3.classList.add("EjJueImg-view");
+    //     img3.classList.add(visibleEjemploJuego);
     // }
 
 
     // if (window.scrollY > 4400) {
-    //     removeView();
+    //     hideEjemploJuego();
     //     const img4 = document.querySelector("#ej-juego4");
-    //     img4.classList.add("EjJueImg-view");
+    //     img4.classList.add(visibleEjemploJuego);
     // }
 }
-function removeView(){
-    // Oculta los que esta a la vista
-    const displayedImg = document.querySelectorAll(".EjJueImg");
-    displayedImg.forEach(img => img.classList.remove("EjJueImg-view"))
+function hideEjemploJuego(displayedImg){
+    // Oculta el ejemplo de juego que esta a la vista
+    displayedImg.classList.remove(visibleEjemploJuego);
 }

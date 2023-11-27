@@ -12,6 +12,8 @@
     --sky-top: #5468F8;
     --sky-bottom: #5499F8;
     --sky-dark-botom:#5499F800;
+    --pre-footer-top:#8FBEFC;
+    --pre-footer-bottom:#F7E3D8;
 }
 
 @font-face {
@@ -786,12 +788,12 @@ ul{
     transition: 1s;
     margin-bottom: -10px;
     margin-top: -133px;
-    margin-bottom: -133px;
+    margin-bottom: -130px;
     height: 850px;
     width: 1280px;
 }
 .threeSpideys{
-    transition: 0.8s;
+    transition: 1s ease-in-out;
 }
 .three_gwen_bg{
     background: url(../images/spideys/bg_gwen.png);
@@ -805,6 +807,7 @@ ul{
 .three_gwen_bg,
 .three_miles_bg,
 .three_peter_bg{
+    z-index: 5;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -814,9 +817,13 @@ ul{
     flex-direction: column;
     width: 100%;
     height: 1296px;
-    background: linear-gradient(#8FBEFC, #F7E3D8);
+    background: linear-gradient(var(--pre-footer-top), var(--pre-footer-bottom));
     position: relative;
     z-index: 3;
+}
+.pre-footer.clipped{
+    clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 100%);
+    transform: translateZ(0);
 }
 .city_pre-footer {
     position: absolute;

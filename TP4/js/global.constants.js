@@ -1,5 +1,3 @@
-const emailSubmit = document.querySelector("#email_submit");
-
 // body main elements
 const main = document.querySelector("#home-main");
 const footer = document.querySelector("#home-footer");
@@ -30,16 +28,24 @@ const fichasPj = document.querySelectorAll(".ficha_pj");
 // Gwen section
 const gwenSection = document.querySelector("#gwen_container");
 const gwenCards = document.querySelectorAll(".gwen_card");
+// Ejemplo Juego
+const ejemplo1 = document.querySelector("#ej-juego1");
+const ejemplo2 = document.querySelector("#ej-juego2");
+const ejemplo3 = document.querySelector("#ej-juego3");
+const ejemplo4 = document.querySelector("#ej-juego4");
 // Three spideys section
 const threeSection = document.querySelector("#spideys_img-container");
 const threeSpideys = threeSection.querySelectorAll(".threeSpideys");
 // Parte 5 - Vengadores
-const vengadores = document.querySelector(".vengadores_great-container");
-const hojas = document.querySelector(".vengadores_upfront");
-const arboles = document.querySelector(".vengadores_trees");
-const pantera = document.querySelector(".vengadores_pantera");
-const elastic = document.querySelector(".vengadores_elastic");
-const hulk = document.querySelector(".vengadores_hulk");
+const vengadores = document.querySelector("#vengadores_great-container");
+const hojas = vengadores.querySelector("#vengadores_upfront");
+const arboles = vengadores.querySelector("#vengadores_trees");
+const pantera = vengadores.querySelector("#vengadores_pantera");
+const elastic = vengadores.querySelector("#vengadores_elastic");
+const hulk = vengadores.querySelector("#vengadores_hulk");
+// Pre-footer
+const preFooter = document.querySelector("#pre-footer");
+const emailSubmit = document.querySelector("#email_submit");
 // Global Classes
 const classInvisible = "hidden";
 const animationFicha = "fichaImg_animacion";
@@ -47,3 +53,4 @@ const headerTop = "header_at_top";
 const headerLow = "header_low";
 const rectToX = "rec-to-x";
 const visibleMenuItem = "visible-item";
+const visibleEjemploJuego = "EjJueImg-view";

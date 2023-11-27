@@ -35,6 +35,7 @@ function blurGwenCards(e){
     Tambien quita la de los otros dos para poder volver a agregarlas.
 */
 function destacarSpidey(){
+    preFooter.classList.add("clipped");
     const currentId = this.id;
     threeSpideys.forEach(spidey => {
         const spideyName = spidey.dataset.name;
