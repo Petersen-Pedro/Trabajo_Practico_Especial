@@ -34,23 +34,21 @@ function parallaxLogoHeader() {
 }
 // parallax de los spiders
 function parallaxFirstSection() {
+    if (window.scrollY < 100 || window.scrollY > 800) return
+    
     //Edificios
-    edificioIzq.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
-    edificioDer.style.transform = `translateX(${window.scrollY * 0.3}px)`;
-    edificioCentro.style.transform = `scale(${1 + window.scrollY * 0.0002}px)`;
-
-    // Spiders
-    // spiderWoman.style.transform = `translateY(${-window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
-    // spiderMan.style.transform = `translateY(${-window.scrollY * 0.2}px) translateY(${window.scrollY * 0.2}px)`;    
+    edificioIzq.style.transform = `translateX(${-window.scrollY * 0.4}px)`;
+    edificioDer.style.transform = `translateX(${window.scrollY * 0.4}px)`;
+    edificioCentro.style.transform = `translateY(${window.scrollY * 0.2}px)`; 
 
     // Spiders
     spiderWoman.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
-    spiderMan.style.transform = `translateX(${window.scrollY * 0.3}px)`;
+    spiderMan.style.transform = `translateY(${-window.scrollY * 0.3}px)`;
     spiderBlack.style.transform = `translateY(${-window.scrollY * 0.2}px) translateX(${window.scrollY * 0.2}px)`;
 
     // Telarañas
-    tIzq.style.transform = `translateY(${window.scrollY * 0.2}px) translateY(${-window.scrollY * 0.2}px)`;
-    tDer.style.transform = `translateY(${window.scrollY * 0.2}px) translateX(${-window.scrollY * 0.2}px)`;
+    tIzq.style.transform = `translateX(${-window.scrollY * 0.5}px)`;
+    tDer.style.transform = `translateX(${window.scrollY * 0.2}px)`;
 }
 // Seccion Duende Verde
 function parallaxDuendeVerde() {

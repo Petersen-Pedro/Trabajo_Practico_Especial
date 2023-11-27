@@ -58,9 +58,7 @@ html,
 body,
 header{
     /* width: 100%;   */
-    
     width: 1280px;
-   
     background-color: var(--pure-white);
 }
 html{
@@ -107,7 +105,7 @@ ul{
 .txt-btn,
 .placeholder,
 .txt-declaracion-legal {
-    /*.txt-declaracion-legal seria para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
+    /*.txt-declaracion-legal es para el <p> que esta debajo de donde uno ingresa su email en la seccion "LO ULTIMO DE SPIDEY"*/
     line-height: 19px;
 }
 .placeholder {
@@ -234,6 +232,7 @@ ul{
     border-bottom: 1px solid var(--pure-black);
     opacity: 0;
     transform: translateX(-300px);
+    transition-timing-function: ease-out;
 }
 .menu_list-item > img{
     height: 30px;
@@ -243,13 +242,13 @@ ul{
     border: none;
 }
 .menu_list-item.item1{
-    transition: 1s ease-out;
+    transition-duration: 1s;
 }
 .menu_list-item.item2{
-    transition: 1.5s ease-out;
+    transition-duration: 1.5s;
 }
 .menu_list-item.item3{
-    transition: 2s ease-out;
+    transition-duration: 2s;
 }
 .menu_list-item.visible-item{
     opacity: 1;
@@ -283,7 +282,6 @@ ul{
     justify-content: center;
     position: relative;
 }
-
 .front-first-section {
     width: 1080px;
     height: 100%;
@@ -292,7 +290,6 @@ ul{
     align-items: center;
     z-index: 2;
 }
-
 .edificio_izq {
     background-image: url(../Images/first-section/left-building.png);
     width: 452px;
@@ -306,7 +303,6 @@ ul{
     transition-delay: 0.2s;
     background-repeat: no-repeat;
 }
-
 .edificio_centro {
     background-image: url(../Images/first-section/center_building.png);
     width: 543px;
@@ -314,14 +310,9 @@ ul{
     position: absolute;
     z-index: 1;
     bottom: 15px;
-    /*
-    background-repeat: no-repeat;
-    left: 500px;
-    */
     opacity: 1;
     transition: all 0.3s ease-in;
 }
-
 .edificio_der {
     background-image: url(../Images/first-section/right-building.png);
     width: 374px;
@@ -335,7 +326,6 @@ ul{
     z-index: 1;
     opacity: 1;
 }
-
 .big-Logo {
     width: 590px;
     height: 301px;
@@ -346,23 +336,22 @@ ul{
     transition: all 0.5s ease-in;
     transition-delay: 0.8s;
 }
-
 .big-Logo img {
     width: 100%;
     height: 100%;
 }
-
 .spidermans-container {
     width: 100%;
     display: flex;
     position: relative;
 }
-
 .spidermans-container img {
     width: 100%;
     height: 100%;
 }
-
+.spidermans-container>div{
+    transition: 0.5s ease-in-out;
+}
 .spiderman_izq {
     background-image: url(../images/first-section/gwen.png);
     width: 360px;
@@ -375,7 +364,6 @@ ul{
     transition-delay: 0.5s;
     z-index: 1;
 }
-
 .spiderman_centro {
     background-image: url(../images/first-section/peter.png);
     width: 465px;
@@ -388,7 +376,6 @@ ul{
     transition-delay: 0.5s;
     z-index: 1;
 }
-
 .spiderman_der {
     background-image: url(../images/first-section/miles.png);
     height: 393px;
@@ -401,15 +388,8 @@ ul{
     transition-delay: 0.5s;
     z-index: 1;
 }
-
 .t_izq {
     background-image: url(../images/first-section/peter-web.png);
-    /*
-    width: 450.817px;
-    height: 1227.274px;
-    top: -200px;
-    left: -400px;
-    */
     width: 578px;
     height: 671px;
     top: -10px;
@@ -418,14 +398,12 @@ ul{
     opacity: 1;
     transition: all 0.3s ease-in;
     transition-delay: 0.3s;
-    
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 4;
     transition: all 0.3s ease-in;
     transition-delay: 0.7s;
 }
-
 .t_der {
     background-image: url(../images/first-section/miles-web.png);
     background-repeat: no-repeat;
@@ -440,7 +418,6 @@ ul{
     transition-delay: 0.3s;
     z-index: 5;
 }
-
 /* DUENDE VERDE */
 .duende-verde_container {
     height: 850px;
@@ -472,11 +449,8 @@ ul{
     width: 656px;
     margin-bottom: 2rem;
 }
-.duende-verde_info-text > .txt > h4 {
+.duende-verde_info-text .titulo-seccion{
     margin-bottom: 24px;
-}
-.duende-verde_info-text>h4 {
-    font-size: 50px;
 }
 .duende-verde_img {
     background-image: url(../images/duende-verde/duende-verde.png);
@@ -485,6 +459,8 @@ ul{
     height: 921px;
     top: -58px;
     right: -105px;
+    transition: 0.6s ease-in-out;
+    transform: translateY(-100px);
 }
 .amigos-pelean_img{
     width: 752px;
