@@ -10,7 +10,6 @@ document.addEventListener("scroll", parallaxLogoHeader);
 document.addEventListener("scroll", parallaxFirstSection);
 document.addEventListener("scroll", parallaxDuendeVerde);
 document.addEventListener("scroll", parallaxTarjetasPj);
-document.addEventListener("scroll", gwenSectionReset);
 document.addEventListener("scroll", parallaxGwen);
 document.addEventListener("scroll", threeSpideysSectionToWhite);
 document.addEventListener("scroll", parallaxEjemplosJuego);
@@ -70,22 +69,12 @@ function parallaxTarjetasPj() {
     }
 }
 // Seccion Gwen
-function gwenSectionReset() {
-    const x = gwenSection.getBoundingClientRect();
-    if (!(x.top < window.innerHeight && x.bottom > 0)) {
-        for (const card of gwenCards) {
-            card.style.cssText = "z-index: 2; filter: blur(0); transform: rotate(0deg);";
-        }
-    }
-}
-/* 
-    TODO - el tiempo de transition deberia aplicarse a translateX pero no a rotate. 
-    Sin embargo ambas son propiedas de transform por lo que no se como solucionarlo.
-*/
 function parallaxGwen() {
     const x = gwenSection.getBoundingClientRect();
     if (x.top < window.innerHeight && x.bottom > 0) {
-        gwenCards.forEach(card => card.classList.add("gwen_card_visible"));
+        gwenCards.forEach(card => card.classList.add(visibleGwenCard));
+    }else{
+        gwenCards.forEach(card => card.style.cssText = "z-index: 2; filter: blur(0);");
     }
 }
 

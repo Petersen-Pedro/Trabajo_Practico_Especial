@@ -52,5 +52,6 @@ const animationFicha = "fichaImg_animacion";
 const headerTop = "header_at_top";
 const headerLow = "header_low";
 const rectToX = "rec-to-x";
+const visibleGwenCard = "gwen_card_visible";
 const visibleMenuItem = "visible-item";
 const visibleEjemploJuego = "EjJueImg-view";
