@@ -33,7 +33,13 @@ const gwenCards = document.querySelectorAll(".gwen_card");
 // Three spideys section
 const threeSection = document.querySelector("#spideys_img-container");
 const threeSpideys = threeSection.querySelectorAll(".threeSpideys");
-
+// Parte 5 - Vengadores
+const vengadores = document.querySelector(".vengadores_great-container");
+const hojas = document.querySelector(".vengadores_upfront");
+const arboles = document.querySelector(".vengadores_trees");
+const pantera = document.querySelector(".vengadores_pantera");
+const elastic = document.querySelector(".vengadores_elastic");
+const hulk = document.querySelector(".vengadores_hulk");
 // Global Classes
 const classInvisible = "hidden";
 const animationFicha = "fichaImg_animacion";
@@ -41,15 +47,3 @@ const headerTop = "header_at_top";
 const headerLow = "header_low";
 const rectToX = "rec-to-x";
 const visibleMenuItem = "visible-item";
-
-// Parte 5 - Vengadores
-//NACHO, NO ME MATES SI ENCONTRAS ESTO, HICE EL JAVASCRIPT ACA PORQUE ME ES MAS COMODO, Y UNA VEZ QUE LO TERMINE LO ORDENO
-const vengadores = document.querySelector(".vengadores_great-container");
-const hojas = document.querySelector(".vengadores_upfront");
-const arboles = document.querySelector(".vengadores_trees");
-const pantera = document.querySelector(".vengadores_pantera");
-const elastic = document.querySelector(".vengadores_elastic");
-const hulk = document.querySelector(".vengadores_hulk");
-/*
-HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGENES DE LOS VENGADORES Y SE TERMINAN CORTANDO LOS BRAZOS
-*/
