@@ -731,7 +731,7 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
 .ej_container{
     width: 100%;
     height: auto;
-    margin-bottom: 70px;
+    margin-bottom: 20%;
     display: flex;
     justify-content: center;
 }
@@ -767,7 +767,6 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     justify-content: center;
     align-items: center;
     position: sticky; 
-    /*Estuve puteando media hora hasta que me acorde de la existencia de sticky*/
     top: 35%;
 }
 
@@ -783,7 +782,6 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     opacity: 1;
     /*z-index: 1;*/
 }
-
 
 .ej_text{
     width: 467px;
@@ -803,7 +801,7 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     flex-direction: column;
     gap: 25px;
     transition: all 0.3s ease-in;
-    opacity: 0;
+    opacity: 1;
 }
 
 .EjJueText-view{

@@ -128,39 +128,39 @@ vengadores.addEventListener("mousemove", (e) => {
 
 //Parte 6 - Ejemplos de Juego
 
-
-
 document.addEventListener("scroll", () => {
 
     //ES PARA SABER DONDE ESTA EL SCROLL Y ASI PODER REGULAR LOS IF
     addEventListener("scroll", () => { console.log(window.scrollY); });
 
+    //AL SCROLLEAR DEBERIA DE AGREGAR LA CLASE EjJueText-view Y EjJueImg-view AL TEXTO Y A LA IMAGEN
+
     if (window.scrollY < 3600) {
         console.log("hola < 3600");
         removeView();
         document.querySelector(".ej_text-1").classList.add(".EjJueText-view");
-        document.querySelector(".ej_text-1").classList.add(".EjJueImg-view");
+        document.querySelector(".EjJueImg-1").classList.add(".EjJueImg-view");
     }
 
     if (window.scrollY > 3600 && window.scrollY < 4000) {
         console.log("hola > 3600 && < 4000");
         removeView();
         document.querySelector(".ej_text-2").classList.add(".EjJueText-view");
-        document.querySelector(".ej_text-2").classList.add(".EjJueImg-view");
+        document.querySelector(".EjJueImg-2").classList.add(".EjJueImg-view");
     }
 
     if (window.scrollY > 4000 && window.scrollY < 4400) {
         console.log("hola > 4000 && < 4400");
         removeView();
         document.querySelector(".ej_text-3").classList.add(".EjJueText-view");
-        document.querySelector(".ej_text-3").classList.add(".EjJueImg-view");
+        document.querySelector(".EjJueImg-3").classList.add(".EjJueImg-view");
     }
 
     if (window.scrollY > 4400) {
         console.log("hola > 4400");
         removeView();
         document.querySelector(".ej_text-4").classList.add(".EjJueText-view");
-        document.querySelector(".ej_text-4").classList.add(".EjJueImg-view");
+        document.querySelector(".EjJueImg-4").classList.add(".EjJueImg-view");
     }
 
     function removeView() {
