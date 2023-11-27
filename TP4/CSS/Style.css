@@ -742,7 +742,11 @@ HAYN UN PROBLEMA QUE ES QUE EL TAMAÑO DEL ESPACIO SE SUPERPONE ENTRE LAS IMAGEN
     /*gap: 50px;*/
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+}
+
+.ej_article-container > .titulo-seccion{
+    margin-bottom: 60px;
 }
 
 .ej_body{

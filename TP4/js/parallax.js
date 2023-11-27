@@ -138,7 +138,7 @@ document.addEventListener("scroll", () => {
     if (window.scrollY < 3600) {
         console.log("hola < 3600");
         removeView();
-        document.querySelector(".ej_text-1").classList.add(".EjJueText-view");
+        //document.querySelector(".ej_text-1").classList.add(".EjJueText-view");
         document.querySelector(".EjJueImg-1").classList.add(".EjJueImg-view");
     }
 
@@ -152,14 +152,14 @@ document.addEventListener("scroll", () => {
     if (window.scrollY > 4000 && window.scrollY < 4400) {
         console.log("hola > 4000 && < 4400");
         removeView();
-        document.querySelector(".ej_text-3").classList.add(".EjJueText-view");
+        //document.querySelector(".ej_text-3").classList.add(".EjJueText-view");
         document.querySelector(".EjJueImg-3").classList.add(".EjJueImg-view");
     }
 
     if (window.scrollY > 4400) {
         console.log("hola > 4400");
         removeView();
-        document.querySelector(".ej_text-4").classList.add(".EjJueText-view");
+        //document.querySelector(".ej_text-4").classList.add(".EjJueText-view");
         document.querySelector(".EjJueImg-4").classList.add(".EjJueImg-view");
     }
 
@@ -169,7 +169,7 @@ document.addEventListener("scroll", () => {
         document.querySelectorAll(".EjJueImg-view").classList.remove(".EjJueImg-view");
 
         //document.querySelector(".EjJueImg-view").classList.remove(".EjJueImg-view");
-        document.querySelectorAll(".EjJueText-view").classList.remove(".EjJueText-view");
+        //document.querySelectorAll(".EjJueText-view").classList.remove(".EjJueText-view");
         console.log("hola remove EjJueText-view");
     }
 });
