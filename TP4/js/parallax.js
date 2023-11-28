@@ -100,22 +100,17 @@ function parallaxGwen() {
 }
 // Seccion Vengadores
 function moveVengadoresByMouse(e){
-    // se toma el boundingClientRect de la seccion de vengadores 
-    // para saber si el usuario se encuentra dicha seccion
-    const x = vengadores.getBoundingClientRect();
-    if (x.top < window.innerHeight && x.bottom > 0) {
-        // se toma la posY y posX del cliente
-        let posX = e.clientX;
-        let posY = e.clientY;
+    // se toma la posY y posX del cliente
+    let posX = e.clientX;
+    let posY = e.clientY;
 
-        // Cada elemento se mueve en base a estas posiciones y numeros que fuimos probando.
-        pantera.style.transform = `translateX(${posX * 0.05}px) translateY(${posY * 0.05}px) rotate(${posX * 0.01}deg)`;
-        elastic.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${posY * 0.02}px) rotate(${-posX * 0.01}deg)`;
-        hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${20 + posY * 0.02}px) rotate(${posX * 0.01}deg)`;
+    // Cada elemento se mueve en base a estas posiciones y numeros que fuimos probando.
+    pantera.style.transform = `translateX(${posX * 0.05}px) translateY(${posY * 0.05}px) rotate(${posX * 0.01}deg)`;
+    elastic.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${posY * 0.02}px) rotate(${-posX * 0.01}deg)`;
+    hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${20 + posY * 0.02}px) rotate(${posX * 0.01}deg)`;
 
-        hojas.style.transform = `translateX(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
-        arboles.style.transform = `translateX(${-posX * 0.005}px) scale(${1 + posY * 0.000001})`;
-    }
+    hojas.style.transform = `translateX(${1 + posY * 0.0002}) scale(${1 + posY * 0.002}`;
+    arboles.style.transform = `translateX(${-posX * 0.005}px) scale(${1 + posY * 0.000001})`;
 }
 // Seccion Ejemplos de Juego
 function parallaxEjemplosJuego(){
