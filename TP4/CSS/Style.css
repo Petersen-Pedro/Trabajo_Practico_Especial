@@ -766,7 +766,8 @@ ul{
     width: 1280px;
 }
 .threeSpideys{
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
 .three_gwen_bg{
     background: url(../images/spideys/bg_gwen.png);
