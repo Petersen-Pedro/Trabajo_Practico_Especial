@@ -15,51 +15,43 @@
     --pre-footer-top:#8FBEFC;
     --pre-footer-bottom:#F7E3D8;
 }
-
 @font-face {
     font-family: 'Lato';
     src: url(Fonts/Lato-Regular.ttf);
 }
-
 @font-face {
     font-family: 'Lato';
     src: url(Fonts/Lato-Bold.ttf);
     font-weight: bold;
 }
-
 @font-face {
     font-family: 'Lato';
     src: url(Fonts/Lato-Italic.ttf);
     font-weight: italic;
 }
-
 @font-face {
     font-family: 'Lato';
     src: url(Fonts/Lato-BlackItalic.ttf);
     font-weight: bold;
     font-style: italic;
 }
-
 @font-face {
     font-family: 'Lato';
     src: url(Fonts/Lato-Light.ttf);
     font-weight: lighter;
     background-color: var(--main-bg-color);
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato';
 }
-
 html, 
 body,
 header{
     width: 1280px;
-    /* background-color: var(--pure-white); */
-    background-color: red;
+    background-color: var(--pure-white);
 }
 html{
     min-height: 100%;
@@ -565,7 +557,7 @@ ul{
 }
 .gwen_card{
     z-index: 2;
-    transform: translateX(-300px);
+    transform: translateX(-500px);
 }
 .gwen_card.sub1{
     top: -160px;
