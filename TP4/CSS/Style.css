@@ -285,7 +285,7 @@ ul{
     z-index: 2;
 }
 .edificio_izq {
-    background-image: url(../Images/first-section/left-building.png);
+    background-image: url(../images/first-section/left-building.png);
     width: 452px;
     height: 720px;
     z-index: 1;
@@ -298,7 +298,7 @@ ul{
     background-repeat: no-repeat;
 }
 .edificio_centro {
-    background-image: url(../Images/first-section/center_building.png);
+    background-image: url(../images/first-section/center_building.png);
     width: 543px;
     height: 213px;
     position: absolute;
@@ -308,7 +308,7 @@ ul{
     transition: all 0.3s ease-in;
 }
 .edificio_der {
-    background-image: url(../Images/first-section/right-building.png);
+    background-image: url(../images/first-section/right-building.png);
     width: 374px;
     height: 727px;
     right: 0;
