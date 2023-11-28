@@ -24,7 +24,8 @@ const tDer = document.querySelector("#t_der");
 const duendeVerdeSection = document.querySelector("#duende-verde-section");
 const duendeVerde = duendeVerdeSection.querySelector("#duende-verde_img");
 // Tarjetas de personaje
-const fichasPj = document.querySelectorAll(".ficha_pj");
+const seccionPresentacionPj = document.querySelector("#presentacion-pj_container");
+const fichasPj = seccionPresentacionPj.querySelectorAll(".ficha_pj");
 // Gwen section
 const gwenSection = document.querySelector("#gwen_container");
 const gwenCards = document.querySelectorAll(".gwen_card");
@@ -48,10 +49,12 @@ const preFooter = document.querySelector("#pre-footer");
 const emailSubmit = document.querySelector("#email_submit");
 // Global Classes
 const classInvisible = "hidden";
+const whiteBg = "bg_white";
 const animationFicha = "fichaImg_animacion";
 const headerTop = "header_at_top";
 const headerLow = "header_low";
 const rectToX = "rec-to-x";
+const clipped = "clipped";
 const visibleGwenCard = "gwen_card_visible";
 const visibleMenuItem = "visible-item";
 const visibleEjemploJuego = "EjJueImg-view";

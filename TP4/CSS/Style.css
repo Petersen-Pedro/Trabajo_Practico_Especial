@@ -154,9 +154,11 @@ ul{
     transition: all 0.5s ease-in-out;
 }
 .header_at_top{
+    height: 100px;
     background: linear-gradient(var(--sky-top), var(--sky-bottom) 80%, var(--sky-dark-botom));
 }
 .header_low{
+    height: 90px;
     background: var(--sky-bottom);
 }
 /* Menu hamburguesa*/
